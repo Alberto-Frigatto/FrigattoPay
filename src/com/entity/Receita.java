@@ -23,6 +23,17 @@ public class Receita {
         this.dataReceita = dataReceita;
     }
 
+    public void data()
+    {
+        System.out.println("Receita(");
+        System.out.println("\tid=" + this.id + ",");
+        System.out.println("\tidCliente=" + this.idCliente + ",");
+        System.out.println("\tidTipoReceita=" + this.idTipoReceita + ",");
+        System.out.println("\tvalor=" + this.valor + ",");
+        System.out.println("\tdataReceita=" + this.dataReceita + ",");
+        System.out.println(")\n");
+    }
+
     public Integer getId()
     {
         return this.id;

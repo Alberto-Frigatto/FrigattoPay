@@ -30,6 +30,19 @@ public class Despesa
         this.dataVencimento = dataVencimento;
     }
 
+    public void data()
+    {
+        System.out.println("Receita(");
+        System.out.println("\tid=" + this.id + ",");
+        System.out.println("\tidCliente=" + this.idCliente + ",");
+        System.out.println("\tidTipoDespesa=" + this.idTipoDespesa + ",");
+        System.out.println("\tnome=" + this.nome + ",");
+        System.out.println("\tvalor=" + this.valor + ",");
+        System.out.println("\tdescricao=" + this.descricao + ",");
+        System.out.println("\tdataVencimento=" + this.dataVencimento + ",");
+        System.out.println(")\n");
+    }
+
     public Integer getId()
     {
         return this.id;

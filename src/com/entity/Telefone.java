@@ -26,6 +26,20 @@ public class Telefone
         this.idTipoTelefone = idTipoTelefone;
     }
 
+    public void data(boolean tab)
+    {
+        String tab_char = tab ? "\t\t" : "";
+
+        System.out.println(tab_char + "Telefone(");
+        System.out.println(tab_char + "\tid=" + this.id + ",");
+        System.out.println(tab_char + "\tidCliente=" + this.idCliente + ",");
+        System.out.println(tab_char + "\tnumero=" + this.numero + ",");
+        System.out.println(tab_char + "\tramal=" + this.ramal + ",");
+        System.out.println(tab_char + "\tddd=" + this.ddd + ",");
+        System.out.println(tab_char + "\tidTipoTelefone=" + this.idTipoTelefone + ",");
+        System.out.println(tab_char + ")\n");
+    }
+
     public Integer getId()
     {
       return this.id;

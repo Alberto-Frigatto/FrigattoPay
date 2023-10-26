@@ -32,6 +32,22 @@ public class Endereco
         this.idBairro = idBairro;
     }
 
+    public void data(boolean tab)
+    {
+        String tab_char = tab ? "\t\t" : "";
+
+        System.out.println(tab_char + "Endereco(");
+        System.out.println(tab_char + "\tid=" + this.id + ",");
+        System.out.println(tab_char + "\tidCliente=" + this.idCliente + ",");
+        System.out.println(tab_char + "\tcep=" + this.cep + ",");
+        System.out.println(tab_char + "\tlogradouro=" + this.logradouro + ",");
+        System.out.println(tab_char + "\tnumero=" + this.numero + ",");
+        System.out.println(tab_char + "\tcomplemento=" + this.complemento + ",");
+        System.out.println(tab_char + "\tidTipoLogradouro=" + this.idTipoLogradouro + ",");
+        System.out.println(tab_char + "\tidBairro=" + this.idBairro + ",");
+        System.out.println(tab_char + ")\n");
+    }
+
     public Integer getId()
     {
       return this.id;

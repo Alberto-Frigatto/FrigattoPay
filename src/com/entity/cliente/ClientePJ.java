@@ -1,5 +1,8 @@
 package com.entity.cliente;
 
+import com.entity.Endereco;
+import com.entity.Telefone;
+
 public class ClientePJ extends Cliente
 {
     private String cnpj;
@@ -23,6 +26,36 @@ public class ClientePJ extends Cliente
         this.inscricaoEstadual = inscricaoEstadual;
         this.dataAbertura = dataAbertura;
         this.setor = setor;
+    }
+
+    public void data()
+    {
+        System.out.println("ClientePF(");
+        System.out.println("\tid=" + this.getId() + ",");
+        System.out.println("\tnome=" + this.getNome() + ",");
+        System.out.println("\temail=" + this.getEmail() + ",");
+        System.out.println("\tsenha=" + this.getSenha() + ",");
+        System.out.println("\tcnpj=" + this.cnpj + ",");
+        System.out.println("\tinscricaoEstadual=" + this.inscricaoEstadual + ",");
+        System.out.println("\tdataAbertura=" + this.dataAbertura + ",");
+        System.out.println("\ttelefones=[");
+
+        for (Telefone telefone : this.getTelefones())
+        {
+            telefone.data(true);
+        }
+
+        System.out.println("\t]");
+
+        System.out.println("\tenderecos=[");
+
+        for (Endereco endereco : this.getEnderecos())
+        {
+            endereco.data(true);
+        }
+
+        System.out.println("\t]");
+        System.out.println(")\n");
     }
 
     public String getcnpj()
