@@ -68,6 +68,49 @@ public class DAOClientePF
         return stmt.executeQuery(query);
     }
 
+    public ClientePF getById(int id) throws SQLException
+    {
+        ResultSet result = this.getCliente(id);
+
+        result.next();
+
+        ClientePF clientePF = new ClientePF(
+            result.getInt("cd_cliente"),
+            result.getString("nm_cliente"),
+            result.getString("ds_email"),
+            result.getString("ds_senha"),
+            result.getString("nr_cpf"),
+            result.getString("nr_rg"),
+            result.getString("dt_nascimento")
+        );
+
+        int idCliente = clientePF.getId();
+
+        List<Telefone> telefones = this.instantiateTelefones(idCliente);
+        List<Endereco> enderecos = this.instantiateEnderecos(idCliente);
+
+        clientePF.addTelefone(telefones);
+        clientePF.addEndereco(enderecos);
+
+        return clientePF;
+    }
+
+    private ResultSet getCliente(int id) throws SQLException
+    {
+        String query = """
+            SELECT C.cd_cliente, C.nm_cliente, C.ds_email, C.ds_senha, PF.nr_cpf, PF.nr_rg, PF.dt_nascimento
+                FROM T_FP_CLIENTE C, T_FP_CLIENTE_PF PF
+                    WHERE C.cd_cliente = PF.t_fp_cliente_cd_cliente AND
+                          C.cd_cliente = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, id);
+
+        return pstmt.executeQuery();
+    }
+
     private List<Telefone> instantiateTelefones(int idCliente) throws SQLException
     {
         List<Telefone> telefonesList = new ArrayList<Telefone>();
