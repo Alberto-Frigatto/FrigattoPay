@@ -8,6 +8,8 @@ import java.util.List;
 import com.dao.DAOClientePF;
 import com.dao.DAOClientePJ;
 import com.dao.DAODespesa;
+import com.dao.DAOReceita;
+import com.entity.Receita;
 import com.entity.Despesa;
 import com.entity.Endereco;
 import com.entity.Telefone;
@@ -91,11 +93,11 @@ public class App
 
             DAOClientePF daoClientePF = new DAOClientePF(conn);
 
-            // daoClientePF.insert(gustavo);
-            // daoClientePF.insert(robertoCarlos);
-            // daoClientePF.insert(fabioJunior);
-            // daoClientePF.insert(milionario);
-            // daoClientePF.insert(joseRico);
+            daoClientePF.insert(gustavo);
+            daoClientePF.insert(robertoCarlos);
+            daoClientePF.insert(fabioJunior);
+            daoClientePF.insert(milionario);
+            daoClientePF.insert(joseRico);
 
             ClientePJ agrobots = new ClientePJ(
                 null,
@@ -169,11 +171,11 @@ public class App
 
             DAOClientePJ daoClientePJ = new DAOClientePJ(conn);
 
-            // daoClientePJ.insert(agrobots);
-            // daoClientePJ.insert(fiap);
-            // daoClientePJ.insert(positivo);
-            // daoClientePJ.insert(oboticario);
-            // daoClientePJ.insert(postoIpiranga);
+            daoClientePJ.insert(agrobots);
+            daoClientePJ.insert(fiap);
+            daoClientePJ.insert(positivo);
+            daoClientePJ.insert(oboticario);
+            daoClientePJ.insert(postoIpiranga);
 
             printClientesPF(daoClientePF.getAll());
             printClientesPJ(daoClientePJ.getAll());
@@ -186,13 +188,32 @@ public class App
             Despesa boletoSabesp = new Despesa(null, 33, 1, "Conta sabesp", 800.00, "Conta referente 10/2023", "05-10-2023");
             Despesa boletoTim = new Despesa(null, 36, 3, "Conta tim", 647.99, "Conta referente 10/2023", "08-10-2023");
 
-            // daoDespesa.insert(boletoClaro);
-            // daoDespesa.insert(boletoCopasa);
-            // daoDespesa.insert(boletoEnel);
-            // daoDespesa.insert(boletoSabesp);
-            // daoDespesa.insert(boletoTim);
+            daoDespesa.insert(boletoClaro);
+            daoDespesa.insert(boletoCopasa);
+            daoDespesa.insert(boletoEnel);
+            daoDespesa.insert(boletoSabesp);
+            daoDespesa.insert(boletoTim);
 
             printDespesas(daoDespesa.getAll());
+
+            DAOReceita daoReceita = new DAOReceita(conn);
+
+            Receita entradaPensao = new Receita(null, 31, 3, 500.00, "01-11-2023");
+            Receita entradaBolsa = new Receita(null, 33, 1, 1500.00, "25-10-2023");
+            Receita entradaSalario = new Receita(null, 30, 2, 2500.00, "07-10-2023");
+            Receita entradaPensaoMensal = new Receita(null, 32, 3, 15000.00, "15-10-2023");
+            Receita entradaBolsaValores = new Receita(null, 36, 2, 1000.00, "27-10-2023");
+
+            
+            daoReceita.insert(entradaPensao);
+            daoReceita.insert(entradaBolsa);
+            daoReceita.insert(entradaSalario);
+            daoReceita.insert(entradaPensaoMensal);
+            daoReceita.insert(entradaBolsaValores);
+
+
+            printReceita(daoReceita.getAll());
+
         }
         catch (SQLException e)
         {
@@ -259,6 +280,22 @@ public class App
             System.out.println("NOME: " + despesa.getNome());
             System.out.println("VALOR: R$" + despesa.getValor());
             System.out.println("ID DO TIPO DE DESPESA: " + despesa.getIdTipoDespesa());
+            System.out.println("\n");
+        }
+    }
+
+
+    private static void printReceita(List<Receita> list)
+    {
+        System.out.println("-------RECEITAS-------\n");
+
+        for (Receita receita : list)
+        {
+            System.out.println("ID: " + receita.getId());
+            System.out.println("DATA: " + receita.getDataReceita());
+            System.out.println("VALOR: R$" + receita.getValor());
+            System.out.println("ID DO TIPO DE RECEITA: " + receita.getIdTipoReceita());
+            System.out.println("ID DO CLIENTE: " + receita.getIdCliente());            
             System.out.println("\n");
         }
     }
