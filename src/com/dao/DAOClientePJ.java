@@ -69,6 +69,50 @@ public class DAOClientePJ
         return stmt.executeQuery(query);
     }
 
+    public ClientePJ getById(int id) throws SQLException
+    {
+        ResultSet result = this.getCliente(id);
+
+        result.next();
+
+        ClientePJ clientePJ = new ClientePJ(
+            result.getInt("cd_cliente"),
+            result.getString("nm_cliente"),
+            result.getString("ds_email"),
+            result.getString("ds_senha"),
+            result.getString("nr_cnpj"), 
+            result.getString("dt_abertura"), 
+            result.getString("nr_inscricao_estadual"), 
+            result.getString("ds_setor")
+        );
+
+        int idCliente = clientePJ.getId();
+
+        List<Telefone> telefones = this.instantiateTelefones(idCliente);
+        List<Endereco> enderecos = this.instantiateEnderecos(idCliente);
+
+        clientePJ.addTelefone(telefones);
+        clientePJ.addEndereco(enderecos);
+
+        return clientePJ;
+    }
+
+    private ResultSet getCliente(int id) throws SQLException
+    {
+        String query = """
+            SELECT C.cd_cliente, C.nm_cliente, C.ds_email, C.ds_senha, PJ.nr_cnpj, PJ.nr_inscricao_estadual, PJ.dt_abertura, PJ.ds_setor 
+                FROM T_FP_CLIENTE C, T_FP_CLIENTE_PJ PJ
+                    WHERE C.cd_cliente = PJ.t_fp_cliente_cd_cliente AND
+                            C.cd_cliente = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, id);
+
+        return pstmt.executeQuery();
+    }
+
     private List<Telefone> instantiateTelefones(int idCliente) throws SQLException
     {
         List<Telefone> telefonesList = new ArrayList<Telefone>();
