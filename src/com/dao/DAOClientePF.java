@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,16 +15,14 @@ import com.entity.Endereco;
 import com.entity.Telefone;
 import com.entity.cliente.ClientePF;
 
-public class DAOClientePF
+public class DAOClientePF extends DAO
 {
-    private Connection conn;
-
     public DAOClientePF(Connection conn)
     {
-        this.conn = conn;
+        super(conn);
     }
 
-    public List<ClientePF> getAll() throws SQLException
+    public List<ClientePF> getAll() throws SQLException, ParseException
     {
         List<ClientePF> clientesList = new ArrayList<ClientePF>();
 
@@ -31,6 +30,8 @@ public class DAOClientePF
 
         while (result.next())
         {
+            String formattedDate = this.formatDate(result.getDate("dt_nascimento"));
+
             ClientePF clientePF = new ClientePF(
                 result.getInt("cd_cliente"),
                 result.getString("nm_cliente"),
@@ -38,7 +39,7 @@ public class DAOClientePF
                 result.getString("ds_senha"),
                 result.getString("nr_cpf"),
                 result.getString("nr_rg"),
-                result.getString("dt_nascimento")
+                formattedDate
             );
 
             int idCliente = clientePF.getId();
@@ -68,11 +69,13 @@ public class DAOClientePF
         return stmt.executeQuery(query);
     }
 
-    public ClientePF getById(int id) throws SQLException
+    public ClientePF getById(int id) throws SQLException, ParseException
     {
         ResultSet result = this.getCliente(id);
 
         result.next();
+
+        String formattedDate = this.formatDate(result.getDate("dt_nascimento"));
 
         ClientePF clientePF = new ClientePF(
             result.getInt("cd_cliente"),
@@ -81,7 +84,7 @@ public class DAOClientePF
             result.getString("ds_senha"),
             result.getString("nr_cpf"),
             result.getString("nr_rg"),
-            result.getString("dt_nascimento")
+            formattedDate
         );
 
         int idCliente = clientePF.getId();
@@ -209,7 +212,7 @@ public class DAOClientePF
         cs.setString(4, pf.getSenha());
         cs.setString(5, pf.getCpf());
         cs.setString(6, pf.getRg());
-        cs.setString(7, pf.getDataNascimento());
+        cs.setDate(7, new java.sql.Date(pf.getDataNascimento().getTime()));
         cs.execute();
 
         int idCliente = cs.getInt(1);
@@ -248,5 +251,19 @@ public class DAOClientePF
             cs.setInt(7, endereco.getIdBairro());
             cs.execute();
         }
+    }
+
+    public void update(ClientePF pf) throws SQLException
+    {
+        CallableStatement cs = conn.prepareCall("{ call AtualizarClientePf(?, ?, ?, ?, ?, ?, ?) }");
+
+        cs.setInt(1, pf.getId());
+        cs.setString(2, pf.getNome());
+        cs.setString(3, pf.getEmail());
+        cs.setString(4, pf.getSenha());
+        cs.setString(5, pf.getCpf());
+        cs.setString(6, pf.getRg());
+        cs.setDate(7, new java.sql.Date(pf.getDataNascimento().getTime()));
+        cs.execute();
     }
 }
