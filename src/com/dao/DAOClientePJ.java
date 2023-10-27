@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,16 +15,14 @@ import com.entity.Endereco;
 import com.entity.Telefone;
 import com.entity.cliente.ClientePJ;
 
-public class DAOClientePJ
+public class DAOClientePJ extends DAO
 {
-    private Connection conn;
-
     public DAOClientePJ(Connection conn)
     {
-        this.conn = conn;
+        super(conn);
     }
-  
-     public List<ClientePJ> getAll() throws SQLException
+
+    public List<ClientePJ> getAll() throws SQLException, ParseException
     {
         List<ClientePJ> clientesList = new ArrayList<ClientePJ>();
 
@@ -31,6 +30,8 @@ public class DAOClientePJ
 
         while (result.next())
         {
+            String formattedDate = this.formatDate(result.getDate("dt_abertura"));
+
             ClientePJ clientePJ = new ClientePJ(
                 result.getInt("cd_cliente"),
                 result.getString("nm_cliente"),
@@ -39,7 +40,7 @@ public class DAOClientePJ
                 result.getString("nr_cnpj"),
                 result.getString("nr_inscricao_estadual"),
                 result.getString("dt_abertura"),
-                result.getString("ds_setor")
+                formattedDate
             );
 
             int idCliente = clientePJ.getId();
@@ -69,11 +70,13 @@ public class DAOClientePJ
         return stmt.executeQuery(query);
     }
 
-    public ClientePJ getById(int id) throws SQLException
+    public ClientePJ getById(int id) throws SQLException, ParseException
     {
         ResultSet result = this.getCliente(id);
 
         result.next();
+
+        String formattedDate = this.formatDate(result.getDate("dt_abertura"));
 
         ClientePJ clientePJ = new ClientePJ(
             result.getInt("cd_cliente"),
@@ -81,8 +84,8 @@ public class DAOClientePJ
             result.getString("ds_email"),
             result.getString("ds_senha"),
             result.getString("nr_cnpj"), 
-            result.getString("dt_abertura"), 
             result.getString("nr_inscricao_estadual"), 
+            formattedDate,
             result.getString("ds_setor")
         );
 
@@ -209,16 +212,16 @@ public class DAOClientePJ
         cs.setString(2, pj.getNome());
         cs.setString(3, pj.getEmail());
         cs.setString(4, pj.getSenha());
-        cs.setString(5, pj.getcnpj());
-        cs.setString(6, pj.getinscricaoEstadual());
-        cs.setString(7, pj.getDataAbertura());
-        cs.setString(8, pj.getsetor());
+        cs.setString(5, pj.getCnpj());
+        cs.setString(6, pj.getInscricaoEstadual());
+        cs.setDate(7, new java.sql.Date(pj.getDataAbertura().getTime()));
+        cs.setString(8, pj.getSetor());
         cs.execute();
 
         int idCliente = cs.getInt(1);
 
         this.insertTelefones(pj.getTelefones(), idCliente);
-        this.inserirEnderecos(pj.getEnderecos(), idCliente);
+        this.insertEnderecos(pj.getEnderecos(), idCliente);
     }
 
     private void insertTelefones(List<Telefone> list, int idCliente) throws SQLException
@@ -236,7 +239,7 @@ public class DAOClientePJ
         }
     }
 
-    private void inserirEnderecos(List<Endereco> list, int idCliente) throws SQLException
+    private void insertEnderecos(List<Endereco> list, int idCliente) throws SQLException
     {
         for (Endereco endereco : list)
         {
@@ -251,5 +254,20 @@ public class DAOClientePJ
             cs.setInt(7, endereco.getIdBairro());
             cs.execute();
         }
+    }
+
+    public void update(ClientePJ pj) throws SQLException
+    {
+        CallableStatement cs = conn.prepareCall("{ call AtualizarClientePJ(?, ?, ?, ?, ?, ?, ?, ?) }");
+
+        cs.setInt(1, pj.getId());
+        cs.setString(2, pj.getNome());
+        cs.setString(3, pj.getEmail());
+        cs.setString(4, pj.getSenha());
+        cs.setString(5, pj.getCnpj());
+        cs.setString(6, pj.getInscricaoEstadual());
+        cs.setDate(7, new java.sql.Date(pj.getDataAbertura().getTime()));
+        cs.setString(8, pj.getSetor());
+        cs.execute();
     }
 }
