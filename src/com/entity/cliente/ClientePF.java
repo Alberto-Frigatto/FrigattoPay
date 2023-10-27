@@ -3,11 +3,14 @@ package com.entity.cliente;
 import com.entity.Endereco;
 import com.entity.Telefone;
 
+import java.text.ParseException;
+import java.util.Date;
+
 public class ClientePF extends Cliente
 {
     private String cpf;
     private String rg;
-    private String dataNascimento;
+    private Date dataNascimento;
 
     public ClientePF(
         Integer id,
@@ -17,12 +20,13 @@ public class ClientePF extends Cliente
         String cpf,
         String rg,
         String dataNascimento
-    )
+    ) throws ParseException
     {
         super(id, nome, email, senha);
         this.cpf = cpf;
         this.rg = rg;
-        this.dataNascimento = dataNascimento;
+
+        this.dataNascimento = this.dateFormat.parse(dataNascimento);
     }
 
     public void data()
@@ -34,7 +38,7 @@ public class ClientePF extends Cliente
         System.out.println("\tsenha=" + this.getSenha() + ",");
         System.out.println("\tcpf=" + this.cpf + ",");
         System.out.println("\trg=" + this.rg + ",");
-        System.out.println("\tdataNascimento=" + this.dataNascimento + ",");
+        System.out.println("\tdataNascimento=" + this.dateFormat.format(this.dataNascimento) + ",");
         System.out.println("\ttelefones=[");
 
         for (Telefone telefone : this.getTelefones())
@@ -57,16 +61,31 @@ public class ClientePF extends Cliente
 
     public String getCpf()
     {
-      return this.cpf;
+        return this.cpf;
+    }
+
+    public void updateCpf(String value)
+    {
+        this.cpf = value;
     }
 
     public String getRg()
     {
-      return this.rg;
+        return this.rg;
     }
 
-    public String getDataNascimento()
+    public void updateRg(String value)
     {
-      return this.dataNascimento;
+        this.rg = value;
+    }
+
+    public Date getDataNascimento()
+    {
+        return this.dataNascimento;
+    }
+
+    public void updateDataNascimento(String value) throws ParseException
+    {
+        this.dataNascimento = this.dateFormat.parse(value);
     }
 }
