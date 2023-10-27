@@ -5,22 +5,20 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.entity.Despesa;
 
-public class DAODespesa
+public class DAODespesa extends DAO
 {
-  
-    private Connection conn;
-
     public DAODespesa(Connection conn) 
     {
-        this.conn = conn;
+        super(conn);
     }
 
-    public List<Despesa> getAll() throws SQLException 
+    public List<Despesa> getAll() throws SQLException, ParseException
     {
         List<Despesa> despesas = new ArrayList<Despesa>();
         
@@ -28,6 +26,8 @@ public class DAODespesa
 
         while (result.next())
         {
+            String formattedDate = this.formatDate(result.getDate("dt_vencimento"));
+
             Despesa despesa = new Despesa(
                 result.getInt("cd_despesa"),
                 result.getInt("t_fp_cliente_cd_cliente"),
@@ -35,7 +35,7 @@ public class DAODespesa
                 result.getString("nm_despesa"),
                 result.getDouble("vl_despesa"),
                 result.getString("ds_despesa"),
-                result.getString("dt_vencimento")
+                formattedDate
             );
 
             despesas.add(despesa);
@@ -71,7 +71,7 @@ public class DAODespesa
         cs.setString(1, dp.getNome());
         cs.setDouble(2, dp.getValor());
         cs.setString(3, dp.getDescricao());
-        cs.setString(4, dp.getDataVencimento());
+        cs.setDate(4, new java.sql.Date(dp.getDataVencimento().getTime()));
         cs.setInt(5, dp.getIdTipoDespesa());
         cs.setInt(6, dp.getIdCliente());
         cs.execute();
