@@ -1,5 +1,6 @@
 package com.entity.cliente;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public abstract class Cliente
     private String senha;
     private List<Telefone> telefones = new ArrayList<Telefone>();
     private List<Endereco> enderecos = new ArrayList<Endereco>();
+    protected SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     public Cliente(
         Integer id,
@@ -53,34 +55,54 @@ public abstract class Cliente
             this.enderecos.add(endereco);
         }
     }
-    
+
     public Integer getId()
     {
-      return this.id;
+        return this.id;
+    }
+
+    public void updateId(Integer value)
+    {
+        this.id = value;
     }
 
     public String getNome()
     {
-      return this.nome;
+        return this.nome;
+    }
+
+    public void updateNome(String value)
+    {
+        this.nome = value;
     }
 
     public String getEmail()
     {
-      return this.email;
+        return this.email;
+    }
+
+    public void updateEmail(String value)
+    {
+        this.email = value;
     }
 
     public String getSenha()
     {
-      return this.senha;
+        return this.senha;
+    }
+
+    public void updateSenha(String value)
+    {
+        this.senha = value;
     }
 
     public List<Telefone> getTelefones()
     {
-      return this.telefones;
+        return this.telefones;
     }
 
     public List<Endereco> getEnderecos()
     {
-      return this.enderecos;
+        return this.enderecos;
     }
 }
