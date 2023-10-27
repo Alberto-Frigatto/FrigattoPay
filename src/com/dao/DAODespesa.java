@@ -2,6 +2,7 @@ package com.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -62,6 +63,51 @@ public class DAODespesa extends DAO
         """;
 
         return stmt.executeQuery(query);        
+    }
+
+    public Despesa getById(int id) throws SQLException, ParseException, Exception
+    {
+        ResultSet result = this.getDespesa(id);
+
+        if (!result.next())
+            throw new Exception("A despesa " + id + " não existe");
+
+        String formattedDate = this.formatDate(result.getDate("dt_vencimento"));
+
+        Despesa despesa = new Despesa(
+            result.getInt("cd_despesa"),
+            result.getInt("t_fp_cliente_cd_cliente"),
+            result.getInt("t_fp_tipo_despesa_cd_tipo"),
+            result.getString("nm_despesa"),
+            result.getDouble("vl_despesa"),
+            result.getString("ds_despesa"),
+            formattedDate
+        );
+
+        return despesa;
+    }
+
+    protected ResultSet getDespesa(int id) throws SQLException
+    {
+        String query = """
+            SELECT
+                cd_despesa,
+                nm_despesa,
+                vl_despesa,
+                ds_despesa,
+                dt_vencimento,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_despesa_cd_tipo
+
+                FROM T_FP_DESPESA
+                    WHERE cd_despesa = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, id);
+
+        return pstmt.executeQuery();
     }
 
     public void insert(Despesa dp) throws SQLException

@@ -4,6 +4,7 @@ import com.entity.Receita;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -58,6 +59,47 @@ public class DAOReceita extends DAO
                 """;
 
         return stmt.executeQuery(query);        
+    }
+
+    public Receita getById(int id) throws SQLException, ParseException, Exception
+    {
+        ResultSet result = this.getReceita(id);
+
+        if (!result.next())
+            throw new Exception("A receita " + id + " não existe");
+
+        String formattedDate = this.formatDate(result.getDate("dt_receita"));
+
+        Receita receita = new Receita(
+            result.getInt("cd_receita"),
+            result.getInt("t_fp_cliente_cd_cliente"),
+            result.getInt("t_fp_tipo_receita_cd_tipo"),
+            result.getDouble("vl_receita"),
+            formattedDate
+        );
+
+        return receita;
+    }
+
+    protected ResultSet getReceita(int id) throws SQLException
+    {
+        String query = """
+            SELECT
+                cd_receita,
+                vl_receita,
+                dt_receita,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_receita_cd_tipo
+
+                FROM T_FP_RECEITA
+                    WHERE cd_receita = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, id);
+
+        return pstmt.executeQuery();
     }
 
     public void insert(Receita rc) throws SQLException
