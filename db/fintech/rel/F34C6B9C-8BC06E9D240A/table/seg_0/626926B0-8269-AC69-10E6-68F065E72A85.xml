@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="626926B0-8269-AC69-10E6-68F065E72A85" name="T_FP_TIPO_PAGAMENTO">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>8B84D0EC-5380-B406-FA6B-473C376F355E</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_tipo_pagamento" id="D3FD1A79-3D48-BC52-0B5F-55951CA7F58F">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>1983435B-6D1E-3644-93BD-50DE16CE14AF</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_tipo_pagamento" id="49E9DB45-ABD6-27C6-00C6-BA29704945E5">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>5D6A5669-6055-BF20-23D6-BA78ED3A281C</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="31E2FC07-CF9A-AC74-EA51-381E0CB4F00B" name="T_FP_TIPO_PAGAMENTO_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>3ADC60E2-DEBE-426E-8175-7F44836F0831</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3FD1A79-3D48-BC52-0B5F-55951CA7F58F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

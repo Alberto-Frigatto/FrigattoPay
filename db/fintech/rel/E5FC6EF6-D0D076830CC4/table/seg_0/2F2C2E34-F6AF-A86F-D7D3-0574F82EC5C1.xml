@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2F2C2E34-F6AF-A86F-D7D3-0574F82EC5C1" name="T_FP_TIPO_DESPESA">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>098AACD2-2824-C283-CF01-2886974D42B8</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_tipo" id="97B18DF1-37E6-8D24-4E3D-CAFD241BC4DF">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>3BCA07B4-0BDA-C50D-9070-C60730558403</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_tipo" id="6C7506A8-C1D5-95D4-961D-2A9DE489CBE6">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>78EFF900-0757-B478-4016-0908BAD63102</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_cor" id="68659D35-1454-57B6-18E8-758B6CC0B8B8">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>ABAEBC4B-8EF1-C497-D997-B624DE3A40B0</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 CHAR</dataTypeSize>
+<ownDataTypeParameters>8 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E050B34-A267-710D-0719-88571BF57F1C" name="T_FP_TIPO_DESPESA_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>051133F9-62B1-96EC-219B-64B41D8B3FE7</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97B18DF1-37E6-8D24-4E3D-CAFD241BC4DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

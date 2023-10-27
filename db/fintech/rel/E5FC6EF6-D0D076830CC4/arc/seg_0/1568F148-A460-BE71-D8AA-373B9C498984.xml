@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="1568F148-A460-BE71-D8AA-373B9C498984" name="Arc_1">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:52 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>0794F395-482B-AB4C-B937-8A8A71790E4B</table>
+<fkeys>
+<fkeyID>8766819A-EA9C-3303-2D77-9FA40776971E</fkeyID>
+<fkeyID>B2729CA0-C392-BB36-0A52-72D54853DDA6</fkeyID>
+</fkeys>
+</FKArc>

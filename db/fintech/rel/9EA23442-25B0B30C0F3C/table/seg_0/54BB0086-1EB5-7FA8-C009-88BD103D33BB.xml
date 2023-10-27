@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="54BB0086-1EB5-7FA8-C009-88BD103D33BB" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_BANCO">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANCO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NR_CNPJ" id="49CE0D9A-439F-E268-B9DD-84485F17A74C">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANCO</sourceObjSchema>
+<sourceObjName>NR_CNPJ</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_BANCO_PARCEIRO" id="E2C61BBA-F89F-980C-CD1F-844B812000A2">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANCO</sourceObjSchema>
+<sourceObjName>NM_BANCO_PARCEIRO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DS_EMAIL" id="AA5E4C4A-CFC0-5DE0-922E-96A7DAE7E5AA">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANCO</sourceObjSchema>
+<sourceObjName>DS_EMAIL</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>320 BYTE</dataTypeSize>
+<ownDataTypeParameters>320 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VL_TAXA_SERVICOS" id="D971D187-DEE4-3181-923D-881A9194191E">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANCO</sourceObjSchema>
+<sourceObjName>VL_TAXA_SERVICOS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="71FA549E-1388-1234-6899-D7BAF186D27F" name="T_FP_BANCO_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANCO_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49CE0D9A-439F-E268-B9DD-84485F17A74C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BEB9E8E2-6442-7B38-F14A-3BA48859AD75" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_BANCO_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANCO_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:16 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49CE0D9A-439F-E268-B9DD-84485F17A74C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

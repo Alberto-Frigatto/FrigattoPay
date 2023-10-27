@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BB194063-835D-E80E-957E-2AB130494C10" containerWithKeyObject="4F0BA2C3-DDA1-86E5-E219-1F3C9CC860B9" localFKIndex="D88BB1C8-45F2-F9AA-0B9B-36E518153289" name="RECEITA_TIPO_RECEITA_FK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>RECEITA_TIPO_RECEITA_FK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>RM97807.T_FP_TIPO_RECEITA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CAE0FD39-D244-AC5C-96CC-F307A43A9545</referredTableID>
+<keyObject>C7A85A12-458F-B32E-D4CB-8237E81AD4EF</keyObject>
+<referredKeyID>C7A85A12-458F-B32E-D4CB-8237E81AD4EF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CD_TIPO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

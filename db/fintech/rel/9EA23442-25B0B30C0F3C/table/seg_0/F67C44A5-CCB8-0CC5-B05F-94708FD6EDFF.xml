@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F67C44A5-CCB8-0CC5-B05F-94708FD6EDFF" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_TIPO_LOGRAD">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_LOGRAD</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_TIPO" id="2B4816C7-5C41-92DD-C1DA-7BA5F6EBB2BE">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_TIPO_LOGRAD</sourceObjSchema>
+<sourceObjName>CD_TIPO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_TIPO" id="7E0521D5-3A19-0F7A-9A99-2ADCFAF96D33">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_TIPO_LOGRAD</sourceObjSchema>
+<sourceObjName>NM_TIPO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E7C3491B-359A-D989-0064-DE955C18A03D" name="T_FP_TIPO_LOGRAD_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_LOGRAD_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B4816C7-5C41-92DD-C1DA-7BA5F6EBB2BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5DB8C42-648F-C667-1F78-5D87163319B3" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_TIPO_LOGRAD_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_LOGRAD_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B4816C7-5C41-92DD-C1DA-7BA5F6EBB2BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

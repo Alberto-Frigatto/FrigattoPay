@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="INSERIRTELEFONECLIENTE" directorySegmentName="seg_0" id="65C76605-F754-4D61-8382-3C21E9DD94BC">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>INSERIRTELEFONECLIENTE</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:46 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<owner><![CDATA[7174F3D1-5743-EDC7-B3AF-42022E64CDBD]]></owner>
+<source>CREATE OR REPLACE PROCEDURE RM97807.INSERIRTELEFONECLIENTE(
+    p_cd_cliente IN t_fp_cliente.cd_cliente%type,
+    p_nr_telefone IN t_fp_telefone.nr_telefone%type,
+    p_nr_ramal IN t_fp_telefone.nr_ramal%type := NULL,
+    p_nr_ddd IN t_fp_telefone.t_fp_ddd_nr_ddd%type,
+    p_cd_tipo_telefone IN t_fp_telefone.t_fp_tipo_tel_cd_tipo%type
+)
+IS
+    v_cd_telefone NUMBER;
+BEGIN
+    INSERT INTO t_fp_telefone
+        (
+            cd_telefone,
+            nr_telefone,
+            nr_ramal,
+            t_fp_ddd_nr_ddd,
+            t_fp_tipo_tel_cd_tipo,
+            t_fp_cliente_cd_cliente
+        )
+        VALUES (
+            seq_telefone.nextval,
+            p_nr_telefone,
+            p_nr_ramal,
+            p_nr_ddd,
+            p_cd_tipo_telefone,
+            p_cd_cliente
+        );
+
+    COMMIT;
+END;</source>
+</StoredProcedureOraclev10g>

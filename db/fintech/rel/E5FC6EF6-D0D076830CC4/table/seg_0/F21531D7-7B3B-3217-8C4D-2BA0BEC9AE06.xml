@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F21531D7-7B3B-3217-8C4D-2BA0BEC9AE06" name="T_FP_UF">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>4DCD601A-6262-EF49-3635-C44C4BD0CF95</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_uf" id="EAA866E5-2890-3D89-6D2B-D4F3F8CD0C21">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>AB4AC5BD-FAAD-553B-2C63-F29B7DD4980F</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_uf" id="7F7C4B8B-F7A1-0F58-2340-BA0144C00EC6">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>99C6CFB3-0E36-D76F-02BB-2DC10C1DBAA5</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5C62D29C-83A1-79E1-6597-5014C0F245A2" name="T_FP_UF_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>02A0CCEE-C6B7-F545-426F-3A1A2E008451</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA866E5-2890-3D89-6D2B-D4F3F8CD0C21"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

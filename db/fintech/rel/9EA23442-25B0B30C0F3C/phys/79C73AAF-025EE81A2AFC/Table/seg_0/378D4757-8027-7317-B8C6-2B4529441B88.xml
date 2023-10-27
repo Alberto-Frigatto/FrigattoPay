@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_FP_TIPO_TRANSC" directorySegmentName="seg_0" id="378D4757-8027-7317-B8C6-2B4529441B88">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>71827C30-1AFB-AA26-B80B-68CED0758948</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CD_TIPO" id="3EA81697-4CE6-EFBF-662E-040FCF2F64CC">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NM_TIPO" id="82F96493-8FC7-E8C9-02B3-AE22E1E5041B">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="T_FP_TIPO_TRANSC_PK" id="F5E4DF67-619C-84AA-6158-A81D22941454">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_FP_TIPO_TRANSC_PK" id="86E1A50E-48C6-F89F-B639-5624F819FDFE">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<existingIndex>F5E4DF67-619C-84AA-6158-A81D22941454</existingIndex>
+<indexSegment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

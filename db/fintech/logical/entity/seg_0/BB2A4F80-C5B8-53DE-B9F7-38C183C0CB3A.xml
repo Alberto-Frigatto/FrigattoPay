@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BB2A4F80-C5B8-53DE-B9F7-38C183C0CB3A" name="T_FP_MUNICIPIO">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:58:29 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_municipio" id="648E768C-0170-2113-6BB4-EDAC07CD4EDD">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:58:45 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_municipio" id="300F01C0-EA9A-F91F-3149-24C88FA2DABA">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:59:04 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_uf" id="309585DA-9C4A-E7F8-7ED2-043D8879E6CA">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 20:03:18 UTC</createdTime>
+<generatorID>EA1EE750-CEF5-9C0C-B42E-F8854D7A8337</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<referedAttribute>AB4AC5BD-FAAD-553B-2C63-F29B7DD4980F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07888E43-9112-6669-4C39-AB115FB3BA12" name="T_FP_MUNICIPIO PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:59:03 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>648E768C-0170-2113-6BB4-EDAC07CD4EDD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

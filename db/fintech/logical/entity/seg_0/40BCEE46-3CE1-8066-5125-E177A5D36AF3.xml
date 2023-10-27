@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="40BCEE46-3CE1-8066-5125-E177A5D36AF3" name="T_FP_CLIENTE_PF">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 18:24:11 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_cliente" id="944FC0CF-353C-2C38-DB7E-82C0640E83FB">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:41:04 UTC</createdTime>
+<generatorID>876EDEA1-D364-F9E1-BE65-D185A2A20958</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<referedAttribute>47E7C230-3DAA-724D-A5E1-3E8B3427DD9F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_cpf" id="2D07A516-E87B-5B3C-4251-D58F423B51B4">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 18:24:11 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<importedID>6690B49E-B45B-9653-9914-3F65EBBFA5AE</importedID>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>11 CHAR</dataTypeSize>
+<ownDataTypeParameters>11 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_rg" id="D11421C8-79F0-E362-50AD-0B7E4C7944CF">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 18:24:11 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<importedID>653B62B2-25D4-8640-3C19-054ABF51594E</importedID>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>11 CHAR</dataTypeSize>
+<ownDataTypeParameters>11 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_nascimento" id="FAD83ED7-D528-1353-5C37-395D0476EB69">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 18:24:11 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<importedID>DB396C11-0700-7A42-3291-7FABDC28C80C</importedID>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="585A5FCD-A928-2694-2435-FAEC7465158F" name="T_FP_CLIENTE_PF PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:34:49 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>944FC0CF-353C-2C38-DB7E-82C0640E83FB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

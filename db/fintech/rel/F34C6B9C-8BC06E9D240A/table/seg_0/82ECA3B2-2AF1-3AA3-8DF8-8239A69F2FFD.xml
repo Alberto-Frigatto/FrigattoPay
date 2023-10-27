@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82ECA3B2-2AF1-3AA3-8DF8-8239A69F2FFD" name="T_FP_RECEITA">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>63F8E11E-1425-E50F-2278-3F2B81C17421</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_receita" id="FC7ADCFA-C150-4C05-0E44-70EAE2F4FEF4">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>9C3DB6B8-7644-2350-579B-B2FF79D1DB94</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_receita" id="39D324A5-CAE0-1665-7863-DB7848F30AAB">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>59FBFAB5-5903-BD6A-9CBF-F595BF6A310F</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_receita" id="EA3FC5DB-0186-77F1-4AED-B7A8BA2DE967">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>529A18B3-B18C-E58E-7CCA-2F8562748F51</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_CLIENTE_cd_cliente" id="1646C3B2-8D82-44A7-60AB-984C56E9B6D5">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>668F5890-0271-4869-5B9A-9AE0C1A310B3</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8135CF9-56AC-166A-D093-45671227E02C" referredColumn="DA69A42D-27E2-D65D-1343-DF5BDA868432"/>
+</associations>
+</Column>
+<Column name="T_FP_TIPO_RECEITA_cd_tipo_receita" id="6A4708B1-394B-B990-BD12-18214CCF0F48">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>5724CBEE-782D-87F2-D9B8-BB22C408E3D1</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D4F262B-3DB8-8BA2-94E1-85B67DC47D6A" referredColumn="21EE7A6B-B70D-AA41-39C2-CA8BE9BD6749"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="23C048F7-7B24-7EFA-334D-A60C8FF7A606" name="T_FP_RECEITA_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>18EFD8A3-3E42-4117-72AB-3024FABF8691</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC7ADCFA-C150-4C05-0E44-70EAE2F4FEF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BCA09BEE-2010-56F5-A634-F8E53DD2E220" name="T_FP_RECEITA_T_FP_CLIENTE_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>3889DD28-604B-3C71-82BC-534021858BE8</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1646C3B2-8D82-44A7-60AB-984C56E9B6D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7740E23C-C936-143E-9875-060198269C39" name="T_FP_RECEITA_T_FP_TIPO_RECEITA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>7261D00B-ED05-0E08-FA62-E7085B9DC862</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A4708B1-394B-B990-BD12-18214CCF0F48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

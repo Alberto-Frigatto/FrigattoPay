@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A266D908-FADE-2615-BC30-FF2473B3F99B" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_BANDEIRA">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANDEIRA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_BANDEIRA" id="C6CDCD5B-BFB7-0CBF-E647-0E8EA6EA71AD">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANDEIRA</sourceObjSchema>
+<sourceObjName>CD_BANDEIRA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_BANDEIRA" id="D7C14479-1C64-BB9F-BD59-DB952E92475C">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANDEIRA</sourceObjSchema>
+<sourceObjName>NM_BANDEIRA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VL_CAMINHO_FOTO" id="CF3ED350-7E42-A20B-7959-6499A238161A">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_BANDEIRA</sourceObjSchema>
+<sourceObjName>VL_CAMINHO_FOTO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A3C5AF2C-8AAC-805B-0B91-45D10D6A55E0" name="T_FP_BANDEIRA_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANDEIRA_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6CDCD5B-BFB7-0CBF-E647-0E8EA6EA71AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="94D89564-9BE4-7461-332D-D6CAB5DE857C" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_BANDEIRA_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_BANDEIRA_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:16 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6CDCD5B-BFB7-0CBF-E647-0E8EA6EA71AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

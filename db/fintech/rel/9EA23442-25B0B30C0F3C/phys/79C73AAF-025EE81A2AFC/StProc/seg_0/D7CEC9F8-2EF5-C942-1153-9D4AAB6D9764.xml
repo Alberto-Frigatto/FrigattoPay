@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="INSERIRENDERECOCLIENTE" directorySegmentName="seg_0" id="D7CEC9F8-2EF5-C942-1153-9D4AAB6D9764">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>INSERIRENDERECOCLIENTE</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:46 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<owner><![CDATA[7174F3D1-5743-EDC7-B3AF-42022E64CDBD]]></owner>
+<source>CREATE OR REPLACE PROCEDURE RM97807.INSERIRENDERECOCLIENTE(
+    p_cd_cliente IN t_fp_cliente.cd_cliente%type,
+    p_nr_cep IN t_fp_endereco.nr_cep%type,
+    p_nm_logradouro IN t_fp_endereco.nm_logradouro%type,
+    p_nr_logradouro IN t_fp_endereco.nr_logradouro%type,
+    p_ds_complemento IN t_fp_endereco.ds_complemento%type,
+    p_cd_tipo_logradouro IN t_fp_endereco.t_fp_tipo_lograd_cd_tipo%type,
+    p_cd_bairro IN t_fp_endereco.t_fp_bairro_cd_bairro%type
+)
+IS
+    v_cd_endereco NUMBER;
+BEGIN
+    INSERT INTO t_fp_endereco
+        (
+            cd_endereco,
+            nr_cep,
+            nm_logradouro,
+            nr_logradouro,
+            ds_complemento,
+            t_fp_tipo_lograd_cd_tipo,
+            t_fp_bairro_cd_bairro,
+            t_fp_cliente_cd_cliente
+        )
+        VALUES (
+            seq_endereco.nextval,
+            p_nr_cep,
+            p_nm_logradouro,
+            p_nr_logradouro,
+            p_ds_complemento,
+            p_cd_tipo_logradouro,
+            p_cd_bairro,
+            p_cd_cliente
+        );
+
+    COMMIT;
+END;</source>
+</StoredProcedureOraclev10g>

@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_FP_ENDERECO" directorySegmentName="seg_0" id="86C417CA-85E6-2398-08E1-BBDC1E36599E">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>71827C30-1AFB-AA26-B80B-68CED0758948</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="T_FP_BANCO_NR_CNPJ" id="5E514E0B-EC8F-2CB6-F585-C925D12D607D">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NM_LOGRADOURO" id="80370AF3-46B6-28EC-CC29-68BFE83A2EA3">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_TIPO_LOGRAD_CD_TIPO" id="846DB3B0-E77E-22BA-98E7-C6547A42B15D">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NR_CEP" id="8B6C1B42-009C-435D-9AF1-2366F1AA3C20">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_CLIENTE_CD_CLIENTE" id="BC1C2AF5-F36F-68DE-F82F-7CAD168EBCB9">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CD_ENDERECO" id="D0493606-9875-62EC-A96F-2C0D740CCCBE">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DS_COMPLEMENTO" id="E1B0D98F-B67C-A2D9-AC5B-FA85D21B6598">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NR_LOGRADOURO" id="EAAF1675-A604-0E49-B3F2-0A99660C47A0">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_BAIRRO_CD_BAIRRO" id="FFD1BFC0-8658-3ACD-B468-463DD0E6E52E">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="T_FP_ENDERECO_PK" id="C50C6E4C-13C9-6E30-7741-5696E42A43C7">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ENDERECO_TIPO_LOGRAD_FK" id="040D5862-5111-F2C8-625A-2907B3280D58">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ENDERECO_BAIRRO_FK" id="8F368627-9409-8D55-2077-7A06B2509135">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ENDERECO_BANCO_FK" id="AC512A67-9A7D-E7BC-565E-09524F26D164">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ENDERECO_CLIENTE_FK" id="E600B159-5514-76B0-4ACD-A6AB215ADB7F">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_FP_ENDERECO_PK" id="AA7D4113-4789-9E24-B53B-884EFE9DD829">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<existingIndex>C50C6E4C-13C9-6E30-7741-5696E42A43C7</existingIndex>
+<indexSegment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BE2B4F7F-9AB9-669D-ED27-676BE390B683" containerWithKeyObject="5B60204E-8772-C2A7-118D-A29E06F21A98" localFKIndex="43E57C1A-C4B3-5A9B-27D6-3A916616A0AD" name="T_FP_PAGAMENTO_T_FP_TIPO_PAGAMENTO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>5D354E31-C820-95FF-6769-EFF4A7939E44</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_PAGAMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>626926B0-8269-AC69-10E6-68F065E72A85</referredTableID>
+<keyObject>31E2FC07-CF9A-AC74-EA51-381E0CB4F00B</keyObject>
+<referredKeyID>31E2FC07-CF9A-AC74-EA51-381E0CB4F00B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_pagamento</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

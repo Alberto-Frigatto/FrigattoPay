@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_FP_CONTA_INVS" directorySegmentName="seg_0" id="BCFABCB5-7AA3-9E1D-1987-D9A6FC315659">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>71827C30-1AFB-AA26-B80B-68CED0758948</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CD_CONTA_INVS" id="993B3875-88B1-4DEE-077D-352C6029F9CF">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VL_INVS" id="BECC1F62-1227-8E0C-D912-D87DBBD85CF4">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DT_INVS" id="C9E5E3A3-CB8E-36EB-B12C-59888CDC2357">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_CONTA_CD_CONTA" id="D6EDE69A-8E66-5925-D99E-87B15285F4C5">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_INVS_CD_INVS" id="D709C7BA-5C4F-46AD-9355-0A95FC030B62">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="T_FP_CONTA_INVS_PK" id="F5CCEFAB-AAFA-5EFE-B42C-BC14A2C63C39">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="CONTA_INVS_CONTA_FK" id="9379ADBF-F326-DFEC-C17B-7A579D14FC2B">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="CONTA_INVS_INVS_FK" id="F407FC00-3E03-9405-E03E-CEBF24494DD9">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_FP_CONTA_INVS_PK" id="D6B47D5F-739A-44B3-8AA0-04B85D73FB76">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<existingIndex>F5CCEFAB-AAFA-5EFE-B42C-BC14A2C63C39</existingIndex>
+<indexSegment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

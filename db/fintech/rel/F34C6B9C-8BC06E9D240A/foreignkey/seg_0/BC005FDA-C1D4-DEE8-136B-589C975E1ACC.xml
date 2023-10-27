@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BC005FDA-C1D4-DEE8-136B-589C975E1ACC" containerWithKeyObject="008FD476-C625-B0B1-C287-8729CEEE4921" localFKIndex="3BCD270A-9E77-C34F-3F36-2A7F26B9B855" name="T_FP_EMPRESTIMO_T_FP_STATUS_EMPRESTIMO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>D43C8E5A-C687-2A8B-595E-2E0B3EA3F635</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_STATUS_EMPRESTIMO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6F83FF18-6D03-4E5E-4E60-4007730D1868</referredTableID>
+<keyObject>6D82053E-062D-36E5-0E75-BF7AF6E3915D</keyObject>
+<referredKeyID>6D82053E-062D-36E5-0E75-BF7AF6E3915D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_status_emprestimo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

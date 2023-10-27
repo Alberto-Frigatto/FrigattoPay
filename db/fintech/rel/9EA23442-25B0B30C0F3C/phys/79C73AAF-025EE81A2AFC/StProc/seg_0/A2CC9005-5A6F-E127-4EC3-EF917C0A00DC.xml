@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StoredProcedureOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StoredProcedureOraclev10g" name="INSERIRRECEITA" directorySegmentName="seg_0" id="A2CC9005-5A6F-E127-4EC3-EF917C0A00DC">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>INSERIRRECEITA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:46 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<owner><![CDATA[7174F3D1-5743-EDC7-B3AF-42022E64CDBD]]></owner>
+<source>CREATE OR REPLACE PROCEDURE RM97807.INSERIRRECEITA(
+    p_cd_tipo_receita IN t_fp_receita.t_fp_tipo_receita_cd_tipo%type,
+    p_cd_cliente IN t_fp_cliente.cd_cliente%type,
+    p_vl_receita IN t_fp_receita.vl_receita%type,
+    p_dt_receita IN t_fp_receita.dt_receita%type
+)
+IS BEGIN
+    INSERT INTO t_fp_receita
+        (
+            cd_receita,
+            t_fp_tipo_receita_cd_tipo,
+            t_fp_cliente_cd_cliente,
+            vl_receita,
+            dt_receita
+        )
+        VALUES (
+            seq_receita.nextval,
+            p_cd_tipo_receita,
+            p_cd_cliente,
+            p_vl_receita,
+            TO_DATE(p_dt_receita, &apos;DD-MM-YYYY&apos;)
+        );
+    COMMIT;
+END;</source>
+</StoredProcedureOraclev10g>

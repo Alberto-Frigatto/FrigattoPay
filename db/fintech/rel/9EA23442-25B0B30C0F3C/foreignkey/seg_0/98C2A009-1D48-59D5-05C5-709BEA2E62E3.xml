@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="98C2A009-1D48-59D5-05C5-709BEA2E62E3" containerWithKeyObject="A29E4E9E-7DD4-D937-37EB-0158A7D6F2F9" localFKIndex="EA6ED6B6-DE07-AA9E-4AAC-70E2CAA0555F" name="FT_DOC_CLIENTE_TIPO_DOC_FK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>FT_DOC_CLIENTE_TIPO_DOC_FK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>RM97807.T_FP_TIPO_DOC</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0C1B2C1B-FE11-1EA2-6BD3-3E9D82AD4D26</referredTableID>
+<keyObject>9ACFC1E8-A386-F8A8-5689-98B8EF2CBF6C</keyObject>
+<referredKeyID>9ACFC1E8-A386-F8A8-5689-98B8EF2CBF6C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CD_TIPO_DOC</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

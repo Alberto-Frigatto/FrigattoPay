@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Possuirv8" directorySegmentName="seg_0" id="EECB638F-9395-8AFB-9F28-C80F64745169">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:51:20 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<sourcePk>322D617C-8BCB-A77D-B09C-3E3726020E61</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>855A3E3F-20B9-33B5-A4F7-8D12BC245A52</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6C259774-D51B-F8EC-713F-D303F150D25C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

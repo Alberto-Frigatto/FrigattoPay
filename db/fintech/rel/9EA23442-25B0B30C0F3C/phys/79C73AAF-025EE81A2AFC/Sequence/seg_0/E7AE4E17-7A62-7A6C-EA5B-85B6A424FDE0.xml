@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SequenceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.SequenceOraclev10g" name="SEQ_RECEITA" directorySegmentName="seg_0" id="E7AE4E17-7A62-7A6C-EA5B-85B6A424FDE0">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>SEQ_RECEITA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:12 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<incrementBy>1</incrementBy>
+<maxValue>9999999999999999999999999999</maxValue>
+<minValue>1</minValue>
+<noCache>YES</noCache>
+<user>7174F3D1-5743-EDC7-B3AF-42022E64CDBD</user>
+</SequenceOraclev10g>

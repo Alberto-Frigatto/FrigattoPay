@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_FP_TRANSC" directorySegmentName="seg_0" id="B3BC265D-7A97-6697-6F5E-EF97AE3C5726">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>71827C30-1AFB-AA26-B80B-68CED0758948</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="VL_TRANSC" id="454FC019-C602-9383-B40A-722B508E317C">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CD_TRANSC" id="5E7909AA-9342-E7DC-A1DE-B46A28021FD7">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DT_TRANSC" id="695B5F22-04CD-D4F1-C169-4E603F0BA248">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_CONTA_CD_CONTA" id="7FEAC32A-CC55-CF99-E999-E899167225AD">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_CONTA_CD_CONTA2" id="EA3ED4FB-EA22-CE28-E5D6-E0FF50BE662A">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="T_FP_TIPO_TRANSC_CD_TIPO" id="F4D3A670-24CB-7A71-97EE-0096AA679F1A">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="T_FP_TRANSC__IDX" id="2B68685C-B03D-3BDB-5EFF-A66450555F58">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="T_FP_TRANSC_PK" id="7E26EEE5-BB74-A872-D89B-4FA4CC6E8683">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<schemaObject>9C8C0046-E00F-9F74-FA4D-F861A08027DE</schemaObject>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="TRANSC_CONTA_FK" id="4EA228E9-5353-FDAA-70E2-D929B94118D0">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="TRANSC_TIPO_TRANSC_FK" id="5CC451BE-007D-3BAE-37CE-FEDF5324DE6A">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="TRANSC_CONTA_FKV2" id="81F2C66D-5A1D-509A-5153-D4820C14D50E">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_FP_TRANSC_PK" id="BD3866C0-A3EA-4294-44BF-338425D82D52">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<segment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</segment>
+<tableSpace>AE3DDAE0-2D78-58C4-9C66-8B76C7B0EDBB</tableSpace>
+<existingIndex>7E26EEE5-BB74-A872-D89B-4FA4CC6E8683</existingIndex>
+<indexSegment>39DF5D5A-2221-05AF-0EF7-8CCB4CF9720B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="62514ABD-A4A0-437D-6B82-E5A9D948F356" containerWithKeyObject="7A8A3658-070C-F82F-8DB9-7474922376AF" localFKIndex="9C671EB6-CB47-490C-7E0F-488C8A0C9BDB" name="T_FP_ENDERECO_T_FP_TIPO_LOGRADOURO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>4EB59767-FF3D-AB0A-9EFF-A754BC405090</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_LOGRADOURO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4605C221-16DF-6122-660F-CA26CCE625D8</referredTableID>
+<keyObject>011F6590-DE8D-AB79-6B71-0B6BAAECB12B</keyObject>
+<referredKeyID>011F6590-DE8D-AB79-6B71-0B6BAAECB12B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_logradouro</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

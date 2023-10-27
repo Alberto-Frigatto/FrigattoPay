@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Realizar" directorySegmentName="seg_0" id="2C76C29B-E676-57C4-4211-29CD8B21B558">
+<createdBy>Gustavo</createdBy>
+<createdTime>2023-05-28 20:43:40 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="EDCF32C0-F9CD-2542-6351-5975490F0297" value="true"/>
+</engineerTo>
+<sourcePk>FB8C9057-1DC5-26E8-11E8-57CC959D3F5C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5F84041A-E669-89C7-2A2C-E31A558B7560</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>888ACC67-EC13-76CC-43D7-867A42C0FD0E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

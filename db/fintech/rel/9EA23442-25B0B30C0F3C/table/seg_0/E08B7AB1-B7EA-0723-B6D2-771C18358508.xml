@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E08B7AB1-B7EA-0723-B6D2-771C18358508" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_CONJ">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CONJ</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_CONTA_CONJ" id="B1FC4C8F-6F1F-3BA5-A6E4-4EF1B2B5DF4C">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_CONJ</sourceObjSchema>
+<sourceObjName>CD_CONTA_CONJ</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_CLIENTE_CD_CLIENTE" id="CB2E0019-B4E4-0547-7458-E2AFE88A89F0">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_CONJ</sourceObjSchema>
+<sourceObjName>T_FP_CLIENTE_CD_CLIENTE</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="121DB9C4-26E7-159B-9087-F80747D288BA" referredColumn="6D8F0372-10CE-52F9-4989-DE366ED2F8F6"/>
+</associations>
+</Column>
+<Column name="T_FP_TIPO_ACESSO_CD_TIPO" id="A80B0F9F-4367-D35A-DF49-DEC2FE106F02">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_CONJ</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_ACESSO_CD_TIPO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="708CEB9F-10BA-0581-DB0D-5639E10BADB5" referredColumn="A891CC98-1BC5-C50E-2452-97F77B2C6803"/>
+</associations>
+</Column>
+<Column name="T_FP_CONTA_CD_CONTA" id="D2E1DF29-8E89-B32A-A474-F4415254ABBE">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_CONJ</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CD_CONTA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78B9511A-CD0B-B351-2954-787196110ACA" referredColumn="33326F00-3B6E-E88C-FAE8-EAD8A8AA4385"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7BCF30A6-4AF5-BF37-311C-2E6E58D645A1" name="T_FP_CONTA_CONJ_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CONJ_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1FC4C8F-6F1F-3BA5-A6E4-4EF1B2B5DF4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87E6F823-0549-28D4-CBCD-1896850D0A98" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_CONJ__IDX">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CONJ__IDX</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB2E0019-B4E4-0547-7458-E2AFE88A89F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38B0282D-79ED-B333-A47F-CE574B435791" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_CONJ__IDXV1">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CONJ__IDXV1</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2E1DF29-8E89-B32A-A474-F4415254ABBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6C3F3FC-3999-00E8-F505-40CCE0F6226A" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_CONJ_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CONJ_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1FC4C8F-6F1F-3BA5-A6E4-4EF1B2B5DF4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="59EC1AD6-4D6D-4427-7454-C049F50183FF" name="CONTA_CONJ_CLIENTE_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB2E0019-B4E4-0547-7458-E2AFE88A89F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FA63779-4BE7-C276-1AC4-94DC33002FFF" name="CONTA_CONJ_CONTA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2E1DF29-8E89-B32A-A474-F4415254ABBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="64E9C93B-B520-E727-F1E6-69AF9A7249B3" name="CONTA_CONJ_TIPO_ACESSO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A80B0F9F-4367-D35A-DF49-DEC2FE106F02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

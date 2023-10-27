@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3DB42378-D7E7-009D-4ED5-9D05AD777382" name="T_FP_CONTA_INVESTIMENTO">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>E1EA84FF-D74C-28CB-ECDB-EC0BB190921E</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_conta_investimento" id="26180D1D-395C-B06F-96B6-7DD0407D44FF">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>D1D791E7-3F81-E4DC-CFC7-5D61EC158859</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_investimento" id="C1D3AA44-6601-7CD2-A3FE-1663C63879DE">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>C0937E1C-BA31-6474-E5CE-2E42006B063B</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_investimento" id="73CDE1D8-0D5E-7AA3-BF68-276DC5EEAE06">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>20023F83-9F82-F651-BF54-66E410AF4742</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_INVESTIMENTO_cd_investimento" id="A3A018A4-EF10-576A-8EA6-97EA3AA466E1">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>4C0AA586-738F-F61D-570B-028DF8CC69D4</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D297C017-689A-6FB3-4150-F187A07130AE" referredColumn="747B0839-32C9-05DE-DE86-0C9122E59ABC"/>
+</associations>
+</Column>
+<Column name="T_FP_CONTA_BANCARIA_cd_conta" id="38FEAF58-842E-7200-F080-FE428B678FA5">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>7F46A9E9-31A8-E768-D58C-EA6C94BCC019</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8B6F768-A55B-AB41-07FC-287DF2647298" referredColumn="45789C4A-3377-694E-A2C7-3C5C2FAEEB50"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E13273D9-5AEC-32B6-3CAB-3E8F7F88F11A" name="T_FP_CONTA_INVESTIMENTO_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>C5DCD8F7-5E7A-907D-F2FC-BF064EBAE676</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="26180D1D-395C-B06F-96B6-7DD0407D44FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A7FAC943-847E-9453-B9C8-7AF46F6DE1E2" name="T_FP_CONTA_INVESTIMENTO_T_FP_INVESTIMENTO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>2BA897F2-0AB2-3D44-F365-5F2075C4E53F</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3A018A4-EF10-576A-8EA6-97EA3AA466E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1AE6492-FED1-3292-F159-9E3F3B808163" name="T_FP_CONTA_INVESTIMENTO_T_FP_CONTA_BANCARIA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>988ECC56-26C8-E868-0AB5-F9E5A40A9FEA</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="38FEAF58-842E-7200-F080-FE428B678FA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

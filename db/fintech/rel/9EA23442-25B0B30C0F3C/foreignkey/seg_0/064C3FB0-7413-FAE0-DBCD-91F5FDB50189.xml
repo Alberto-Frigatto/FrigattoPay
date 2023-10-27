@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="064C3FB0-7413-FAE0-DBCD-91F5FDB50189" containerWithKeyObject="8C2A4113-B97E-F979-5601-A2211492B98C" localFKIndex="B7D4ABF8-1578-2A37-FBEE-44A95CA162E8" name="DESPESA_CLIENTE_FK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>DESPESA_CLIENTE_FK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>RM97807.T_FP_CLIENTE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DDED834A-5085-0F45-7813-9D585596DF35</referredTableID>
+<keyObject>FA06E3BA-0EC5-81A2-FA88-2C501D786CD1</keyObject>
+<referredKeyID>FA06E3BA-0EC5-81A2-FA88-2C501D786CD1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CD_CLIENTE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

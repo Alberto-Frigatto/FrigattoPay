@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AA3AD00D-EEB2-FE0D-E1F0-8D5C0C8C2976" containerWithKeyObject="2D92AAB6-CE60-4900-46E5-3EE5D46A0225" localFKIndex="566C1511-BAC9-F25A-17C4-A925CDCCD144" name="T_FP_CARTAO_BANCARIO_T_FP_BANDEIRA_CARTAO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>D7877E00-C4B1-FE82-6320-C9B3354F16DE</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_BANDEIRA_CARTAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BA9C28A5-C857-BB68-E3D9-1FBE70D005B0</referredTableID>
+<keyObject>94281493-D0D7-B2B1-D925-700793A989E7</keyObject>
+<referredKeyID>94281493-D0D7-B2B1-D925-700793A989E7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_bandeira_cartao</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

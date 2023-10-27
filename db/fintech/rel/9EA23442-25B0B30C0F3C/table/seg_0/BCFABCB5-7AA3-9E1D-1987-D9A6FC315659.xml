@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCFABCB5-7AA3-9E1D-1987-D9A6FC315659" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_INVS">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_INVS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_CONTA_INVS" id="993B3875-88B1-4DEE-077D-352C6029F9CF">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_INVS</sourceObjSchema>
+<sourceObjName>CD_CONTA_INVS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_INVS" id="C9E5E3A3-CB8E-36EB-B12C-59888CDC2357">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_INVS</sourceObjSchema>
+<sourceObjName>DT_INVS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VL_INVS" id="BECC1F62-1227-8E0C-D912-D87DBBD85CF4">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_INVS</sourceObjSchema>
+<sourceObjName>VL_INVS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_INVS_CD_INVS" id="D709C7BA-5C4F-46AD-9355-0A95FC030B62">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_INVS</sourceObjSchema>
+<sourceObjName>T_FP_INVS_CD_INVS</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="100F407F-26ED-5867-3EEE-4574720F9BC3" referredColumn="CDD214EB-D046-405E-F6F8-A575B32472E9"/>
+</associations>
+</Column>
+<Column name="T_FP_CONTA_CD_CONTA" id="D6EDE69A-8E66-5925-D99E-87B15285F4C5">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_CONTA_INVS</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_CD_CONTA</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3033DD22-3098-5651-0979-9EE1331EDE1A" referredColumn="33326F00-3B6E-E88C-FAE8-EAD8A8AA4385"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D6B47D5F-739A-44B3-8AA0-04B85D73FB76" name="T_FP_CONTA_INVS_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_INVS_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="993B3875-88B1-4DEE-077D-352C6029F9CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5CCEFAB-AAFA-5EFE-B42C-BC14A2C63C39" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_CONTA_INVS_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_CONTA_INVS_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="993B3875-88B1-4DEE-077D-352C6029F9CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9379ADBF-F326-DFEC-C17B-7A579D14FC2B" name="CONTA_INVS_CONTA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6EDE69A-8E66-5925-D99E-87B15285F4C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F407FC00-3E03-9405-E03E-CEBF24494DD9" name="CONTA_INVS_INVS_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D709C7BA-5C4F-46AD-9355-0A95FC030B62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

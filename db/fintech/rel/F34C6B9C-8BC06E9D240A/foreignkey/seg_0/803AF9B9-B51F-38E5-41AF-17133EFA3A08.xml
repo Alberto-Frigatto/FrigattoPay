@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="803AF9B9-B51F-38E5-41AF-17133EFA3A08" containerWithKeyObject="9718ADF6-F766-6F92-281A-69E632C11FE7" localFKIndex="3BDECFF8-DE69-7B53-8042-D9FE18635166" name="T_FP_CONTA_BANCARIA_T_FP_TIPO_CONTA_BANCARIA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>21B9897A-3C9C-0E64-2183-FEEDE62621F7</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_CONTA_BANCARIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DAF5DFE7-9832-5CDC-CB6A-84557A59E1FA</referredTableID>
+<keyObject>81EBA580-97FA-B3F1-83E6-29615BBF9C38</keyObject>
+<referredKeyID>81EBA580-97FA-B3F1-83E6-29615BBF9C38</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_conta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

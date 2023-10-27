@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B753854A-DD35-B1CB-6843-5AC436A89E83" containerWithKeyObject="ABDC74E7-2CF4-CCD8-DE03-3EF795DAEB2A" localFKIndex="0C070A5A-AD6F-0706-5FA9-0D697499E903" name="T_FP_FT_DOC_CLIENTE_T_FP_TIPO_DOC_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:52 UTC</createdTime>
+<generatorID>F211FEF6-D4BB-980B-7218-39F1D28F44E7</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_DOC</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7A7BF072-8E32-EF68-9414-BE228F9361C6</referredTableID>
+<keyObject>7A71B8F8-AA9A-A00C-A158-F4491B81CDE3</keyObject>
+<referredKeyID>7A71B8F8-AA9A-A00C-A158-F4491B81CDE3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_doc</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

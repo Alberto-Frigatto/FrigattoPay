@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5638945C-F1D4-4698-8A44-DE86A88ACABF" name="T_FP_TIPO_CONTA">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 21:37:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_tipo" id="BCC66CA7-48B8-9965-DEA9-C11CE8BD8977">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 21:37:31 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_tipo" id="96314987-118C-1EDF-123D-08053799D8DB">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 21:41:16 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3FEC2F8C-49D9-66C6-0ECD-0EC93689A0B2" name="T_FP_TIPO_CONTA PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 21:38:10 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>BCC66CA7-48B8-9965-DEA9-C11CE8BD8977</newElementsIDs>
+<usedAttributes>
+<attributeRef>BCC66CA7-48B8-9965-DEA9-C11CE8BD8977</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="50B6193C-D35F-67CD-BFED-183E68412347" containerWithKeyObject="53897DFE-4C1D-C3EC-F6C6-CE0DAC44428B" localFKIndex="DFFFD448-2A76-BFB0-FE1F-653DC8A6EC48" name="T_FP_CONTA_CONJUNTA_T_FP_TIPO_ACESSO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>A793F0CE-10A0-D2E5-68B3-410D58A6B313</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_ACESSO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>245CC1C1-56B5-1C53-8FEB-573C9D4566C5</referredTableID>
+<keyObject>E1C97016-9038-EC82-C972-B9DF2C64077A</keyObject>
+<referredKeyID>E1C97016-9038-EC82-C972-B9DF2C64077A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_acesso</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

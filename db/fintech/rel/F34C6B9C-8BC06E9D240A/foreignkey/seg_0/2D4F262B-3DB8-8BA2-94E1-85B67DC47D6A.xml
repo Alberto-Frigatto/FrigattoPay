@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2D4F262B-3DB8-8BA2-94E1-85B67DC47D6A" containerWithKeyObject="82ECA3B2-2AF1-3AA3-8DF8-8239A69F2FFD" localFKIndex="7740E23C-C936-143E-9875-060198269C39" name="T_FP_RECEITA_T_FP_TIPO_RECEITA_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>7261D00B-ED05-0E08-FA62-E7085B9DC862</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_TIPO_RECEITA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>66972E34-DC60-E557-07AA-37FFA9418576</referredTableID>
+<keyObject>F256CE22-029A-1A8A-6656-6280377430EF</keyObject>
+<referredKeyID>F256CE22-029A-1A8A-6656-6280377430EF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_receita</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D9FEBDD6-6FB0-8ABD-794C-0EB9A71CD7A2" containerWithKeyObject="2CA20392-CDA9-5AAD-4E2D-8B2D472022CD" localFKIndex="02D37B86-2659-FD51-6815-79A3B161E438" name="T_FP_DDD_T_FP_UF_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:52 UTC</createdTime>
+<generatorID>F1AFA06A-D4E6-AA20-5C4E-D98C0BDB4479</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_UF</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F21531D7-7B3B-3217-8C4D-2BA0BEC9AE06</referredTableID>
+<keyObject>5C62D29C-83A1-79E1-6597-5014C0F245A2</keyObject>
+<referredKeyID>5C62D29C-83A1-79E1-6597-5014C0F245A2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_uf</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

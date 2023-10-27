@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="fintech" id="2AA4D132-565F-1884-FB18-6CADF2740048" version="3.5">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 17:47:51 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>2AA4D132-565F-1884-FB18-6CADF2740048</designId>
+</OSDM_Design>

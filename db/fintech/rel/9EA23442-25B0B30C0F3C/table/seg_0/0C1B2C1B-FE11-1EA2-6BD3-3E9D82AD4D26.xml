@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C1B2C1B-FE11-1EA2-6BD3-3E9D82AD4D26" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_TIPO_DOC">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_DOC</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_TIPO_DOC" id="0BF07851-EEEB-3712-BF68-650AC87E7189">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_TIPO_DOC</sourceObjSchema>
+<sourceObjName>CD_TIPO_DOC</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_TIPO_DOCUMENTO" id="91B31CF8-AFDA-95CC-18FB-1C1518065EBA">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_TIPO_DOC</sourceObjSchema>
+<sourceObjName>NM_TIPO_DOCUMENTO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9ACFC1E8-A386-F8A8-5689-98B8EF2CBF6C" name="T_FP_TIPO_DOC_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_DOC_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BF07851-EEEB-3712-BF68-650AC87E7189"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="22928E8E-D951-5709-54F2-F57E10D3BD5F" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_TIPO_DOC_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_DOC_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0BF07851-EEEB-3712-BF68-650AC87E7189"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

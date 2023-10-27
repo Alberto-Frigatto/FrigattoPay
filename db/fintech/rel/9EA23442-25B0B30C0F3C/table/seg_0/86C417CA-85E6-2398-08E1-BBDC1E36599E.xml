@@ -1,0 +1,229 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="86C417CA-85E6-2398-08E1-BBDC1E36599E" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_ENDERECO">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_ENDERECO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:13 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CD_ENDERECO" id="D0493606-9875-62EC-A96F-2C0D740CCCBE">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>CD_ENDERECO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NR_CEP" id="8B6C1B42-009C-435D-9AF1-2366F1AA3C20">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>NR_CEP</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NM_LOGRADOURO" id="80370AF3-46B6-28EC-CC29-68BFE83A2EA3">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>NM_LOGRADOURO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NR_LOGRADOURO" id="EAAF1675-A604-0E49-B3F2-0A99660C47A0">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>NR_LOGRADOURO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DS_COMPLEMENTO" id="E1B0D98F-B67C-A2D9-AC5B-FA85D21B6598">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>DS_COMPLEMENTO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_TIPO_LOGRAD_CD_TIPO" id="846DB3B0-E77E-22BA-98E7-C6547A42B15D">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>T_FP_TIPO_LOGRAD_CD_TIPO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A1D50A2F-C75C-9294-DA46-727DF501FE44" referredColumn="2B4816C7-5C41-92DD-C1DA-7BA5F6EBB2BE"/>
+</associations>
+</Column>
+<Column name="T_FP_BAIRRO_CD_BAIRRO" id="FFD1BFC0-8658-3ACD-B468-463DD0E6E52E">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>T_FP_BAIRRO_CD_BAIRRO</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DAFA78A8-645E-DB48-12E3-5EAF5D53967A" referredColumn="E020A9E9-5731-B657-41A8-2FF885E9786A"/>
+</associations>
+</Column>
+<Column name="T_FP_BANCO_NR_CNPJ" id="5E514E0B-EC8F-2CB6-F585-C925D12D607D">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>T_FP_BANCO_NR_CNPJ</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5423246-009B-76F6-882B-B11C81D4040F" referredColumn="49CE0D9A-439F-E268-B9DD-84485F17A74C"/>
+</associations>
+</Column>
+<Column name="T_FP_CLIENTE_CD_CLIENTE" id="BC1C2AF5-F36F-68DE-F82F-7CAD168EBCB9">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_ENDERECO</sourceObjSchema>
+<sourceObjName>T_FP_CLIENTE_CD_CLIENTE</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C431A51F-3494-A9B2-1237-33E08EF669C6" referredColumn="6D8F0372-10CE-52F9-4989-DE366ED2F8F6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA7D4113-4789-9E24-B53B-884EFE9DD829" name="T_FP_ENDERECO_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_ENDERECO_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0493606-9875-62EC-A96F-2C0D740CCCBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C50C6E4C-13C9-6E30-7741-5696E42A43C7" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_ENDERECO_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_ENDERECO_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0493606-9875-62EC-A96F-2C0D740CCCBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F368627-9409-8D55-2077-7A06B2509135" name="ENDERECO_BAIRRO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFD1BFC0-8658-3ACD-B468-463DD0E6E52E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC512A67-9A7D-E7BC-565E-09524F26D164" name="ENDERECO_BANCO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E514E0B-EC8F-2CB6-F585-C925D12D607D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E600B159-5514-76B0-4ACD-A6AB215ADB7F" name="ENDERECO_CLIENTE_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC1C2AF5-F36F-68DE-F82F-7CAD168EBCB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="040D5862-5111-F2C8-625A-2907B3280D58" name="ENDERECO_TIPO_LOGRAD_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="846DB3B0-E77E-22BA-98E7-C6547A42B15D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

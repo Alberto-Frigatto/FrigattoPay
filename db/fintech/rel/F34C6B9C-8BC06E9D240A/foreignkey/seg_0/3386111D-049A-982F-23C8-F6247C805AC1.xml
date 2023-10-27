@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3386111D-049A-982F-23C8-F6247C805AC1" containerWithKeyObject="96812077-89B9-B208-F739-6047F641FC15" localFKIndex="6D33D8EA-ED22-65A9-7C38-D05A760636BF" name="T_FP_HISTORICO_PAGAMENTO_PARCELA_T_FP_EMPRESTIMO_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-12 00:47:13 UTC</createdTime>
+<generatorID>35EB8C73-CFEA-B6BE-0B82-D1AC04CCDE64</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>T_FP_EMPRESTIMO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>008FD476-C625-B0B1-C287-8729CEEE4921</referredTableID>
+<keyObject>96044AE9-929D-65B8-481B-7767180DC9D5</keyObject>
+<referredKeyID>96044AE9-929D-65B8-481B-7767180DC9D5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_emprestimo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

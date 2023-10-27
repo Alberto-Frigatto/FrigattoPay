@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SequenceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.SequenceOraclev10g" name="SEQ_CONTA_CONJ" directorySegmentName="seg_0" id="CC49D60D-A753-DBBC-867E-8142909C7FCE">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>SEQ_CONTA_CONJ</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:12 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<incrementBy>1</incrementBy>
+<maxValue>9999999999999999999999999999</maxValue>
+<minValue>1</minValue>
+<noCache>YES</noCache>
+<user>7174F3D1-5743-EDC7-B3AF-42022E64CDBD</user>
+</SequenceOraclev10g>

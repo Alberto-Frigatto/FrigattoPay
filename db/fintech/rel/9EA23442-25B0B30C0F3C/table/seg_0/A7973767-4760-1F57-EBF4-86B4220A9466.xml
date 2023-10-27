@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A7973767-4760-1F57-EBF4-86B4220A9466" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_DDD">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_DDD</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:14 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NR_DDD" id="D7DA6D6C-D6C0-3ACA-532A-FBCCA4223CE7">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_DDD</sourceObjSchema>
+<sourceObjName>NR_DDD</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_UF_CD_UF" id="A4DD46B3-7E7E-8960-81EB-2CA54D19DB90">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>T_FP_DDD</sourceObjSchema>
+<sourceObjName>T_FP_UF_CD_UF</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:15 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,9,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5524580-B2B1-75FB-6078-2D2D6ECE44C4" referredColumn="C48A4F4B-A90F-E776-9C20-0E9D5DE3FE14"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4F34FC42-793A-A69F-EAF3-42CF4D489D10" name="T_FP_DDD_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_DDD_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:30 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7DA6D6C-D6C0-3ACA-532A-FBCCA4223CE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30CE1784-DE0B-799E-C6E9-A81474991AF5" schemaObject="9C8C0046-E00F-9F74-FA4D-F861A08027DE" name="T_FP_DDD_PK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>T_FP_DDD_PK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:17 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7DA6D6C-D6C0-3ACA-532A-FBCCA4223CE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8C48220-C1C9-BBB0-E35A-5D0C8666B9A7" name="DDD_UF_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4DD46B3-7E7E-8960-81EB-2CA54D19DB90"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

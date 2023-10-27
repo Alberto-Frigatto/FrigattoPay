@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A1D50A2F-C75C-9294-DA46-727DF501FE44" containerWithKeyObject="86C417CA-85E6-2398-08E1-BBDC1E36599E" localFKIndex="040D5862-5111-F2C8-625A-2907B3280D58" name="ENDERECO_TIPO_LOGRAD_FK">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>ENDERECO_TIPO_LOGRAD_FK</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:43 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<referredTableLongName>RM97807.T_FP_TIPO_LOGRAD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F67C44A5-CCB8-0CC5-B05F-94708FD6EDFF</referredTableID>
+<keyObject>E7C3491B-359A-D989-0064-DE955C18A03D</keyObject>
+<referredKeyID>E7C3491B-359A-D989-0064-DE955C18A03D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CD_TIPO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

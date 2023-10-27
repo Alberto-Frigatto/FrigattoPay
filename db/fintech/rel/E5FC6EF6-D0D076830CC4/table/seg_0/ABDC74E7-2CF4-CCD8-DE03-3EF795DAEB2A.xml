@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ABDC74E7-2CF4-CCD8-DE03-3EF795DAEB2A" name="T_FP_FT_DOC_CLIENTE">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>710A5FCD-BE7C-4C2A-94BB-854FBB25066F</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_ft_doc" id="FEF0478B-B644-E244-8E34-3A08C9BB51A2">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>7CFC11AE-FF79-ADFA-47D7-C85A3ACD8DBF</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_caminho_foto" id="89FCF7A1-EEF1-6EC6-91D7-67A95F37F932">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>F65E5505-954E-D2C5-26BE-0B3CE8E07210</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="vl_status" id="EF99422D-498A-C8F1-DBF3-5B0DE9DFCCFB">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>46959A98-7AE0-FA19-DE5F-561B647F04BE</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="T_FP_CLIENTE_cd_cliente" id="E3F62960-4627-915E-75CE-B555A06EC62A">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>20210012-CC70-2FEC-4A2C-3AC2EA4678AB</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4041D1DA-1AA6-3B1A-BD8C-CEA66149BAF9" referredColumn="AD05D235-8640-03E8-1E97-8E7920F0303F"/>
+</associations>
+</Column>
+<Column name="T_FP_TIPO_DOC_cd_tipo_doc" id="6D416D78-E934-B00B-C331-00CF917893A1">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>BD9D413A-BFBD-30AA-419C-ABB3B80634B1</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B753854A-DD35-B1CB-6843-5AC436A89E83" referredColumn="A12B46A1-F5FA-FFAD-CB77-723E8696DB4F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E361DA1-6879-E724-F6DA-A574A531681A" name="T_FP_FT_DOC_CLIENTE_PK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>98D98E7F-7CDD-F9EB-C671-FB0D468485F7</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEF0478B-B644-E244-8E34-3A08C9BB51A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F49665EA-FAD1-806A-0E61-64912B78BB82" name="T_FP_FT_DOC_CLIENTE__IDX">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>237A9BD4-69A2-D08E-D7E7-7B52DD232E5E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E3F62960-4627-915E-75CE-B555A06EC62A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A2CCA17E-74AC-040B-6FFA-C7ACC241D845" name="T_FP_FT_DOC_CLIENTE_T_FP_CLIENTE_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:51 UTC</createdTime>
+<generatorID>237A9BD4-69A2-D08E-D7E7-7B52DD232E5E</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E3F62960-4627-915E-75CE-B555A06EC62A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C070A5A-AD6F-0706-5FA9-0D697499E903" name="T_FP_FT_DOC_CLIENTE_T_FP_TIPO_DOC_FK">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-14 16:56:52 UTC</createdTime>
+<generatorID>F211FEF6-D4BB-980B-7218-39F1D28F44E7</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D416D78-E934-B00B-C331-00CF917893A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

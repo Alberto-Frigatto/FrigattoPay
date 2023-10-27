@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="2D026DAB-2D4C-3343-4DC4-D66D5DD0696E" name="Arc_1">
+<createdBy>alber</createdBy>
+<createdTime>2023-05-27 19:42:06 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="EDCF32C0-F9CD-2542-6351-5975490F0297" value="true"/>
+</engineerTo>
+<entity>9606B8BA-FFE1-B225-73C9-3579C5F3BB60</entity>
+<relations>
+<relationID>876EDEA1-D364-F9E1-BE65-D185A2A20958</relationID>
+<relationID>D8E1DC3F-AB50-E67F-FBC0-4CB9D1132C51</relationID>
+</relations>
+</Arc>

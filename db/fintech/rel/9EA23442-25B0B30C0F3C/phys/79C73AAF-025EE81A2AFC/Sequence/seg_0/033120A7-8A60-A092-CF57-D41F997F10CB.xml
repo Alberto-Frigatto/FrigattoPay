@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SequenceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.SequenceOraclev10g" name="SEQ_EMPR" directorySegmentName="seg_0" id="033120A7-8A60-A092-CF57-D41F997F10CB">
+<sourceConnName>FIAP</sourceConnName>
+<sourceObjSchema>RM97807</sourceObjSchema>
+<sourceObjName>SEQ_EMPR</sourceObjName>
+<createdBy>alber</createdBy>
+<createdTime>2023-10-27 17:22:12 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<incrementBy>1</incrementBy>
+<maxValue>9999999999999999999999999999</maxValue>
+<minValue>1</minValue>
+<noCache>YES</noCache>
+<user>7174F3D1-5743-EDC7-B3AF-42022E64CDBD</user>
+</SequenceOraclev10g>
