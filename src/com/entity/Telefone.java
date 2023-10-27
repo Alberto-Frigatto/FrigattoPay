@@ -42,31 +42,31 @@ public class Telefone
 
     public Integer getId()
     {
-      return this.id;
+        return this.id;
     }
 
     public int getIdCliente()
     {
-      return this.idCliente;
+        return this.idCliente;
     }
 
     public String getNumero()
     {
-      return this.numero;
+        return this.numero;
     }
 
     public String getRamal()
     {
-      return this.ramal;
+        return this.ramal;
     }
 
     public int getDdd()
     {
-      return this.ddd;
+        return this.ddd;
     }
 
     public int getIdTipoTelefone()
     {
-      return this.idTipoTelefone;
+        return this.idTipoTelefone;
     }
 }

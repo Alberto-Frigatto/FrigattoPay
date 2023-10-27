@@ -50,41 +50,41 @@ public class Endereco
 
     public Integer getId()
     {
-      return this.id;
+        return this.id;
     }
 
     public int getIdCliente()
     {
-      return this.idCliente;
+        return this.idCliente;
     }
 
     public String getCep()
     {
-      return this.cep;
+        return this.cep;
     }
 
     public String getLogradouro()
     {
-      return this.logradouro;
+        return this.logradouro;
     }
 
     public int getNumero()
     {
-      return this.numero;
+        return this.numero;
     }
 
     public String getComplemento()
     {
-      return this.complemento;
+        return this.complemento;
     }
 
     public int getIdTipoLogradouro()
     {
-      return this.idTipoLogradouro;
+        return this.idTipoLogradouro;
     }
 
     public int getIdBairro()
     {
-      return this.idBairro;
+        return this.idBairro;
     }
 }
