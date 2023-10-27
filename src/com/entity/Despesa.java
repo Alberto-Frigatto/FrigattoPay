@@ -1,5 +1,9 @@
 package com.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Despesa
 {
     private Integer id;
@@ -8,8 +12,8 @@ public class Despesa
     private String nome;
     private double valor;
     private String descricao;
-    private String dataVencimento;
-
+    private Date dataVencimento;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     public Despesa(
         Integer id,
@@ -19,7 +23,7 @@ public class Despesa
         double valor,
         String descricao,
         String dataVencimento
-    )
+    ) throws ParseException
     {
         this.id = id;
         this.idCliente = idCliente;
@@ -27,19 +31,19 @@ public class Despesa
         this.nome = nome;
         this.valor = valor;
         this.descricao = descricao;
-        this.dataVencimento = dataVencimento;
+        this.dataVencimento = this.dateFormat.parse(dataVencimento);
     }
 
     public void data()
     {
-        System.out.println("Receita(");
+        System.out.println("Despesa(");
         System.out.println("\tid=" + this.id + ",");
         System.out.println("\tidCliente=" + this.idCliente + ",");
         System.out.println("\tidTipoDespesa=" + this.idTipoDespesa + ",");
         System.out.println("\tnome=" + this.nome + ",");
         System.out.println("\tvalor=" + this.valor + ",");
         System.out.println("\tdescricao=" + this.descricao + ",");
-        System.out.println("\tdataVencimento=" + this.dataVencimento + ",");
+        System.out.println("\tdataVencimento=" + this.dateFormat.format(this.dataVencimento) + ",");
         System.out.println(")\n");
     }
 
@@ -68,7 +72,7 @@ public class Despesa
         return this.descricao;
     }
 
-    public String getDataVencimento()
+    public Date getDataVencimento()
     {
         return this.dataVencimento;
     }
