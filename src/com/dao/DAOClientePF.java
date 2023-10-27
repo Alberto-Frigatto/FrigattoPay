@@ -141,9 +141,9 @@ public class DAOClientePF extends DAO
     {
         String query = """
             SELECT T.cd_telefone, T.nr_telefone, T.nr_ramal, T.t_fp_ddd_nr_ddd, T.t_fp_tipo_tel_cd_tipo
-                FROM T_FP_TELEFONE T, T_FP_REL_TEL R, T_FP_CLIENTE C
-                    WHERE C.cd_cliente = R.t_fp_cliente_cd_cliente AND
-                          T.cd_telefone = R.t_fp_telefone_cd_telefone AND C.cd_cliente = ?
+                FROM T_FP_TELEFONE T, T_FP_CLIENTE C
+                    WHERE T.t_fp_cliente_cd_cliente = C.cd_cliente AND
+                          C.cd_cliente = ?
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);
@@ -190,9 +190,9 @@ public class DAOClientePF extends DAO
                 E.t_fp_tipo_lograd_cd_tipo,
                 E.t_fp_bairro_cd_bairro
 
-                FROM T_FP_ENDERECO E, T_FP_REL_END R, T_FP_CLIENTE C
-                    WHERE C.cd_cliente = R.t_fp_cliente_cd_cliente AND
-                          E.cd_endereco = R.t_fp_endereco_cd_endereco AND C.cd_cliente = ?
+                FROM T_FP_ENDERECO E, T_FP_CLIENTE C
+                    WHERE E.t_fp_cliente_cd_cliente = C.cd_cliente AND
+                          C.cd_cliente = ?
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);
