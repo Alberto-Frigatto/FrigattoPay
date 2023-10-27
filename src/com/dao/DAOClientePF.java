@@ -69,11 +69,12 @@ public class DAOClientePF extends DAOCliente
         return stmt.executeQuery(query);
     }
 
-    public ClientePF getById(int id) throws SQLException, ParseException
+    public ClientePF getById(int id) throws SQLException, ParseException, Exception
     {
         ResultSet result = this.getCliente(id);
 
-        result.next();
+        if (!result.next())
+            throw new Exception("O cliente  " + id + " não existe");
 
         String formattedDate = this.formatDate(result.getDate("dt_nascimento"));
 
