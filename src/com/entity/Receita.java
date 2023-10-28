@@ -43,19 +43,19 @@ public class Receita {
         return this.id;
     }
 
+    public void updateId(Integer value)
+    {
+        this.id = value;
+    }
+
     public int getIdCliente()
     {
         return this.idCliente;
     }
 
-    public Double getValor()
+    public void updateIdCliente(int value)
     {
-        return this.valor;
-    }
-
-    public Date getDataReceita()
-    {
-        return this.dataReceita;
+        this.idCliente = value;
     }
 
     public int getIdTipoReceita()
@@ -63,4 +63,28 @@ public class Receita {
         return this.idTipoReceita;
     }
 
+    public void updateIdTipoReceita(int value)
+    {
+        this.idTipoReceita = value;
+    }
+
+    public double getValor()
+    {
+        return this.valor;
+    }
+
+    public void updateValor(double value)
+    {
+        this.valor = value;
+    }
+
+    public Date getDataReceita()
+    {
+        return this.dataReceita;
+    }
+
+    public void updateDataReceita(String value) throws ParseException
+    {
+        this.dataReceita = this.dateFormat.parse(value);
+    }
 }
