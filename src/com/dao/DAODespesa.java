@@ -110,16 +110,29 @@ public class DAODespesa extends DAO
         return pstmt.executeQuery();
     }
 
-    public void insert(Despesa dp) throws SQLException
+    public void insert(Despesa despesa) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ call InserirDespesa(?, ?, ?, ?, ?, ?) }");
 
-        cs.setString(1, dp.getNome());
-        cs.setDouble(2, dp.getValor());
-        cs.setString(3, dp.getDescricao());
-        cs.setDate(4, new java.sql.Date(dp.getDataVencimento().getTime()));
-        cs.setInt(5, dp.getIdTipoDespesa());
-        cs.setInt(6, dp.getIdCliente());
+        cs.setString(1, despesa.getNome());
+        cs.setDouble(2, despesa.getValor());
+        cs.setString(3, despesa.getDescricao());
+        cs.setDate(4, new java.sql.Date(despesa.getDataVencimento().getTime()));
+        cs.setInt(5, despesa.getIdTipoDespesa());
+        cs.setInt(6, despesa.getIdCliente());
+        cs.execute();
+    }
+
+    public void update(Despesa despesa) throws SQLException
+    {
+        CallableStatement cs = conn.prepareCall("{ call AtualizarDespesa(?, ?, ?, ?, ?, ?) }");
+
+        cs.setInt(1, despesa.getId());
+        cs.setString(2, despesa.getNome());
+        cs.setDouble(3, despesa.getValor());
+        cs.setString(4, despesa.getDescricao());
+        cs.setDate(5, new java.sql.Date(despesa.getDataVencimento().getTime()));
+        cs.setInt(6, despesa.getIdTipoDespesa());
         cs.execute();
     }
 }
