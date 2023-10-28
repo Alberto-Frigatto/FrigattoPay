@@ -102,14 +102,25 @@ public class DAOReceita extends DAO
         return pstmt.executeQuery();
     }
 
-    public void insert(Receita rc) throws SQLException
+    public void insert(Receita receita) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ call InserirReceita(?, ?, ?, ?) }");
 
-        cs.setInt(1, rc.getIdTipoReceita());
-        cs.setInt(2, rc.getIdCliente());
-        cs.setDouble(3, rc.getValor());
-        cs.setDate(4, new java.sql.Date(rc.getDataReceita().getTime()));
+        cs.setInt(1, receita.getIdTipoReceita());
+        cs.setInt(2, receita.getIdCliente());
+        cs.setDouble(3, receita.getValor());
+        cs.setDate(4, new java.sql.Date(receita.getDataReceita().getTime()));
+        cs.execute();
+    }
+
+    public void update(Receita receita) throws SQLException
+    {
+        CallableStatement cs = conn.prepareCall("{ call AtualizarReceita(?, ?, ?, ?) }");
+
+        cs.setInt(1, receita.getId());
+        cs.setInt(2, receita.getIdTipoReceita());
+        cs.setDouble(3, receita.getValor());
+        cs.setDate(4, new java.sql.Date(receita.getDataReceita().getTime()));
         cs.execute();
     }
 }
