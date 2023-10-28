@@ -115,36 +115,36 @@ public class DAOClientePF extends DAOCliente
         return pstmt.executeQuery();
     }
 
-    public void insert(ClientePF pf) throws SQLException
+    public void insert(ClientePF cliente) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ ? = call CadastrarClientePF(?, ?, ?, ?, ?, ?) }");
 
         cs.registerOutParameter(1, Types.NUMERIC);
-        cs.setString(2, pf.getNome());
-        cs.setString(3, pf.getEmail());
-        cs.setString(4, pf.getSenha());
-        cs.setString(5, pf.getCpf());
-        cs.setString(6, pf.getRg());
-        cs.setDate(7, new java.sql.Date(pf.getDataNascimento().getTime()));
+        cs.setString(2, cliente.getNome());
+        cs.setString(3, cliente.getEmail());
+        cs.setString(4, cliente.getSenha());
+        cs.setString(5, cliente.getCpf());
+        cs.setString(6, cliente.getRg());
+        cs.setDate(7, new java.sql.Date(cliente.getDataNascimento().getTime()));
         cs.execute();
 
         int idCliente = cs.getInt(1);
 
-        this.insertTelefones(pf.getTelefones(), idCliente);
-        this.insertEnderecos(pf.getEnderecos(), idCliente);
+        this.insertTelefones(cliente.getTelefones(), idCliente);
+        this.insertEnderecos(cliente.getEnderecos(), idCliente);
     }
 
-    public void update(ClientePF pf) throws SQLException
+    public void update(ClientePF cliente) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ call AtualizarClientePf(?, ?, ?, ?, ?, ?, ?) }");
 
-        cs.setInt(1, pf.getId());
-        cs.setString(2, pf.getNome());
-        cs.setString(3, pf.getEmail());
-        cs.setString(4, pf.getSenha());
-        cs.setString(5, pf.getCpf());
-        cs.setString(6, pf.getRg());
-        cs.setDate(7, new java.sql.Date(pf.getDataNascimento().getTime()));
+        cs.setInt(1, cliente.getId());
+        cs.setString(2, cliente.getNome());
+        cs.setString(3, cliente.getEmail());
+        cs.setString(4, cliente.getSenha());
+        cs.setString(5, cliente.getCpf());
+        cs.setString(6, cliente.getRg());
+        cs.setDate(7, new java.sql.Date(cliente.getDataNascimento().getTime()));
         cs.execute();
     }
 }
