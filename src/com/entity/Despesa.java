@@ -52,29 +52,19 @@ public class Despesa
         return this.id;
     }
 
-    public int getIdCliente()
+    public void updateId(Integer value)
+    {
+        this.id = value;
+    }
+
+    public Integer getIdCliente()
     {
         return this.idCliente;
     }
 
-    public String getNome()
+    public void updateIdCliente(Integer value)
     {
-        return this.nome;
-    }
-
-    public Double getValor()
-    {
-        return this.valor;
-    }
-
-    public String getDescricao()
-    {
-        return this.descricao;
-    }
-
-    public Date getDataVencimento()
-    {
-        return this.dataVencimento;
+        this.idCliente = value;
     }
 
     public int getIdTipoDespesa()
@@ -82,4 +72,48 @@ public class Despesa
         return this.idTipoDespesa;
     }
 
+    public void updateIdTipoDespesa(int value)
+    {
+        this.idTipoDespesa = value;
+    }
+
+    public String getNome()
+    {
+        return this.nome;
+    }
+
+    public void updateNome(String value)
+    {
+        this.nome = value;
+    }
+
+    public double getValor()
+    {
+        return this.valor;
+    }
+
+    public void updateValor(double value)
+    {
+        this.valor = value;
+    }
+
+    public String getDescricao()
+    {
+        return this.descricao;
+    }
+
+    public void updateDescricao(String value)
+    {
+        this.descricao = value;
+    }
+
+    public Date getDataVencimento()
+    {
+        return this.dataVencimento;
+    }
+
+    public void updateDataVencimento(String value) throws ParseException
+    {
+        this.dataVencimento = this.dateFormat.parse(value);
+    }
 }
