@@ -70,12 +70,12 @@ public class DAOClientePJ extends DAOCliente
         return stmt.executeQuery(query);
     }
 
-    public ClientePJ getById(int id) throws SQLException, ParseException, Exception
+    public ClientePJ getById(int id) throws SQLException, ParseException
     {
         ResultSet result = this.getCliente(id);
 
         if (!result.next())
-            throw new Exception("O cliente " + id + " não existe");
+            throw new SQLException("O cliente PJ " + id + " não existe");
 
         String formattedDate = this.formatDate(result.getDate("dt_abertura"));
 
@@ -150,5 +150,21 @@ public class DAOClientePJ extends DAOCliente
         cs.setDate(7, new java.sql.Date(cliente.getDataAbertura().getTime()));
         cs.setString(8, cliente.getSetor());
         cs.execute();
+    }
+
+    public void delete(int id) throws SQLException, ParseException
+    {
+        ClientePJ cliente = this.getById(id);
+
+        String deleteQuery = """
+            DELETE FROM T_FP_CLIENTE
+                WHERE cd_cliente = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(deleteQuery);
+
+        pstmt.setInt(1, cliente.getId());
+
+        pstmt.executeUpdate();
     }
 }
