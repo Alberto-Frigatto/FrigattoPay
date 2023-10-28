@@ -1,7 +1,5 @@
 package com.dao;
 
-import com.entity.Receita;
-
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +9,8 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.entity.Receita;
 
 public class DAOReceita extends DAO
 { 
@@ -61,12 +61,12 @@ public class DAOReceita extends DAO
         return stmt.executeQuery(query);        
     }
 
-    public Receita getById(int id) throws SQLException, ParseException, Exception
+    public Receita getById(int id) throws SQLException, ParseException
     {
         ResultSet result = this.getReceita(id);
 
         if (!result.next())
-            throw new Exception("A receita " + id + " não existe");
+            throw new SQLException("A receita " + id + " não existe");
 
         String formattedDate = this.formatDate(result.getDate("dt_receita"));
 
@@ -122,5 +122,21 @@ public class DAOReceita extends DAO
         cs.setDouble(3, receita.getValor());
         cs.setDate(4, new java.sql.Date(receita.getDataReceita().getTime()));
         cs.execute();
+    }
+
+    public void delete(int id) throws SQLException, ParseException
+    {
+        Receita receita = this.getById(id);
+
+        String deleteQuery = """
+            DELETE FROM T_FP_RECEITA
+                WHERE cd_receita = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(deleteQuery);
+
+        pstmt.setInt(1, receita.getId());
+
+        pstmt.executeUpdate();
     }
 }
