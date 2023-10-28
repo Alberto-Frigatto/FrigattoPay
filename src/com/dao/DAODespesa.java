@@ -14,7 +14,7 @@ import com.entity.Despesa;
 
 public class DAODespesa extends DAO
 {
-    public DAODespesa(Connection conn) 
+    public DAODespesa(Connection conn)
     {
         super(conn);
     }
@@ -65,12 +65,12 @@ public class DAODespesa extends DAO
         return stmt.executeQuery(query);        
     }
 
-    public Despesa getById(int id) throws SQLException, ParseException, Exception
+    public Despesa getById(int id) throws SQLException, ParseException
     {
         ResultSet result = this.getDespesa(id);
 
         if (!result.next())
-            throw new Exception("A despesa " + id + " não existe");
+            throw new SQLException("A despesa " + id + " não existe");
 
         String formattedDate = this.formatDate(result.getDate("dt_vencimento"));
 
@@ -134,5 +134,21 @@ public class DAODespesa extends DAO
         cs.setDate(5, new java.sql.Date(despesa.getDataVencimento().getTime()));
         cs.setInt(6, despesa.getIdTipoDespesa());
         cs.execute();
+    }
+
+    public void delete(int id) throws SQLException, ParseException
+    {
+        Despesa despesa = this.getById(id);
+
+        String deleteQuery = """
+            DELETE FROM T_FP_DESPESA
+                WHERE cd_despesa = ?
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(deleteQuery);
+
+        pstmt.setInt(1, despesa.getId());
+
+        pstmt.executeUpdate();
     }
 }
