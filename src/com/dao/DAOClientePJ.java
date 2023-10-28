@@ -117,38 +117,38 @@ public class DAOClientePJ extends DAOCliente
         return pstmt.executeQuery();
     }
 
-    public void insert(ClientePJ pj) throws SQLException
+    public void insert(ClientePJ cliente) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ ? = call CadastrarClientePJ(?, ?, ?, ?, ?, ?, ?) }");
 
         cs.registerOutParameter(1, Types.NUMERIC);
-        cs.setString(2, pj.getNome());
-        cs.setString(3, pj.getEmail());
-        cs.setString(4, pj.getSenha());
-        cs.setString(5, pj.getCnpj());
-        cs.setString(6, pj.getInscricaoEstadual());
-        cs.setDate(7, new java.sql.Date(pj.getDataAbertura().getTime()));
-        cs.setString(8, pj.getSetor());
+        cs.setString(2, cliente.getNome());
+        cs.setString(3, cliente.getEmail());
+        cs.setString(4, cliente.getSenha());
+        cs.setString(5, cliente.getCnpj());
+        cs.setString(6, cliente.getInscricaoEstadual());
+        cs.setDate(7, new java.sql.Date(cliente.getDataAbertura().getTime()));
+        cs.setString(8, cliente.getSetor());
         cs.execute();
 
         int idCliente = cs.getInt(1);
 
-        this.insertTelefones(pj.getTelefones(), idCliente);
-        this.insertEnderecos(pj.getEnderecos(), idCliente);
+        this.insertTelefones(cliente.getTelefones(), idCliente);
+        this.insertEnderecos(cliente.getEnderecos(), idCliente);
     }
 
-    public void update(ClientePJ pj) throws SQLException
+    public void update(ClientePJ cliente) throws SQLException
     {
         CallableStatement cs = conn.prepareCall("{ call AtualizarClientePJ(?, ?, ?, ?, ?, ?, ?, ?) }");
 
-        cs.setInt(1, pj.getId());
-        cs.setString(2, pj.getNome());
-        cs.setString(3, pj.getEmail());
-        cs.setString(4, pj.getSenha());
-        cs.setString(5, pj.getCnpj());
-        cs.setString(6, pj.getInscricaoEstadual());
-        cs.setDate(7, new java.sql.Date(pj.getDataAbertura().getTime()));
-        cs.setString(8, pj.getSetor());
+        cs.setInt(1, cliente.getId());
+        cs.setString(2, cliente.getNome());
+        cs.setString(3, cliente.getEmail());
+        cs.setString(4, cliente.getSenha());
+        cs.setString(5, cliente.getCnpj());
+        cs.setString(6, cliente.getInscricaoEstadual());
+        cs.setDate(7, new java.sql.Date(cliente.getDataAbertura().getTime()));
+        cs.setString(8, cliente.getSetor());
         cs.execute();
     }
 }
