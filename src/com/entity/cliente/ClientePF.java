@@ -1,10 +1,10 @@
 package com.entity.cliente;
 
-import com.entity.Endereco;
-import com.entity.Telefone;
-
 import java.text.ParseException;
 import java.util.Date;
+
+import com.entity.Endereco;
+import com.entity.Telefone;
 
 public class ClientePF extends Cliente
 {
