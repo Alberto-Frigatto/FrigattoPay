@@ -34,8 +34,7 @@ public abstract class DAOCliente extends DAO
                 idCliente,
                 result.getString("nr_telefone"),
                 result.getString("nr_ramal"),
-                result.getInt("t_fp_ddd_nr_ddd"),
-                result.getInt("t_fp_tipo_tel_cd_tipo")
+                result.getInt("t_fp_ddd_nr_ddd")
             );
 
             telefonesList.add(telefone);
@@ -47,7 +46,7 @@ public abstract class DAOCliente extends DAO
     protected ResultSet getTelefones(int idCliente) throws SQLException
     {
         String query = """
-            SELECT T.cd_telefone, T.nr_telefone, T.nr_ramal, T.t_fp_ddd_nr_ddd, T.t_fp_tipo_tel_cd_tipo
+            SELECT T.cd_telefone, T.nr_telefone, T.nr_ramal, T.t_fp_ddd_nr_ddd
                 FROM T_FP_TELEFONE T, T_FP_CLIENTE C
                     WHERE T.t_fp_cliente_cd_cliente = C.cd_cliente AND
                           C.cd_cliente = ?
@@ -71,12 +70,12 @@ public abstract class DAOCliente extends DAO
             Endereco endereco = new Endereco(
                 result.getInt("cd_endereco"),
                 idCliente,
+                result.getInt("t_fp_uf_cd_uf"),
                 result.getString("nr_cep"),
                 result.getString("nm_logradouro"),
                 result.getInt("nr_logradouro"),
                 result.getString("ds_complemento"),
-                result.getInt("t_fp_tipo_lograd_cd_tipo"),
-                result.getInt("t_fp_bairro_cd_bairro")
+                result.getString("nm_municipio")
             );
 
             enderecosList.add(endereco);
@@ -94,8 +93,8 @@ public abstract class DAOCliente extends DAO
                 E.nm_logradouro,
                 E.nr_logradouro,
                 E.ds_complemento,
-                E.t_fp_tipo_lograd_cd_tipo,
-                E.t_fp_bairro_cd_bairro
+                E.nm_municipio,
+                E.t_fp_uf_cd_uf
 
                 FROM T_FP_ENDERECO E, T_FP_CLIENTE C
                     WHERE E.t_fp_cliente_cd_cliente = C.cd_cliente AND
@@ -113,13 +112,12 @@ public abstract class DAOCliente extends DAO
     {
         for (Telefone telefone : list)
         {
-            CallableStatement cs = conn.prepareCall("{ call InserirTelefoneCliente(?, ?, ?, ?, ?) }");
+            CallableStatement cs = conn.prepareCall("{ call InserirTelefoneCliente(?, ?, ?, ?) }");
 
             cs.setInt(1, idCliente);
             cs.setString(2, telefone.getNumero());
             cs.setString(3, telefone.getRamal());
             cs.setInt(4, telefone.getDdd());
-            cs.setInt(5, telefone.getIdTipoTelefone());
             cs.execute();
         }
     }
@@ -135,8 +133,8 @@ public abstract class DAOCliente extends DAO
             cs.setString(3, endereco.getLogradouro());
             cs.setInt(4, endereco.getNumero());
             cs.setString(5, endereco.getComplemento());
-            cs.setInt(6, endereco.getIdTipoLogradouro());
-            cs.setInt(7, endereco.getIdBairro());
+            cs.setString(6, endereco.getMunicipio());
+            cs.setInt(7, endereco.getIdUF());
             cs.execute();
         }
     }
