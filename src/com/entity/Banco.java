@@ -15,7 +15,7 @@ public class Banco
         String cnpj,
         String nome,
         String email
-    ) throws ParseException
+    )
     {
         this.id = id;
         this.cnpj = cnpj;
@@ -27,7 +27,7 @@ public class Banco
         String cnpj,
         String nome,
         String email
-    ) throws ParseException
+    )
     {
         this.cnpj = cnpj;
         this.nome = nome;

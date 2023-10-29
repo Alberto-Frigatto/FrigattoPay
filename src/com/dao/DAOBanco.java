@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class DAOBanco extends DAO
         super(conn);
     }
 
-    public List<Banco> getAll() throws SQLException, ParseException
+    public List<Banco> getAll() throws SQLException
     {
         List<Banco> bancos = new ArrayList<Banco>();
         
@@ -58,7 +57,7 @@ public class DAOBanco extends DAO
         return stmt.executeQuery(query);
     }
 
-    public Banco getById(int id) throws SQLException, ParseException
+    public Banco getById(int id) throws SQLException
     {
         ResultSet result = this.getBanco(id);
 
@@ -118,7 +117,7 @@ public class DAOBanco extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException
     {
         Banco banco = this.getById(id);
 
