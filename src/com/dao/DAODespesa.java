@@ -88,7 +88,7 @@ public class DAODespesa extends DAO
         return despesa;
     }
 
-    protected ResultSet getDespesa(int id) throws SQLException
+    private ResultSet getDespesa(int id) throws SQLException
     {
         String query = """
             SELECT
