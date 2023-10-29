@@ -30,7 +30,7 @@ public class DAOClientePJ extends DAOCliente
 
         while (result.next())
         {
-            String formattedDate = this.formatDate(result.getDate("dt_abertura"));
+            String formattedDate = this.formatCompleteDate(result.getDate("dt_abertura"));
 
             ClientePJ clientePJ = new ClientePJ(
                 result.getInt("cd_cliente"),
@@ -78,7 +78,7 @@ public class DAOClientePJ extends DAOCliente
         if (!result.next())
             throw new SQLException("O cliente PJ " + id + " não existe");
 
-        String formattedDate = this.formatDate(result.getDate("dt_abertura"));
+        String formattedDate = this.formatCompleteDate(result.getDate("dt_abertura"));
 
         ClientePJ clientePJ = new ClientePJ(
             result.getInt("cd_cliente"),

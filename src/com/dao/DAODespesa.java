@@ -27,7 +27,7 @@ public class DAODespesa extends DAO
 
         while (result.next())
         {
-            String formattedDate = this.formatDate(result.getDate("dt_vencimento"));
+            String formattedDate = this.formatCompleteDate(result.getDate("dt_vencimento"));
 
             Despesa despesa = new Despesa(
                 result.getInt("cd_despesa"),
@@ -73,7 +73,7 @@ public class DAODespesa extends DAO
         if (!result.next())
             throw new SQLException("A despesa " + id + " não existe");
 
-        String formattedDate = this.formatDate(result.getDate("dt_vencimento"));
+        String formattedDate = this.formatCompleteDate(result.getDate("dt_vencimento"));
 
         Despesa despesa = new Despesa(
             result.getInt("cd_despesa"),

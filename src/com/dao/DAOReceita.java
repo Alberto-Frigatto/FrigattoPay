@@ -27,7 +27,7 @@ public class DAOReceita extends DAO
 
         while (result.next())
         {
-            String formattedDate = this.formatDate(result.getDate("dt_receita"));
+            String formattedDate = this.formatCompleteDate(result.getDate("dt_receita"));
 
             Receita receita = new Receita(
                 result.getInt("cd_receita"),
@@ -69,7 +69,7 @@ public class DAOReceita extends DAO
         if (!result.next())
             throw new SQLException("A receita " + id + " não existe");
 
-        String formattedDate = this.formatDate(result.getDate("dt_receita"));
+        String formattedDate = this.formatCompleteDate(result.getDate("dt_receita"));
 
         Receita receita = new Receita(
             result.getInt("cd_receita"),
