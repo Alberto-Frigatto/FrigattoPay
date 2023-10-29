@@ -1,12 +1,4 @@
-CREATE TABLE t_fp_bairro (
-    cd_bairro                   NUMBER(9) NOT NULL,
-    nm_bairro                   VARCHAR2(30) NOT NULL,
-    t_fp_municipio_cd_municipio NUMBER(9) NOT NULL
-);
-
-ALTER TABLE t_fp_bairro ADD CONSTRAINT t_fp_bairro_pk PRIMARY KEY ( cd_bairro );
-
-CREATE TABLE t_fp_banco (
+CREATE TABLE t_fp_banco (    
     nr_cnpj           CHAR(14) NOT NULL,
     nm_banco_parceiro VARCHAR2(50) NOT NULL,
     ds_email          VARCHAR2(320) NOT NULL,
@@ -28,7 +20,6 @@ CREATE TABLE t_fp_cartao (
     dt_validade               DATE NOT NULL,
     nr_cvv                    VARCHAR2(3) NOT NULL,
     vl_cartao_desbloqueado    NUMBER NOT NULL,
-    t_fp_cliente_cd_cliente   NUMBER(9) NOT NULL,
     t_fp_tipo_cartao_cd_tipo  NUMBER(9) NOT NULL,
     t_fp_bandeira_cd_bandeira NUMBER(9) NOT NULL,
     t_fp_conta_cd_conta       NUMBER(9) NOT NULL
@@ -75,23 +66,6 @@ CREATE TABLE t_fp_conta (
 );
 
 ALTER TABLE t_fp_conta ADD CONSTRAINT t_fp_conta_pk PRIMARY KEY ( cd_conta );
-
-CREATE TABLE t_fp_conta_conj (
-    cd_conta_conj            NUMBER(9) NOT NULL,
-    t_fp_cliente_cd_cliente  NUMBER(9) NOT NULL,
-    t_fp_tipo_acesso_cd_tipo NUMBER(9) NOT NULL,
-    t_fp_conta_cd_conta      NUMBER(9) NOT NULL
-);
-
-CREATE UNIQUE INDEX t_fp_conta_conj__idx ON
-    t_fp_conta_conj (
-        t_fp_cliente_cd_cliente
-    ASC );
-
-CREATE UNIQUE INDEX t_fp_conta_conj__idxv1 ON
-    t_fp_conta_conj (
-        t_fp_conta_cd_conta
-    ASC );
 
 ALTER TABLE t_fp_conta_conj ADD CONSTRAINT t_fp_conta_conj_pk PRIMARY KEY ( cd_conta_conj );
 
@@ -144,36 +118,12 @@ CREATE TABLE t_fp_endereco (
     nm_logradouro            VARCHAR2(40) NOT NULL,
     nr_logradouro            NUMBER(4) NOT NULL,
     ds_complemento           VARCHAR2(30),
-    t_fp_tipo_lograd_cd_tipo NUMBER(9) NOT NULL,
-    t_fp_bairro_cd_bairro    NUMBER(9) NOT NULL,
-    t_fp_banco_nr_cnpj       CHAR(14),
+    nm_municipio            VARCHAR2(70) NOT NULL,
+    t_fp_uf_cd_uf            NUMBER(9),
     t_fp_cliente_cd_cliente  NUMBER(9)
 );
 
 ALTER TABLE t_fp_endereco ADD CONSTRAINT t_fp_endereco_pk PRIMARY KEY ( cd_endereco );
-
-CREATE TABLE t_fp_ft_cliente (
-    cd_ft_cliente           NUMBER(9) NOT NULL,
-    vl_caminho_foto         VARCHAR2(255) NOT NULL,
-    t_fp_cliente_cd_cliente NUMBER(9) NOT NULL
-);
-
-ALTER TABLE t_fp_ft_cliente ADD CONSTRAINT t_fp_ft_cliente_pk PRIMARY KEY ( cd_ft_cliente );
-
-CREATE TABLE t_fp_ft_doc_cliente (
-    cd_ft_doc                 NUMBER(9) NOT NULL,
-    ds_caminho_foto           VARCHAR2(255 CHAR) NOT NULL,
-    vl_status                 NUMBER NOT NULL,
-    t_fp_cliente_cd_cliente   NUMBER(9) NOT NULL,
-    t_fp_tipo_doc_cd_tipo_doc NUMBER(9) NOT NULL
-);
-
-CREATE UNIQUE INDEX t_fp_ft_doc_cliente__idx ON
-    t_fp_ft_doc_cliente (
-        t_fp_cliente_cd_cliente
-    ASC );
-
-ALTER TABLE t_fp_ft_doc_cliente ADD CONSTRAINT t_fp_ft_doc_cliente_pk PRIMARY KEY ( cd_ft_doc );
 
 CREATE TABLE t_fp_invs (
     cd_invs     NUMBER(9) NOT NULL,
@@ -186,14 +136,6 @@ CREATE TABLE t_fp_invs (
 );
 
 ALTER TABLE t_fp_invs ADD CONSTRAINT t_fp_invs_pk PRIMARY KEY ( cd_invs );
-
-CREATE TABLE t_fp_municipio (
-    cd_municipio  NUMBER(9) NOT NULL,
-    nm_municipio  VARCHAR2(30 CHAR) NOT NULL,
-    t_fp_uf_cd_uf NUMBER(9) NOT NULL
-);
-
-ALTER TABLE t_fp_municipio ADD CONSTRAINT t_fp_municipio_pk PRIMARY KEY ( cd_municipio );
 
 CREATE TABLE t_fp_pagmt (
     cd_pagmt                VARCHAR2(44) NOT NULL,
@@ -232,19 +174,10 @@ CREATE TABLE t_fp_telefone (
     nr_telefone              VARCHAR2(9) NOT NULL,
     nr_ramal                 NUMBER(4) NULL,
     t_fp_ddd_nr_ddd          NUMBER(2) NOT NULL,
-    t_fp_tipo_tel_cd_tipo    NUMBER(9) NOT NULL,
     t_fp_cliente_cd_cliente  NUMBER(9),
-    t_fp_banco_nr_cnpj       CHAR(14)
 );
 
 ALTER TABLE t_fp_telefone ADD CONSTRAINT t_fp_telefone_pk PRIMARY KEY ( cd_telefone );
-
-CREATE TABLE t_fp_tipo_acesso (
-    cd_tipo NUMBER(9) NOT NULL,
-    nm_tipo VARCHAR2(20 CHAR) NOT NULL
-);
-
-ALTER TABLE t_fp_tipo_acesso ADD CONSTRAINT t_fp_tipo_acesso_pk PRIMARY KEY ( cd_tipo );
 
 CREATE TABLE t_fp_tipo_cartao (
     cd_tipo NUMBER(9) NOT NULL,
@@ -267,20 +200,6 @@ CREATE TABLE t_fp_tipo_despesa (
 
 ALTER TABLE t_fp_tipo_despesa ADD CONSTRAINT t_fp_tipo_despesa_pk PRIMARY KEY ( cd_tipo );
 
-CREATE TABLE t_fp_tipo_doc (
-    cd_tipo_doc       NUMBER(9) NOT NULL,
-    nm_tipo_documento VARCHAR2(20 CHAR) NOT NULL
-);
-
-ALTER TABLE t_fp_tipo_doc ADD CONSTRAINT t_fp_tipo_doc_pk PRIMARY KEY ( cd_tipo_doc );
-
-CREATE TABLE t_fp_tipo_lograd (
-    cd_tipo NUMBER(9) NOT NULL,
-    nm_tipo VARCHAR2(20) NOT NULL
-);
-
-ALTER TABLE t_fp_tipo_lograd ADD CONSTRAINT t_fp_tipo_lograd_pk PRIMARY KEY ( cd_tipo );
-
 CREATE TABLE t_fp_tipo_pagmt (
     cd_tipo NUMBER(9) NOT NULL,
     nm_tipo VARCHAR2(20 CHAR) NOT NULL
@@ -294,13 +213,6 @@ CREATE TABLE t_fp_tipo_receita (
 );
 
 ALTER TABLE t_fp_tipo_receita ADD CONSTRAINT t_fp_tipo_receita_pk PRIMARY KEY ( cd_tipo );
-
-CREATE TABLE t_fp_tipo_tel (
-    cd_tipo NUMBER(9) NOT NULL,
-    nm_tipo VARCHAR2(20) NOT NULL
-);
-
-ALTER TABLE t_fp_tipo_tel ADD CONSTRAINT t_fp_tipo_tel_pk PRIMARY KEY ( cd_tipo );
 
 CREATE TABLE t_fp_tipo_transc (
     cd_tipo NUMBER(9) NOT NULL,
@@ -332,17 +244,9 @@ CREATE TABLE t_fp_uf (
 
 ALTER TABLE t_fp_uf ADD CONSTRAINT t_fp_uf_pk PRIMARY KEY ( cd_uf );
 
-ALTER TABLE t_fp_bairro
-    ADD CONSTRAINT bairro_municipio_fk FOREIGN KEY ( t_fp_municipio_cd_municipio )
-        REFERENCES t_fp_municipio ( cd_municipio );
-
 ALTER TABLE t_fp_cartao
     ADD CONSTRAINT cartao_bandeira_fk FOREIGN KEY ( t_fp_bandeira_cd_bandeira )
         REFERENCES t_fp_bandeira ( cd_bandeira );
-
-ALTER TABLE t_fp_cartao
-    ADD CONSTRAINT cartao_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
-        REFERENCES t_fp_cliente ( cd_cliente );
 
 ALTER TABLE t_fp_cartao
     ADD CONSTRAINT cartao_conta_fk FOREIGN KEY ( t_fp_conta_cd_conta )
@@ -359,18 +263,6 @@ ALTER TABLE t_fp_cliente_pf
 ALTER TABLE t_fp_cliente_pj
     ADD CONSTRAINT cliente_pj_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
         REFERENCES t_fp_cliente ( cd_cliente ) ON DELETE CASCADE;
-
-ALTER TABLE t_fp_conta_conj
-    ADD CONSTRAINT conta_conj_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
-        REFERENCES t_fp_cliente ( cd_cliente );
-
-ALTER TABLE t_fp_conta_conj
-    ADD CONSTRAINT conta_conj_conta_fk FOREIGN KEY ( t_fp_conta_cd_conta )
-        REFERENCES t_fp_conta ( cd_conta );
-
-ALTER TABLE t_fp_conta_conj
-    ADD CONSTRAINT conta_conj_tipo_acesso_fk FOREIGN KEY ( t_fp_tipo_acesso_cd_tipo )
-        REFERENCES t_fp_tipo_acesso ( cd_tipo );
 
 ALTER TABLE t_fp_conta_invs
     ADD CONSTRAINT conta_invs_conta_fk FOREIGN KEY ( t_fp_conta_cd_conta )
@@ -409,36 +301,12 @@ ALTER TABLE t_fp_empr
         REFERENCES t_fp_conta ( cd_conta );
 
 ALTER TABLE t_fp_endereco
-    ADD CONSTRAINT endereco_bairro_fk FOREIGN KEY ( t_fp_bairro_cd_bairro )
-        REFERENCES t_fp_bairro ( cd_bairro );
-
-ALTER TABLE t_fp_endereco
-    ADD CONSTRAINT endereco_tipo_lograd_fk FOREIGN KEY ( t_fp_tipo_lograd_cd_tipo )
-        REFERENCES t_fp_tipo_lograd ( cd_tipo );
-
-ALTER TABLE t_fp_endereco
-    ADD CONSTRAINT endereco_banco_fk FOREIGN KEY ( t_fp_banco_nr_cnpj )
-        REFERENCES t_fp_banco ( nr_cnpj ) ON DELETE CASCADE;
+    ADD CONSTRAINT endereco_uf_fk FOREIGN KEY ( t_fp_uf_cd_uf )
+        REFERENCES t_fp_uf ( cd_uf );
 
 ALTER TABLE t_fp_endereco
     ADD CONSTRAINT endereco_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
         REFERENCES t_fp_cliente ( cd_cliente ) ON DELETE CASCADE;
-
-ALTER TABLE t_fp_ft_cliente
-    ADD CONSTRAINT ft_cliente_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
-        REFERENCES t_fp_cliente ( cd_cliente );
-
-ALTER TABLE t_fp_ft_doc_cliente
-    ADD CONSTRAINT ft_doc_cliente_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
-        REFERENCES t_fp_cliente ( cd_cliente );
-
-ALTER TABLE t_fp_ft_doc_cliente
-    ADD CONSTRAINT ft_doc_cliente_tipo_doc_fk FOREIGN KEY ( t_fp_tipo_doc_cd_tipo_doc )
-        REFERENCES t_fp_tipo_doc ( cd_tipo_doc );
-
-ALTER TABLE t_fp_municipio
-    ADD CONSTRAINT municipio_uf_fk FOREIGN KEY ( t_fp_uf_cd_uf )
-        REFERENCES t_fp_uf ( cd_uf );
 
 ALTER TABLE t_fp_pagmt
     ADD CONSTRAINT pagmt_conta_fk FOREIGN KEY ( t_fp_conta_cd_conta )
@@ -467,14 +335,6 @@ ALTER TABLE t_fp_receita
 ALTER TABLE t_fp_telefone
     ADD CONSTRAINT telefone_ddd_fk FOREIGN KEY ( t_fp_ddd_nr_ddd)
         REFERENCES t_fp_ddd ( nr_ddd );
-
-ALTER TABLE t_fp_telefone
-    ADD CONSTRAINT telefone_tipo_tel_fk FOREIGN KEY ( t_fp_tipo_tel_cd_tipo )
-        REFERENCES t_fp_tipo_tel ( cd_tipo );
-
-ALTER TABLE t_fp_telefone
-    ADD CONSTRAINT telefone_banco_fk FOREIGN KEY ( t_fp_banco_nr_cnpj )
-        REFERENCES t_fp_banco ( nr_cnpj ) ON DELETE CASCADE;
 
 ALTER TABLE t_fp_telefone
     ADD CONSTRAINT telefone_cliente_fk FOREIGN KEY ( t_fp_cliente_cd_cliente )
