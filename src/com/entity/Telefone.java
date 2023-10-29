@@ -7,15 +7,13 @@ public class Telefone
     private String numero;
     private String ramal;
     private int ddd;
-    private int idTipoTelefone;
 
     public Telefone(
         Integer id,
         Integer idCliente,
         String numero,
         String ramal,
-        int ddd,
-        int idTipoTelefone
+        int ddd
     )
     {
         this.id = id;
@@ -23,7 +21,17 @@ public class Telefone
         this.numero = numero;
         this.ramal = ramal;
         this.ddd = ddd;
-        this.idTipoTelefone = idTipoTelefone;
+    }
+
+    public Telefone(
+        String numero,
+        String ramal,
+        int ddd
+    )
+    {
+        this.numero = numero;
+        this.ramal = ramal;
+        this.ddd = ddd;
     }
 
     public void data(boolean tab)
@@ -36,7 +44,6 @@ public class Telefone
         System.out.println(tab_char + "\tnumero=" + this.numero + ",");
         System.out.println(tab_char + "\tramal=" + this.ramal + ",");
         System.out.println(tab_char + "\tddd=" + this.ddd + ",");
-        System.out.println(tab_char + "\tidTipoTelefone=" + this.idTipoTelefone + ",");
         System.out.println(tab_char + ")\n");
     }
 
@@ -63,10 +70,5 @@ public class Telefone
     public int getDdd()
     {
         return this.ddd;
-    }
-
-    public int getIdTipoTelefone()
-    {
-        return this.idTipoTelefone;
     }
 }

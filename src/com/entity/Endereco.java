@@ -4,32 +4,49 @@ public class Endereco
 {
     private Integer id;
     private Integer idCliente;
+    private int idUF;
     private String cep;
     private String logradouro;
     private int numero;
     private String complemento;
-    private int idTipoLogradouro;
-    private int idBairro;
+    private String municipio;
 
     public Endereco(
         Integer id,
         Integer idCliente,
+        int idUF,
         String cep,
         String logradouro,
         int numero,
         String complemento,
-        int idTipoLogradouro,
-        int idBairro
+        String municipio
     )
     {
         this.id = id;
         this.idCliente = idCliente;
+        this.idUF = idUF;
         this.cep = cep;
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
-        this.idTipoLogradouro = idTipoLogradouro;
-        this.idBairro = idBairro;
+        this.municipio = municipio;
+    }
+
+    public Endereco(
+        int idUF,
+        String cep,
+        String logradouro,
+        int numero,
+        String complemento,
+        String municipio
+    )
+    {
+        this.idUF = idUF;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.municipio = municipio;
     }
 
     public void data(boolean tab)
@@ -43,8 +60,7 @@ public class Endereco
         System.out.println(tab_char + "\tlogradouro=" + this.logradouro + ",");
         System.out.println(tab_char + "\tnumero=" + this.numero + ",");
         System.out.println(tab_char + "\tcomplemento=" + this.complemento + ",");
-        System.out.println(tab_char + "\tidTipoLogradouro=" + this.idTipoLogradouro + ",");
-        System.out.println(tab_char + "\tidBairro=" + this.idBairro + ",");
+        System.out.println(tab_char + "\tmunicipio=" + this.municipio + ",");
         System.out.println(tab_char + ")\n");
     }
 
@@ -78,13 +94,13 @@ public class Endereco
         return this.complemento;
     }
 
-    public int getIdTipoLogradouro()
+    public String getMunicipio()
     {
-        return this.idTipoLogradouro;
+        return this.municipio;
     }
 
-    public int getIdBairro()
+    public int getIdUF()
     {
-        return this.idBairro;
+        return this.idUF;
     }
 }
