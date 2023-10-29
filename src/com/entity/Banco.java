@@ -1,7 +1,5 @@
 package com.entity;
 
-import java.text.ParseException;
-
 
 public class Banco
 {
