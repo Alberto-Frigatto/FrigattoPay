@@ -55,21 +55,6 @@
 <dataTypePrecision>4</dataTypePrecision>
 <ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_tipo" id="34A0D95B-E24B-D30C-69B6-7388121099F9">
-<createdBy>alber</createdBy>
-<createdTime>2023-05-27 20:11:44 UTC</createdTime>
-<generatorID>B0A56767-267A-CE36-ED21-242FB0992561</generatorID>
-<ownerDesignName>fintech</ownerDesignName>
-<engineerTo>
-<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
-</engineerTo>
-<referedAttribute>15281EA4-5044-960D-9BBE-24AD8A648A32</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,9,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="nr_ddd" id="A7ADABD5-76C3-9512-CC10-F352243D31E2">
 <createdBy>alber</createdBy>
 <createdTime>2023-10-20 17:59:50 UTC</createdTime>

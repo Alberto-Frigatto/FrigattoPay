@@ -81,35 +81,18 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cd_tipo" id="C59A2CEB-2324-CC28-D01B-6742AED71137">
+<Attribute name="nm_municipio" id="2BEDA0F0-FDD6-7925-45DA-CB85A84F452E">
 <createdBy>alber</createdBy>
-<createdTime>2023-05-27 20:01:53 UTC</createdTime>
-<generatorID>4EB59767-FF3D-AB0A-9EFF-A754BC405090</generatorID>
+<createdTime>2023-10-29 01:35:41 UTC</createdTime>
 <ownerDesignName>fintech</ownerDesignName>
 <engineerTo>
 <item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
 </engineerTo>
-<referedAttribute>E358C102-17FC-6EF1-520C-2C8ED9176409</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,9,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cd_bairro" id="814731C8-C8B6-69CF-C61F-3AC0B10352D2">
-<createdBy>alber</createdBy>
-<createdTime>2023-05-27 20:02:23 UTC</createdTime>
-<generatorID>8FFCE8BF-E3ED-F3D4-B4F6-D3C7A581D4FD</generatorID>
-<ownerDesignName>fintech</ownerDesignName>
-<engineerTo>
-<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
-</engineerTo>
-<referedAttribute>D40D5B9E-7BF6-E22A-DB1E-13C5D11237A3</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 CHAR</dataTypeSize>
+<ownDataTypeParameters>70 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cd_cliente" id="CB53BB56-2C30-C1C6-91E7-3D2E178330A1">
 <createdBy>alber</createdBy>
@@ -126,6 +109,21 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>9</dataTypePrecision>
 <ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_uf" id="A127956B-A038-D6B6-3020-DB2C2B86D8C7">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-29 01:24:17 UTC</createdTime>
+<generatorID>200F954F-86E2-FABE-D692-0AAAEE73CECB</generatorID>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<referedAttribute>AB4AC5BD-FAAD-553B-2C63-F29B7DD4980F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

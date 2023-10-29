@@ -1,4 +1,4 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="main_view" objectID="6C8D28A8-42D4-B3B8-F220-A33772FE9C7F" name="FIAP" visible="true"/>
+   <object objectType="main_view" objectID="6C8D28A8-42D4-B3B8-F220-A33772FE9C7F" name="FIAP" visible="false"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>
