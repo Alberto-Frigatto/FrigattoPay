@@ -30,6 +30,17 @@ public abstract class Cliente
         this.senha = senha;
     }
 
+    public Cliente(
+        String nome,
+        String email,
+        String senha
+    )
+    {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+
     public void addTelefone(Telefone telefone)
     {
         this.telefones.add(telefone);

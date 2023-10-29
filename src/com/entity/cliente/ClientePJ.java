@@ -32,6 +32,24 @@ public class ClientePJ extends Cliente
         this.dataAbertura = this.dateFormat.parse(dataAbertura);
     }
 
+    public ClientePJ(
+        String nome,
+        String email,
+        String senha,
+        String cnpj,
+        String inscricaoEstadual,
+        String dataAbertura,
+        String setor
+    ) throws ParseException
+    {
+        super(nome, email, senha);
+        this.cnpj = cnpj;
+        this.inscricaoEstadual = inscricaoEstadual;
+        this.setor = setor;
+
+        this.dataAbertura = this.dateFormat.parse(dataAbertura);
+    }
+
     public void data()
     {
         System.out.println("ClientePF(");

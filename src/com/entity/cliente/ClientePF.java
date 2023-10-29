@@ -29,6 +29,22 @@ public class ClientePF extends Cliente
         this.dataNascimento = this.dateFormat.parse(dataNascimento);
     }
 
+    public ClientePF(
+        String nome,
+        String email,
+        String senha,
+        String cpf,
+        String rg,
+        String dataNascimento
+    ) throws ParseException
+    {
+        super(nome, email, senha);
+        this.cpf = cpf;
+        this.rg = rg;
+
+        this.dataNascimento = this.dateFormat.parse(dataNascimento);
+    }
+
     public void data()
     {
         System.out.println("ClientePF(");

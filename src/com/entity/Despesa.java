@@ -34,6 +34,23 @@ public class Despesa
         this.dataVencimento = this.dateFormat.parse(dataVencimento);
     }
 
+    public Despesa(
+        Integer idCliente,
+        int idTipoDespesa,
+        String nome,
+        double valor,
+        String descricao,
+        String dataVencimento
+    ) throws ParseException
+    {
+        this.idCliente = idCliente;
+        this.idTipoDespesa = idTipoDespesa;
+        this.nome = nome;
+        this.valor = valor;
+        this.descricao = descricao;
+        this.dataVencimento = this.dateFormat.parse(dataVencimento);
+    }
+
     public void data()
     {
         System.out.println("Despesa(");

@@ -27,6 +27,19 @@ public class Receita {
         this.dataReceita = this.dateFormat.parse(dataReceita);
     }
 
+    public Receita(
+        int idCliente,
+        int idTipoReceita,
+        double valor,
+        String dataReceita
+    ) throws ParseException
+    {
+        this.idCliente = idCliente;
+        this.idTipoReceita = idTipoReceita;
+        this.valor = valor;
+        this.dataReceita = this.dateFormat.parse(dataReceita);
+    }
+
     public void data()
     {
         System.out.println("Receita(");
