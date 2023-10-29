@@ -15,6 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_banco" id="6A653141-E272-720F-C013-DDDB86165ECC">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-29 14:34:27 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="nr_cnpj" id="17CD923F-97F6-A2C1-C3FB-27AA01918376">
 <createdBy>Gustavo</createdBy>
 <createdTime>2023-05-28 20:31:31 UTC</createdTime>
@@ -64,9 +77,9 @@
 <item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>17CD923F-97F6-A2C1-C3FB-27AA01918376</newElementsIDs>
+<newElementsIDs>6A653141-E272-720F-C013-DDDB86165ECC</newElementsIDs>
 <usedAttributes>
-<attributeRef>17CD923F-97F6-A2C1-C3FB-27AA01918376</attributeRef>
+<attributeRef>6A653141-E272-720F-C013-DDDB86165ECC</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
