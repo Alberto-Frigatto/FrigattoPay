@@ -36,6 +36,17 @@ public class Telefone
         this.ddd = ddd;
     }
 
+    public Telefone(
+        String numero,
+        String ramal,
+        int ddd
+    )
+    {
+        this.numero = numero;
+        this.ramal = ramal;
+        this.ddd = ddd;
+    }
+
     public void data(boolean tab)
     {
         String tab_char = tab ? "\t\t" : "";
