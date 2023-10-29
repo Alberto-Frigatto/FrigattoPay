@@ -24,11 +24,13 @@ public class Telefone
     }
 
     public Telefone(
+        Integer idCliente,
         String numero,
         String ramal,
         int ddd
     )
     {
+        this.idCliente = idCliente;
         this.numero = numero;
         this.ramal = ramal;
         this.ddd = ddd;
@@ -52,7 +54,7 @@ public class Telefone
         return this.id;
     }
 
-    public int getIdCliente()
+    public Integer getIdCliente()
     {
         return this.idCliente;
     }
@@ -62,13 +64,28 @@ public class Telefone
         return this.numero;
     }
 
+    public void updateNumero(String value)
+    {
+        this.numero = value;
+    }
+
     public String getRamal()
     {
         return this.ramal;
     }
 
+    public void updateRamal(String value)
+    {
+        this.ramal = value;
+    }
+
     public int getDdd()
     {
         return this.ddd;
+    }
+
+    public void updateDdd(int value)
+    {
+        this.ddd = value;
     }
 }
