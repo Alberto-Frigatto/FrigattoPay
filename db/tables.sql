@@ -1,8 +1,7 @@
 CREATE TABLE t_fp_banco (    
     nr_cnpj           CHAR(14) NOT NULL,
     nm_banco_parceiro VARCHAR2(50) NOT NULL,
-    ds_email          VARCHAR2(320) NOT NULL,
-    vl_taxa_servicos  CLOB NOT NULL
+    ds_email          VARCHAR2(320) NOT NULL
 );
 
 ALTER TABLE t_fp_banco ADD CONSTRAINT t_fp_banco_pk PRIMARY KEY ( nr_cnpj );
