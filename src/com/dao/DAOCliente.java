@@ -50,6 +50,7 @@ public abstract class DAOCliente extends DAO
                 FROM T_FP_TELEFONE T, T_FP_CLIENTE C
                     WHERE T.t_fp_cliente_cd_cliente = C.cd_cliente AND
                           C.cd_cliente = ?
+                    ORDER BY T.cd_telefone
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);
@@ -99,6 +100,7 @@ public abstract class DAOCliente extends DAO
                 FROM T_FP_ENDERECO E, T_FP_CLIENTE C
                     WHERE E.t_fp_cliente_cd_cliente = C.cd_cliente AND
                           C.cd_cliente = ?
+                    ORDER BY E.cd_endereco
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

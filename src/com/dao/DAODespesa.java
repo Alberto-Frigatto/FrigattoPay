@@ -60,6 +60,7 @@ public class DAODespesa extends DAO
                 dt_vencimento
 
                 FROM T_FP_DESPESA
+                    ORDER BY cd_despesa
         """;
 
         return stmt.executeQuery(query);        
@@ -101,6 +102,7 @@ public class DAODespesa extends DAO
 
                 FROM T_FP_DESPESA
                     WHERE cd_despesa = ?
+                    ORDER BY cd_despesa
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

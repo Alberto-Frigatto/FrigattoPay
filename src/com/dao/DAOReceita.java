@@ -48,15 +48,16 @@ public class DAOReceita extends DAO
         Statement stmt = this.conn.createStatement();
 
         String query = """
-                SELECT
-                    cd_receita, 
-                    t_fp_cliente_cd_cliente, 
-                    t_fp_tipo_receita_cd_tipo, 
-                    vl_receita, 
-                    dt_receita
+            SELECT
+                cd_receita, 
+                t_fp_cliente_cd_cliente, 
+                t_fp_tipo_receita_cd_tipo, 
+                vl_receita, 
+                dt_receita
 
-                    FROM T_FP_RECEITA
-                """;
+                FROM T_FP_RECEITA
+                    ORDER BY cd_receita
+        """;
 
         return stmt.executeQuery(query);        
     }
@@ -93,6 +94,7 @@ public class DAOReceita extends DAO
 
                 FROM T_FP_RECEITA
                     WHERE cd_receita = ?
+                    ORDER BY cd_receita
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

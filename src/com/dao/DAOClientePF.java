@@ -64,6 +64,7 @@ public class DAOClientePF extends DAOCliente
             SELECT C.cd_cliente, C.nm_cliente, C.ds_email, C.ds_senha, PF.nr_cpf, PF.nr_rg, PF.dt_nascimento
                 FROM T_FP_CLIENTE C, T_FP_CLIENTE_PF PF
                     WHERE C.cd_cliente = PF.t_fp_cliente_cd_cliente
+                    ORDER BY C.cd_cliente
         """;
 
         return stmt.executeQuery(query);
@@ -106,6 +107,7 @@ public class DAOClientePF extends DAOCliente
                 FROM T_FP_CLIENTE C, T_FP_CLIENTE_PF PF
                     WHERE C.cd_cliente = PF.t_fp_cliente_cd_cliente AND
                           C.cd_cliente = ?
+                    ORDER BY C.cd_cliente
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);
