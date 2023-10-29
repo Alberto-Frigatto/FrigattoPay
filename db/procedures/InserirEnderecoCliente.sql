@@ -4,12 +4,10 @@ create or replace PROCEDURE InserirEnderecoCliente(
     p_nm_logradouro IN t_fp_endereco.nm_logradouro%type,
     p_nr_logradouro IN t_fp_endereco.nr_logradouro%type,
     p_ds_complemento IN t_fp_endereco.ds_complemento%type,
-    p_cd_tipo_logradouro IN t_fp_endereco.t_fp_tipo_lograd_cd_tipo%type,
-    p_cd_bairro IN t_fp_endereco.t_fp_bairro_cd_bairro%type
+    P_nm_municipio IN t_fp_endereco.nm_municipio%type,
+    p_cd_uf IN t_fp_uf.cd_uf%type
 )
-IS
-    v_cd_endereco NUMBER;
-BEGIN
+IS BEGIN
     INSERT INTO t_fp_endereco
         (
             cd_endereco,
@@ -17,8 +15,8 @@ BEGIN
             nm_logradouro,
             nr_logradouro,
             ds_complemento,
-            t_fp_tipo_lograd_cd_tipo,
-            t_fp_bairro_cd_bairro,
+            nm_municipio,
+            t_fp_uf_cd_uf,
             t_fp_cliente_cd_cliente
         )
         VALUES (
@@ -27,8 +25,8 @@ BEGIN
             p_nm_logradouro,
             p_nr_logradouro,
             p_ds_complemento,
-            p_cd_tipo_logradouro,
-            p_cd_bairro,
+            P_nm_municipio,
+            p_cd_uf,
             p_cd_cliente
         );
 
