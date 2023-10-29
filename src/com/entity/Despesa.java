@@ -7,7 +7,7 @@ import java.util.Date;
 public class Despesa
 {
     private Integer id;
-    private Integer idCliente;
+    private int idCliente;
     private int idTipoDespesa;
     private String nome;
     private double valor;
@@ -17,7 +17,7 @@ public class Despesa
 
     public Despesa(
         Integer id,
-        Integer idCliente,
+        int idCliente,
         int idTipoDespesa,
         String nome,
         double valor,
@@ -35,7 +35,7 @@ public class Despesa
     }
 
     public Despesa(
-        Integer idCliente,
+        int idCliente,
         int idTipoDespesa,
         String nome,
         double valor,
@@ -74,14 +74,9 @@ public class Despesa
         this.id = value;
     }
 
-    public Integer getIdCliente()
+    public int getIdCliente()
     {
         return this.idCliente;
-    }
-
-    public void updateIdCliente(Integer value)
-    {
-        this.idCliente = value;
     }
 
     public int getIdTipoDespesa()
