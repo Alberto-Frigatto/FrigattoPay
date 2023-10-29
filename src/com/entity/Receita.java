@@ -56,19 +56,9 @@ public class Receita {
         return this.id;
     }
 
-    public void updateId(Integer value)
-    {
-        this.id = value;
-    }
-
     public int getIdCliente()
     {
         return this.idCliente;
-    }
-
-    public void updateIdCliente(int value)
-    {
-        this.idCliente = value;
     }
 
     public int getIdTipoReceita()
