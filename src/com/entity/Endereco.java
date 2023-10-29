@@ -33,6 +33,25 @@ public class Endereco
     }
 
     public Endereco(
+        Integer idCliente,
+        int idUF,
+        String cep,
+        String logradouro,
+        int numero,
+        String complemento,
+        String municipio
+    )
+    {
+        this.idCliente = idCliente;
+        this.idUF = idUF;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.municipio = municipio;
+    }
+
+    public Endereco(
         int idUF,
         String cep,
         String logradouro,
@@ -56,6 +75,7 @@ public class Endereco
         System.out.println(tab_char + "Endereco(");
         System.out.println(tab_char + "\tid=" + this.id + ",");
         System.out.println(tab_char + "\tidCliente=" + this.idCliente + ",");
+        System.out.println(tab_char + "\tidUF=" + this.idUF + ",");
         System.out.println(tab_char + "\tcep=" + this.cep + ",");
         System.out.println(tab_char + "\tlogradouro=" + this.logradouro + ",");
         System.out.println(tab_char + "\tnumero=" + this.numero + ",");
@@ -69,9 +89,19 @@ public class Endereco
         return this.id;
     }
 
-    public int getIdCliente()
+    public Integer getIdCliente()
     {
         return this.idCliente;
+    }
+
+    public int getIdUF()
+    {
+        return this.idUF;
+    }
+
+    public void updateIdUF(int value)
+    {
+        this.idUF = value;
     }
 
     public String getCep()
@@ -79,9 +109,19 @@ public class Endereco
         return this.cep;
     }
 
+    public void updateCep(String value)
+    {
+        this.cep = value;
+    }
+
     public String getLogradouro()
     {
         return this.logradouro;
+    }
+
+    public void updateLogradouro(String value)
+    {
+        this.logradouro = value;
     }
 
     public int getNumero()
@@ -89,9 +129,19 @@ public class Endereco
         return this.numero;
     }
 
+    public void updateNumero(int value)
+    {
+        this.numero = value;
+    }
+
     public String getComplemento()
     {
         return this.complemento;
+    }
+
+    public void updateComplemento(String value)
+    {
+        this.complemento = value;
     }
 
     public String getMunicipio()
@@ -99,8 +149,8 @@ public class Endereco
         return this.municipio;
     }
 
-    public int getIdUF()
+    public void updateMunicipio(String value)
     {
-        return this.idUF;
+        this.municipio = value;
     }
 }
