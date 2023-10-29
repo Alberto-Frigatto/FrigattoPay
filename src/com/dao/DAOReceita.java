@@ -82,7 +82,7 @@ public class DAOReceita extends DAO
         return receita;
     }
 
-    protected ResultSet getReceita(int id) throws SQLException
+    private ResultSet getReceita(int id) throws SQLException
     {
         String query = """
             SELECT
