@@ -38,8 +38,8 @@ public class TipoConta {
         return this.nome;
     }
 
-    public String updateNome()
+    public void updateNome(String value)
     {
-        return this.nome;
+        this.nome = value;
     }
 }
