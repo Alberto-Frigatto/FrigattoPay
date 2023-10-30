@@ -90,7 +90,6 @@ public class DAOTelefone extends DAO
 
                 FROM T_FP_TELEFONE
                     WHERE cd_telefone = ?
-                    ORDER BY cd_telefone
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

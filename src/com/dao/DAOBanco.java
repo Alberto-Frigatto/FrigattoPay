@@ -86,7 +86,6 @@ public class DAOBanco extends DAO
 
                 FROM T_fp_banco
                     WHERE cd_banco = ?
-                    ORDER BY cd_banco
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

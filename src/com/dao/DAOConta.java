@@ -97,7 +97,6 @@ public class DAOConta extends DAO
 
                 FROM T_FP_CONTA
                     WHERE cd_conta = ?
-                    ORDER BY cd_conta
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

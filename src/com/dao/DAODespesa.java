@@ -102,7 +102,6 @@ public class DAODespesa extends DAO
 
                 FROM T_FP_DESPESA
                     WHERE cd_despesa = ?
-                    ORDER BY cd_despesa
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

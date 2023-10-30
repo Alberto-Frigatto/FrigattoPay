@@ -109,7 +109,6 @@ public class DAOClientePJ extends DAOCliente
                 FROM T_FP_CLIENTE C, T_FP_CLIENTE_PJ PJ
                     WHERE C.cd_cliente = PJ.t_fp_cliente_cd_cliente AND
                             C.cd_cliente = ?
-                    ORDER BY C.cd_cliente
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

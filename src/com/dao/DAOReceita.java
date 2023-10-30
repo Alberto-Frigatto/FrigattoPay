@@ -94,7 +94,6 @@ public class DAOReceita extends DAO
 
                 FROM T_FP_RECEITA
                     WHERE cd_receita = ?
-                    ORDER BY cd_receita
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);

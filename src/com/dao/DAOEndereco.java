@@ -101,7 +101,6 @@ public class DAOEndereco extends DAO
 
                 FROM T_FP_ENDERECO
                     WHERE cd_endereco = ?
-                    ORDER BY cd_endereco
         """;
 
         PreparedStatement pstmt = this.conn.prepareStatement(query);
