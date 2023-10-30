@@ -8,6 +8,7 @@ public abstract class DAO
 {
     protected Connection conn;
     protected SimpleDateFormat dateFormatComplete = new SimpleDateFormat("dd-MM-yyyy");
+    protected SimpleDateFormat dateFormatMonthYear = new SimpleDateFormat("MM-yy");
 
     public DAO(Connection conn)
     {
@@ -19,5 +20,12 @@ public abstract class DAO
         Long resultDate = date.getTime();
         java.util.Date rawDate = new java.util.Date(resultDate);
         return this.dateFormatComplete.format(rawDate);
+    }
+
+    protected String formatMonthYearDate(Date date)
+    {
+        Long resultDate = date.getTime();
+        java.util.Date rawDate = new java.util.Date(resultDate);
+        return this.dateFormatMonthYear.format(rawDate);
     }
 }
