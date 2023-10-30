@@ -15,6 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_cartao" id="6281FA93-C303-A624-9E00-F4FA01625ED1">
+<createdBy>alber</createdBy>
+<createdTime>2023-10-30 00:31:53 UTC</createdTime>
+<ownerDesignName>fintech</ownerDesignName>
+<engineerTo>
+<item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="nr_cartao" id="12B78594-1C58-B205-D969-72B93578B41F">
 <createdBy>alber</createdBy>
 <createdTime>2023-05-27 22:27:25 UTC</createdTime>
@@ -24,9 +37,9 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>16</dataTypePrecision>
-<ownDataTypeParameters>,16,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 CHAR</dataTypeSize>
+<ownDataTypeParameters>16 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="dt_validade" id="98369255-E56E-3869-9D05-F1CBE148A41A">
 <createdBy>alber</createdBy>
@@ -62,9 +75,9 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cd_tipo" id="38325C40-FA11-F5E1-3A7D-2F3B99B2BF3D">
 <createdBy>alber</createdBy>
@@ -121,9 +134,9 @@
 <item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>12B78594-1C58-B205-D969-72B93578B41F</newElementsIDs>
+<newElementsIDs>6281FA93-C303-A624-9E00-F4FA01625ED1</newElementsIDs>
 <usedAttributes>
-<attributeRef>12B78594-1C58-B205-D969-72B93578B41F</attributeRef>
+<attributeRef>6281FA93-C303-A624-9E00-F4FA01625ED1</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

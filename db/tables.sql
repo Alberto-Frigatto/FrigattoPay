@@ -15,10 +15,10 @@ CREATE TABLE t_fp_bandeira (
 ALTER TABLE t_fp_bandeira ADD CONSTRAINT t_fp_bandeira_pk PRIMARY KEY ( cd_bandeira );
 
 CREATE TABLE t_fp_cartao (
-    nr_cartao                 NUMBER(16) NOT NULL,
+    nr_cartao                 VARCHAR(16) NOT NULL,
     dt_validade               DATE NOT NULL,
     nr_cvv                    VARCHAR2(3) NOT NULL,
-    vl_cartao_desbloqueado    NUMBER NOT NULL,
+    vl_cartao_desbloqueado    NUMBER(1) NOT NULL,
     t_fp_tipo_cartao_cd_tipo  NUMBER(9) NOT NULL,
     t_fp_bandeira_cd_bandeira NUMBER(9) NOT NULL,
     t_fp_conta_cd_conta       NUMBER(9) NOT NULL
@@ -65,8 +65,6 @@ CREATE TABLE t_fp_conta (
 );
 
 ALTER TABLE t_fp_conta ADD CONSTRAINT t_fp_conta_pk PRIMARY KEY ( cd_conta );
-
-ALTER TABLE t_fp_conta_conj ADD CONSTRAINT t_fp_conta_conj_pk PRIMARY KEY ( cd_conta_conj );
 
 CREATE TABLE t_fp_conta_invs (
     cd_conta_invs       NUMBER(9) NOT NULL,
