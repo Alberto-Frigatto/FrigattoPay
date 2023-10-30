@@ -88,10 +88,9 @@ public class DAOTipoConta extends DAO
 
     public void insert(TipoConta tipoConta) throws SQLException
     {
-        CallableStatement cs = conn.prepareCall("{ call InserirTipoConta(?, ?) }");
+        CallableStatement cs = conn.prepareCall("{ call InserirTipoConta(?) }");
 
-        cs.setInt(1, tipoConta.getId());
-        cs.setString(2, tipoConta.getNome());
+        cs.setString(1, tipoConta.getNome());
         cs.execute();
     }
 
