@@ -107,10 +107,11 @@
 <item key="9EA23442-2A1A-EFAE-6400-25B0B30C0F3C" value="true"/>
 </engineerTo>
 <referedAttribute>6A653141-E272-720F-C013-DDDB86165ECC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>9</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
