@@ -69,11 +69,6 @@ public class Despesa
         return this.id;
     }
 
-    public void updateId(Integer value)
-    {
-        this.id = value;
-    }
-
     public int getIdCliente()
     {
         return this.idCliente;
