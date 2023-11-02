@@ -9,7 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Telefone;
+import com.entity.telefone.Telefone;
+import com.entity.telefone.TelefoneExceptions.TelefoneException;
 
 public class DAOTelefone extends DAO
 {
@@ -19,7 +20,7 @@ public class DAOTelefone extends DAO
         super(conn);
     }
 
-    public List<Telefone> getAll() throws SQLException
+    public List<Telefone> getAll() throws SQLException, TelefoneException
     {
         List<Telefone> telefones = new ArrayList<Telefone>();
         
@@ -60,7 +61,7 @@ public class DAOTelefone extends DAO
         return stmt.executeQuery(query);
     }
 
-    public Telefone getById(int id) throws SQLException
+    public Telefone getById(int id) throws SQLException, TelefoneException
     {
         ResultSet result = this.getTelefone(id);
 
@@ -122,7 +123,7 @@ public class DAOTelefone extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException
+    public void delete(int id) throws SQLException, TelefoneException
     {
         Telefone telefone = this.getById(id);
 
