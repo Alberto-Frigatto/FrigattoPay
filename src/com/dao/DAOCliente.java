@@ -8,8 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Endereco;
-import com.entity.Telefone;
+import com.entity.endereco.Endereco;
+import com.entity.endereco.EnderecoExceptions.EnderecoException;
+import com.entity.telefone.Telefone;
+import com.entity.telefone.TelefoneExceptions.TelefoneException;
 
 public abstract class DAOCliente extends DAO
 {
@@ -21,7 +23,7 @@ public abstract class DAOCliente extends DAO
     protected abstract ResultSet getClientes() throws SQLException;
     protected abstract ResultSet getCliente(int id) throws SQLException;
 
-    protected List<Telefone> instantiateTelefones(int idCliente) throws SQLException
+    protected List<Telefone> instantiateTelefones(int idCliente) throws SQLException, TelefoneException
     {
         List<Telefone> telefonesList = new ArrayList<Telefone>();
 
@@ -60,7 +62,7 @@ public abstract class DAOCliente extends DAO
         return pstmt.executeQuery();
     }
 
-    protected List<Endereco> instantiateEnderecos(int idCliente) throws SQLException
+    protected List<Endereco> instantiateEnderecos(int idCliente) throws SQLException, EnderecoException
     {
         List<Endereco> enderecosList = new ArrayList<Endereco>();
 
