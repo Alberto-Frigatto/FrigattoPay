@@ -11,9 +11,12 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Endereco;
-import com.entity.Telefone;
 import com.entity.cliente.ClientePF;
+import com.entity.cliente.exceptions.ClienteExceptions.ClienteException;
+import com.entity.endereco.Endereco;
+import com.entity.endereco.EnderecoExceptions.EnderecoException;
+import com.entity.telefone.Telefone;
+import com.entity.telefone.TelefoneExceptions.TelefoneException;
 
 public class DAOClientePF extends DAOCliente
 {
@@ -22,7 +25,7 @@ public class DAOClientePF extends DAOCliente
         super(conn);
     }
 
-    public List<ClientePF> getAll() throws SQLException, ParseException
+    public List<ClientePF> getAll() throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
     {
         List<ClientePF> clientesList = new ArrayList<ClientePF>();
 
@@ -56,6 +59,7 @@ public class DAOClientePF extends DAOCliente
         return clientesList;
     }
 
+    @Override
     protected ResultSet getClientes() throws SQLException
     {
         Statement stmt = this.conn.createStatement();
@@ -70,7 +74,7 @@ public class DAOClientePF extends DAOCliente
         return stmt.executeQuery(query);
     }
 
-    public ClientePF getById(int id) throws SQLException, ParseException
+    public ClientePF getById(int id) throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
     {
         ResultSet result = this.getCliente(id);
 
@@ -100,6 +104,7 @@ public class DAOClientePF extends DAOCliente
         return clientePF;
     }
 
+    @Override
     protected ResultSet getCliente(int id) throws SQLException
     {
         String query = """
@@ -149,7 +154,7 @@ public class DAOClientePF extends DAOCliente
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
     {
         ClientePF cliente = this.getById(id);
 
