@@ -9,7 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Endereco;
+import com.entity.endereco.Endereco;
+import com.entity.endereco.EnderecoExceptions.EnderecoException;
 
 public class DAOEndereco extends DAO
 {
@@ -18,7 +19,7 @@ public class DAOEndereco extends DAO
         super(conn);
     }
 
-    public List<Endereco> getAll() throws SQLException
+    public List<Endereco> getAll() throws SQLException, EnderecoException
     {
         List<Endereco> enderecos = new ArrayList<Endereco>();
         
@@ -65,7 +66,7 @@ public class DAOEndereco extends DAO
         return stmt.executeQuery(query);
     }
 
-    public Endereco getById(int id) throws SQLException
+    public Endereco getById(int id) throws SQLException, EnderecoException
     {
         ResultSet result = this.getEndereco(id);
 
@@ -138,7 +139,7 @@ public class DAOEndereco extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException
+    public void delete(int id) throws SQLException, EnderecoException
     {
         Endereco endereco = this.getById(id);
 
