@@ -1,11 +1,14 @@
 package com.entity.cliente;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Endereco;
-import com.entity.Telefone;
+import com.entity.cliente.exceptions.ClienteExceptions.*;
+import com.entity.endereco.Endereco;
+import com.entity.telefone.Telefone;
 
 public abstract class Cliente
 {
@@ -22,23 +25,92 @@ public abstract class Cliente
         String nome,
         String email,
         String senha
-    )
+    ) throws ClienteException
     {
         this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+        this.nome = nome.strip();
+        this.email = email.strip();
+        this.senha = senha.strip();
+
+        this.validarNome();
+        this.validarEmail();
+        this.criptografarSenhaSeValida();
     }
 
     public Cliente(
         String nome,
         String email,
         String senha
-    )
+    ) throws ClienteException
     {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+        this.nome = nome.strip();
+        this.email = email.strip();
+        this.senha = senha.strip();
+
+        this.validarNome();
+        this.validarEmail();
+        this.criptografarSenhaSeValida();
+    }
+
+    private void validarNome() throws NomeInvalidoException
+    {
+        if (!this.nomeEValido())
+            throw new NomeInvalidoException();
+    }
+
+    protected abstract boolean nomeEValido();
+
+    private void validarEmail() throws EmailInvalidoException
+    {
+        if (!this.emailEValido())
+            throw new EmailInvalidoException();
+    }
+
+    private boolean emailEValido()
+    {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@([A-Za-z0-9]+\\.)+[A-Za-z]{2,}$";
+
+        return this.email.matches(emailRegex);
+    }
+
+    private void criptografarSenhaSeValida() throws SenhaInvalidaException
+    {
+        if (!this.senhaEValida())
+            throw new SenhaInvalidaException();
+
+        this.senha = criptografarSenha(this.senha);
+    }
+
+    private boolean senhaEValida()
+    {
+        String senhaRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!_\\-()&¨%'\"<>:;/?~^{}´`]).{8,}$";
+
+        return this.senha.matches(senhaRegex);
+    }
+    private boolean senhaEValida(String senha)
+    {
+        String senhaRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!_\\-()&¨%'\"<>:;/?~^{}´`]).{8,}$";
+
+        return senha.matches(senhaRegex);
+    }
+
+    private String criptografarSenha(String senha)
+    {
+        try
+        {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedBytes = md.digest(senha.getBytes());
+
+            StringBuilder stringBuilder = new StringBuilder();
+            for (byte b : hashedBytes)
+                stringBuilder.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+
+            return stringBuilder.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            throw new RuntimeException("Error hashing password.");
+        }
     }
 
     public void addTelefone(Telefone telefone)
@@ -53,7 +125,7 @@ public abstract class Cliente
             this.telefones.add(telefone);
         }
     }
-    
+
     public void addEndereco(Endereco endereco)
     {
         this.enderecos.add(endereco);
@@ -72,19 +144,17 @@ public abstract class Cliente
         return this.id;
     }
 
-    public void updateId(Integer value)
-    {
-        this.id = value;
-    }
-
     public String getNome()
     {
         return this.nome;
     }
 
-    public void updateNome(String value)
+    public void updateNome(String value) throws NomeInvalidoException
     {
         this.nome = value;
+
+        if (!this.nomeEValido())
+            throw new NomeInvalidoException();
     }
 
     public String getEmail()
@@ -92,9 +162,12 @@ public abstract class Cliente
         return this.email;
     }
 
-    public void updateEmail(String value)
+    public void updateEmail(String value) throws EmailInvalidoException
     {
         this.email = value;
+
+        if (!this.emailEValido())
+            throw new EmailInvalidoException();
     }
 
     public String getSenha()
@@ -102,9 +175,12 @@ public abstract class Cliente
         return this.senha;
     }
 
-    public void updateSenha(String value)
+    public void updateSenha(String value) throws SenhaInvalidaException
     {
-        this.senha = value;
+        if (!this.senhaEValida(value))
+            throw new SenhaInvalidaException();
+
+        this.senha = criptografarSenha(this.senha);
     }
 
     public List<Telefone> getTelefones()
