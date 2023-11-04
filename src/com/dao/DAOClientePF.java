@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class DAOClientePF extends DAOCliente
         super(conn);
     }
 
-    public List<ClientePF> getAll() throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
+    public List<ClientePF> getAll() throws SQLException, ClienteException, TelefoneException, EnderecoException
     {
         List<ClientePF> clientesList = new ArrayList<ClientePF>();
 
@@ -74,7 +73,7 @@ public class DAOClientePF extends DAOCliente
         return stmt.executeQuery(query);
     }
 
-    public ClientePF getById(int id) throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
+    public ClientePF getById(int id) throws SQLException, ClienteException, TelefoneException, EnderecoException
     {
         ResultSet result = this.getCliente(id);
 
@@ -154,7 +153,7 @@ public class DAOClientePF extends DAOCliente
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException, ClienteException, TelefoneException, EnderecoException
+    public void delete(int id) throws SQLException, ClienteException, TelefoneException, EnderecoException
     {
         ClientePF cliente = this.getById(id);
 
