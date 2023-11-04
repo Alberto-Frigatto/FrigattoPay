@@ -1,8 +1,10 @@
-package com.entity;
+package com.entity.conta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.entity.conta.exceptions.CartaoExceptions.*;
 
 public class Cartao
 {
@@ -18,42 +20,100 @@ public class Cartao
 
     public Cartao(
         Integer id,
-        String numero,
         int idConta,
         int idBandeira,
         int idTipoCartao,
+        String numero,
         String dataValidade,
         String cvv,
         boolean desbloqueado
-    ) throws ParseException
+    ) throws CartaoException
     {
         this.id = id;
-        this.numero = numero;
         this.idConta = idConta;
         this.idBandeira = idBandeira;
         this.idTipoCartao = idTipoCartao;
-        this.dataValidade = this.dateFormat.parse(dataValidade);
-        this.cvv = cvv;
+        this.numero = numero.strip();
+        this.cvv = cvv.strip();
         this.desbloqueado = desbloqueado;
+
+        this.validarNumero();
+        this.validarCvv();
+        this.definirDataValidadeSeValida(dataValidade);
     }
 
     public Cartao(
-        String numero,
         int idConta,
         int idBandeira,
         int idTipoCartao,
+        String numero,
         String dataValidade,
         String cvv,
         boolean desbloqueado
-    ) throws ParseException
+    ) throws CartaoException
     {
-        this.numero = numero;
         this.idConta = idConta;
         this.idBandeira = idBandeira;
         this.idTipoCartao = idTipoCartao;
-        this.dataValidade = this.dateFormat.parse(dataValidade);
-        this.cvv = cvv;
+        this.numero = numero.strip();
+        this.cvv = cvv.strip();
         this.desbloqueado = desbloqueado;
+
+        this.validarNumero();
+        this.validarCvv();
+        this.definirDataValidadeSeValida(dataValidade);
+    }
+
+    private void validarNumero() throws NumeroInvalidoException
+    {
+        if (!this.numeroEValido())
+            throw new NumeroInvalidoException();
+    }
+
+    private boolean numeroEValido()
+    {
+        if (this.numero.isEmpty() ||
+            this.numero.length() < 15 || 
+            this.numero.length() > 16)
+            return false;
+
+        for (char c : this.numero.toCharArray())
+            if (!Character.isDigit(c))
+                return false;
+
+        return true;
+    }
+
+    private void definirDataValidadeSeValida(String dataValidade) throws DataValidadeInvalidaException
+    {
+        try
+        {
+            this.dataValidade = this.dateFormat.parse(dataValidade);
+        }
+        catch (ParseException e)
+        {
+            throw new DataValidadeInvalidaException();
+        }
+    }
+
+    private void validarCvv() throws CvvInvalidoException
+    {
+        if (!this.cvvEValido())
+            throw new CvvInvalidoException();
+    }
+
+    private boolean cvvEValido()
+    {
+        if (this.cvv.isEmpty() ||
+            this.cvv.length() < 3 ||
+            this.cvv.length() > 4)
+            return false;
+
+        for (char c : this.cvv.toCharArray())
+            if (!Character.isDigit(c))
+                return false;
+
+        return true;
     }
 
     public void data()
