@@ -9,7 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Conta;
+import com.entity.conta.Conta;
+import com.entity.conta.ContaExceptions.ContaException;
 
 public class DAOConta extends DAO
 {
@@ -18,7 +19,7 @@ public class DAOConta extends DAO
         super(conn);
     }
 
-    public List<Conta> getAll() throws SQLException
+    public List<Conta> getAll() throws SQLException, ContaException
     {
         List<Conta> contas = new ArrayList<Conta>();
         
@@ -63,7 +64,7 @@ public class DAOConta extends DAO
         return stmt.executeQuery(query);        
     }
 
-    public Conta getById(int id) throws SQLException
+    public Conta getById(int id) throws SQLException, ContaException
     {
         ResultSet result = this.getConta(id);
 
@@ -129,7 +130,7 @@ public class DAOConta extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException
+    public void delete(int id) throws SQLException, ContaException
     {
         Conta conta = this.getById(id);
 
