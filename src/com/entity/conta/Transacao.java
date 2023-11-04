@@ -1,4 +1,4 @@
-package com.entity;
+package com.entity.conta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
