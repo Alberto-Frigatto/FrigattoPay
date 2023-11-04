@@ -17,9 +17,9 @@ public class Banco
     ) throws BancoException
     {
         this.id = id;
-        this.cnpj = cnpj;
-        this.nome = nome;
-        this.email = email;
+        this.cnpj = cnpj.strip();
+        this.nome = nome.strip();
+        this.email = email.strip();
 
         this.validarCnpj();
         this.validarNome();
@@ -32,9 +32,9 @@ public class Banco
         String email
     ) throws BancoException
     {
-        this.cnpj = cnpj;
-        this.nome = nome;
-        this.email = email;
+        this.cnpj = cnpj.strip();
+        this.nome = nome.strip();
+        this.email = email.strip();
 
         this.validarCnpj();
         this.validarNome();
