@@ -1,4 +1,4 @@
-package com.entity.conta;
+package com.entity.conta.exceptions;
 
 public class ContaExceptions
 {
