@@ -24,8 +24,8 @@ public class Telefone
     {
         this.id = id;
         this.idCliente = idCliente;
-        this.numero = numero;
-        this.ramal = ramal;
+        this.numero = numero.strip();
+        this.ramal = ramal.strip();
         this.ddd = ddd;
 
         this.validarNumero();
@@ -41,8 +41,8 @@ public class Telefone
     ) throws TelefoneException
     {
         this.idCliente = idCliente;
-        this.numero = numero;
-        this.ramal = ramal;
+        this.numero = numero.strip();
+        this.ramal = ramal.strip();
         this.ddd = ddd;
 
         this.validarNumero();
@@ -56,8 +56,8 @@ public class Telefone
         int ddd
     ) throws TelefoneException
     {
-        this.numero = numero;
-        this.ramal = ramal;
+        this.numero = numero.strip();
+        this.ramal = ramal.strip();
         this.ddd = ddd;
 
         this.validarNumero();
