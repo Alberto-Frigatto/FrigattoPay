@@ -26,8 +26,8 @@ public class ClientePF extends Cliente
     ) throws ClienteException, ParseException
     {
         super(id, nome, email, senha);
-        this.cpf = cpf;
-        this.rg = rg;
+        this.cpf = cpf.strip();
+        this.rg = rg.strip();
 
         this.validarCpf();
         this.validarRg();
@@ -44,8 +44,8 @@ public class ClientePF extends Cliente
     ) throws ClienteException, ParseException
     {
         super(nome, email, senha);
-        this.cpf = cpf;
-        this.rg = rg;
+        this.cpf = cpf.strip();
+        this.rg = rg.strip();
 
         this.validarCpf();
         this.validarRg();
