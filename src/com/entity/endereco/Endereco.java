@@ -27,11 +27,11 @@ public class Endereco
         this.id = id;
         this.idCliente = idCliente;
         this.idUF = idUF;
-        this.cep = cep;
-        this.logradouro = logradouro;
+        this.cep = cep.strip();
+        this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento;
-        this.municipio = municipio;
+        this.complemento = complemento.strip();
+        this.municipio = municipio.strip();
 
         this.validarCep();
         this.validarLogradouro();
@@ -52,11 +52,11 @@ public class Endereco
     {
         this.idCliente = idCliente;
         this.idUF = idUF;
-        this.cep = cep;
-        this.logradouro = logradouro;
+        this.cep = cep.strip();
+        this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento;
-        this.municipio = municipio;
+        this.complemento = complemento.strip();
+        this.municipio = municipio.strip();
 
         this.validarCep();
         this.validarLogradouro();
@@ -75,11 +75,11 @@ public class Endereco
     ) throws EnderecoException
     {
         this.idUF = idUF;
-        this.cep = cep;
-        this.logradouro = logradouro;
+        this.cep = cep.strip();
+        this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento;
-        this.municipio = municipio;
+        this.complemento = complemento.strip();
+        this.municipio = municipio.strip();
 
         this.validarCep();
         this.validarLogradouro();
