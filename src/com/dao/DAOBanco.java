@@ -9,7 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Banco;
+import com.entity.banco.Banco;
+import com.entity.banco.BancoExceptions.BancoException;
 
 public class DAOBanco extends DAO
 {
@@ -18,7 +19,7 @@ public class DAOBanco extends DAO
         super(conn);
     }
 
-    public List<Banco> getAll() throws SQLException
+    public List<Banco> getAll() throws SQLException, BancoException
     {
         List<Banco> bancos = new ArrayList<Banco>();
         
@@ -57,7 +58,7 @@ public class DAOBanco extends DAO
         return stmt.executeQuery(query);
     }
 
-    public Banco getById(int id) throws SQLException
+    public Banco getById(int id) throws SQLException, BancoException
     {
         ResultSet result = this.getBanco(id);
 
@@ -116,7 +117,7 @@ public class DAOBanco extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException
+    public void delete(int id) throws SQLException, BancoException
     {
         Banco banco = this.getById(id);
 
