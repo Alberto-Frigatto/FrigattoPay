@@ -23,7 +23,7 @@ public class ClientePF extends Cliente
         String cpf,
         String rg,
         String dataNascimento
-    ) throws ClienteException, ParseException
+    ) throws ClienteException
     {
         super(id, nome, email, senha);
         this.cpf = cpf.strip();
@@ -41,7 +41,7 @@ public class ClientePF extends Cliente
         String cpf,
         String rg,
         String dataNascimento
-    ) throws ClienteException, ParseException
+    ) throws ClienteException
     {
         super(nome, email, senha);
         this.cpf = cpf.strip();

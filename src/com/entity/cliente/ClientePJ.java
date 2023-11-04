@@ -25,7 +25,7 @@ public class ClientePJ extends Cliente
         String inscricaoEstadual,
         String dataAbertura,
         String setor
-    ) throws ClienteException, ParseException
+    ) throws ClienteException
     {
         super(id, nome, email, senha);
         this.cnpj = cnpj.strip();
@@ -46,7 +46,7 @@ public class ClientePJ extends Cliente
         String inscricaoEstadual,
         String dataAbertura,
         String setor
-    ) throws ClienteException, ParseException
+    ) throws ClienteException
     {
         super(nome, email, senha);
         this.cnpj = cnpj.strip();
