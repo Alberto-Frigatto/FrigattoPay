@@ -1,9 +1,10 @@
-package com.entity;
+package com.entity.conta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+
+import com.entity.conta.exceptions.EmprestimoExceptions.*;
 
 public class Emprestimo
 {
@@ -12,7 +13,7 @@ public class Emprestimo
     private double valorEmprestimo;
     private double valorJuros;
     private Date dataPrazo;
-    private Date dataSolicitacao = Calendar.getInstance().getTime();
+    private Date dataSolicitacao;
     private double valorParcela;
     private int diaVencimentoParcela;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -22,37 +23,107 @@ public class Emprestimo
         int idConta,
         double valorEmprestimo,
         double valorJuros,
+        double valorParcela,
         String dataPrazo,
         String dataSolicitacao,
-        double valorParcela,
         int diaVencimentoParcela
-    ) throws ParseException
+    ) throws EmprestimoException
     {
         this.id = id;
         this.idConta = idConta;
         this.valorEmprestimo = valorEmprestimo;
         this.valorJuros = valorJuros;
-        this.dataPrazo = this.dateFormat.parse(dataPrazo);
-        this.dataSolicitacao = this.dateFormat.parse(dataSolicitacao);
         this.valorParcela = valorParcela;
         this.diaVencimentoParcela = diaVencimentoParcela;
+
+        this.validarValorEmprestimo();
+        this.validarValorJuros();
+        this.validarValorParcela();
+        this.validarDiaVencimentoParcela();
+        this.definirDataPrazoSeValida(dataPrazo);
+        this.definirDataSolicitacaoSeValida(dataSolicitacao);
     }
 
     public Emprestimo(
         int idConta,
         double valorEmprestimo,
         double valorJuros,
-        String dataPrazo,
         double valorParcela,
+        String dataPrazo,
+        String dataSolicitacao,
         int diaVencimentoParcela
-    ) throws ParseException
+    ) throws EmprestimoException
     {
         this.idConta = idConta;
         this.valorEmprestimo = valorEmprestimo;
         this.valorJuros = valorJuros;
-        this.dataPrazo = this.dateFormat.parse(dataPrazo);
         this.valorParcela = valorParcela;
         this.diaVencimentoParcela = diaVencimentoParcela;
+
+        this.validarValorEmprestimo();
+        this.validarValorJuros();
+        this.validarValorParcela();
+        this.validarDiaVencimentoParcela();
+        this.definirDataPrazoSeValida(dataPrazo);
+        this.definirDataSolicitacaoSeValida(dataSolicitacao);
+    }
+
+    private void validarValorEmprestimo() throws ValorInvalidoException
+    {
+        if (!this.valorEValido(this.valorEmprestimo))
+            throw new ValorInvalidoException();
+    }
+
+    private boolean valorEValido(double value)
+    {
+        return value > 1;
+    }
+
+    private void validarValorJuros() throws ValorJurosInvalidoException
+    {
+        if (!this.valorEValido(this.valorEmprestimo))
+            throw new ValorJurosInvalidoException();
+    }
+
+    private void validarValorParcela() throws ValorParcelaInvalidoException
+    {
+        if (!this.valorEValido(this.valorEmprestimo))
+            throw new ValorParcelaInvalidoException();
+    }
+
+    private void definirDataPrazoSeValida(String dataPrazo) throws DataPrazoInvalidaException
+    {
+        try
+        {
+            this.dataPrazo = this.dateFormat.parse(dataPrazo);
+        }
+        catch (ParseException e)
+        {
+            throw new DataPrazoInvalidaException();
+        }
+    }
+
+    private void definirDataSolicitacaoSeValida(String dataSolicitacao) throws DataPrazoInvalidaException
+    {
+        try
+        {
+            this.dataSolicitacao = this.dateFormat.parse(dataSolicitacao);
+        }
+        catch (ParseException e)
+        {
+            throw new DataPrazoInvalidaException();
+        }
+    }
+
+    private void validarDiaVencimentoParcela() throws ValorInvalidoException
+    {
+        if (!this.diaVencimentoParcelaEValido())
+            throw new ValorInvalidoException();
+    }
+
+    private boolean diaVencimentoParcelaEValido()
+    {
+        return this.diaVencimentoParcela >= 1 && this.diaVencimentoParcela <= 31;
     }
 
     public void data()
