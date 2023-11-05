@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Transacao;
+import com.entity.conta.Transacao;
 
 public class DAOTransacao extends DAO
 {
@@ -22,7 +22,7 @@ public class DAOTransacao extends DAO
     public List<Transacao> getAll() throws SQLException, ParseException
     {
         List<Transacao> transacoes = new ArrayList<Transacao>();
-        
+
         ResultSet result = this.getTransacoes();
 
         while (result.next())
@@ -50,10 +50,10 @@ public class DAOTransacao extends DAO
 
         String query = """
             SELECT
-                cd_transc, 
-                t_fp_conta_cd_conta, 
-                t_fp_conta_cd_conta2, 
-                t_fp_tipo_transc_cd_tipo, 
+                cd_transc,
+                t_fp_conta_cd_conta,
+                t_fp_conta_cd_conta2,
+                t_fp_tipo_transc_cd_tipo,
                 vl_transc,
                 dt_transc
 
@@ -61,7 +61,7 @@ public class DAOTransacao extends DAO
                     ORDER BY cd_transc
         """;
 
-        return stmt.executeQuery(query);        
+        return stmt.executeQuery(query);
     }
 
     public Transacao getById(int id) throws SQLException, ParseException
@@ -89,10 +89,10 @@ public class DAOTransacao extends DAO
     {
         String query = """
             SELECT
-                cd_transc, 
-                t_fp_conta_cd_conta, 
-                t_fp_conta_cd_conta2, 
-                t_fp_tipo_transc_cd_tipo, 
+                cd_transc,
+                t_fp_conta_cd_conta,
+                t_fp_conta_cd_conta2,
+                t_fp_tipo_transc_cd_tipo,
                 vl_transc,
                 dt_transc
 
