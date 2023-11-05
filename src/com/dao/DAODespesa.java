@@ -6,11 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Despesa;
+import com.entity.despesa.Despesa;
+import com.entity.despesa.DespesaExceptions.DespesaException;
 
 public class DAODespesa extends DAO
 {
@@ -19,10 +19,10 @@ public class DAODespesa extends DAO
         super(conn);
     }
 
-    public List<Despesa> getAll() throws SQLException, ParseException
+    public List<Despesa> getAll() throws SQLException, DespesaException
     {
         List<Despesa> despesas = new ArrayList<Despesa>();
-        
+
         ResultSet result = this.getDespesas();
 
         while (result.next())
@@ -51,22 +51,22 @@ public class DAODespesa extends DAO
 
         String query = """
             SELECT
-                cd_despesa, 
-                t_fp_cliente_cd_cliente, 
-                t_fp_tipo_despesa_cd_tipo, 
-                nm_despesa, 
-                vl_despesa, 
-                ds_despesa, 
+                cd_despesa,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_despesa_cd_tipo,
+                nm_despesa,
+                vl_despesa,
+                ds_despesa,
                 dt_vencimento
 
                 FROM T_FP_DESPESA
                     ORDER BY cd_despesa
         """;
 
-        return stmt.executeQuery(query);        
+        return stmt.executeQuery(query);
     }
 
-    public Despesa getById(int id) throws SQLException, ParseException
+    public Despesa getById(int id) throws SQLException, DespesaException
     {
         ResultSet result = this.getDespesa(id);
 
@@ -137,7 +137,7 @@ public class DAODespesa extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, DespesaException
     {
         Despesa despesa = this.getById(id);
 
