@@ -1,9 +1,11 @@
-package com.entity;
+package com.entity.conta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import com.entity.conta.exceptions.PagamentoExceptions.*;
 
 public class Pagamento
 {
@@ -24,15 +26,19 @@ public class Pagamento
         String nome,
         String dataPagamento,
         double valor
-    ) throws ParseException
+    ) throws PagamentoException
     {
         this.id = id;
         this.idConta = idConta;
         this.idTipoPagamento = idTipoPagamento;
         this.codigoBarras = codigoBarras;
         this.nome = nome;
-        this.dataPagamento = this.dateFormat.parse(dataPagamento);
         this.valor = valor;
+
+        this.validarCodigoBarras();
+        this.validarNome();
+        this.validarValor();
+        this.definirDataPagamentoSeValida(dataPagamento);
     }
 
     public Pagamento(
@@ -40,14 +46,79 @@ public class Pagamento
         int idTipoPagamento,
         String codigoBarras,
         String nome,
+        String dataPagamento,
         double valor
-    )
+    ) throws PagamentoException
     {
         this.idConta = idConta;
         this.idTipoPagamento = idTipoPagamento;
         this.codigoBarras = codigoBarras;
         this.nome = nome;
         this.valor = valor;
+
+        this.validarCodigoBarras();
+        this.validarNome();
+        this.validarValor();
+        this.definirDataPagamentoSeValida(dataPagamento);
+    }
+
+    private void validarNome() throws NomeInvalidoException
+    {
+        if (!this.nomeEValido())
+            throw new NomeInvalidoException();
+    }
+
+    private boolean nomeEValido()
+    {
+        return this.nome instanceof String &&
+               !this.nome.isEmpty() &&
+               this.nome.length() <= 30;
+    }
+
+    private void validarCodigoBarras() throws CodigoBarrasInvalidoException
+    {
+        if (!this.codigoBarrasEValido())
+            throw new CodigoBarrasInvalidoException();
+    }
+
+    private boolean codigoBarrasEValido()
+    {
+        int minSize = 35;
+        int maxSize = 44;
+
+        if (this.codigoBarras.isEmpty() ||
+            this.codigoBarras.length() < minSize ||
+            this.codigoBarras.length() > maxSize)
+            return false;
+
+        for (char c : this.codigoBarras.toCharArray())
+            if (!Character.isDigit(c))
+                return false;
+
+        return true;
+    }
+
+    private void validarValor() throws ValorInvalidoException
+    {
+        if (!this.valorEValido(this.valor))
+            throw new ValorInvalidoException();
+    }
+
+    private boolean valorEValido(double value)
+    {
+        return value > 1;
+    }
+
+    private void definirDataPagamentoSeValida(String dataPagamento) throws DataPagamentoInvalidaException
+    {
+        try
+        {
+            this.dataPagamento = this.dateFormat.parse(dataPagamento);
+        }
+        catch (ParseException e)
+        {
+            throw new DataPagamentoInvalidaException();
+        }
     }
 
     public void data()
