@@ -34,7 +34,6 @@ public abstract class Cliente
 
         this.validarNome();
         this.validarEmail();
-        this.criptografarSenhaSeValida();
     }
 
     public Cliente(
