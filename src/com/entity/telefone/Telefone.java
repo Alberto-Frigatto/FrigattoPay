@@ -25,7 +25,7 @@ public class Telefone
         this.id = id;
         this.idCliente = idCliente;
         this.numero = numero.strip();
-        this.ramal = ramal.strip();
+        this.ramal = ramal != null ? ramal.strip() : ramal;
         this.ddd = ddd;
 
         this.validarNumero();
