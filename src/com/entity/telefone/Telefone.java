@@ -42,7 +42,7 @@ public class Telefone
     {
         this.idCliente = idCliente;
         this.numero = numero.strip();
-        this.ramal = ramal.strip();
+        this.ramal = ramal != null ? ramal.strip() : ramal;
         this.ddd = ddd;
 
         this.validarNumero();
@@ -57,7 +57,7 @@ public class Telefone
     ) throws TelefoneException
     {
         this.numero = numero.strip();
-        this.ramal = ramal.strip();
+        this.ramal = ramal != null ? ramal.strip() : ramal;
         this.ddd = ddd;
 
         this.validarNumero();
