@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.entity.conta.Conta;
-import com.entity.conta.ContaExceptions.ContaException;
+import com.entity.conta.exceptions.ContaExceptions.ContaException;
 
 public class DAOConta extends DAO
 {
