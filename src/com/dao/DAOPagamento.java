@@ -51,10 +51,10 @@ public class DAOPagamento extends DAO
 
         String query = """
             SELECT
-                cd_pagmt, 
-                t_fp_conta_cd_conta, 
-                t_fp_tipo_pagmt_cd_tipo, 
-                cd_barras, 
+                cd_pagmt,
+                t_fp_conta_cd_conta,
+                t_fp_tipo_pagmt_cd_tipo,
+                cd_barras,
                 nm_pagmt,
                 dt_pagmt,
                 vl_pagmt
@@ -63,7 +63,7 @@ public class DAOPagamento extends DAO
                     ORDER BY cd_pagmt
         """;
 
-        return stmt.executeQuery(query);        
+        return stmt.executeQuery(query);
     }
 
     public Pagamento getById(int id) throws SQLException, PagamentoException
@@ -92,10 +92,10 @@ public class DAOPagamento extends DAO
     {
         String query = """
             SELECT
-                cd_pagmt, 
-                t_fp_conta_cd_conta, 
-                t_fp_tipo_pagmt_cd_tipo, 
-                cd_barras, 
+                cd_pagmt,
+                t_fp_conta_cd_conta,
+                t_fp_tipo_pagmt_cd_tipo,
+                cd_barras,
                 nm_pagmt,
                 dt_pagmt,
                 vl_pagmt
