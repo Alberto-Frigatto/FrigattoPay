@@ -6,23 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Receita;
+import com.entity.receita.Receita;
+import com.entity.receita.ReceitaExceptions.ReceitaException;
 
 public class DAOReceita extends DAO
-{ 
+{
     public DAOReceita(Connection conn)
     {
         super(conn);
     }
 
-    public List<Receita> getAll() throws SQLException, ParseException
+    public List<Receita> getAll() throws SQLException, ReceitaException
     {
         List<Receita> receitas = new ArrayList<Receita>();
-        
+
         ResultSet result = this.getReceitas();
 
         while (result.next())
@@ -49,20 +49,20 @@ public class DAOReceita extends DAO
 
         String query = """
             SELECT
-                cd_receita, 
-                t_fp_cliente_cd_cliente, 
-                t_fp_tipo_receita_cd_tipo, 
-                vl_receita, 
+                cd_receita,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_receita_cd_tipo,
+                vl_receita,
                 dt_receita
 
                 FROM T_FP_RECEITA
                     ORDER BY cd_receita
         """;
 
-        return stmt.executeQuery(query);        
+        return stmt.executeQuery(query);
     }
 
-    public Receita getById(int id) throws SQLException, ParseException
+    public Receita getById(int id) throws SQLException, ReceitaException
     {
         ResultSet result = this.getReceita(id);
 
@@ -125,7 +125,7 @@ public class DAOReceita extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, ReceitaException
     {
         Receita receita = this.getById(id);
 
