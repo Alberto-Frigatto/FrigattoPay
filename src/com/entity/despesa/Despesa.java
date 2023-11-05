@@ -1,8 +1,10 @@
-package com.entity;
+package com.entity.despesa;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.entity.despesa.DespesaExceptions.*;
 
 public class Despesa
 {
@@ -23,7 +25,7 @@ public class Despesa
         double valor,
         String descricao,
         String dataVencimento
-    ) throws ParseException
+    ) throws DespesaException
     {
         this.id = id;
         this.idCliente = idCliente;
@@ -31,7 +33,11 @@ public class Despesa
         this.nome = nome;
         this.valor = valor;
         this.descricao = descricao;
-        this.dataVencimento = this.dateFormat.parse(dataVencimento);
+
+        this.validarNome();
+        this.validarValor();
+        this.validarDescricao();
+        this.definirDataVencimentoSeValida(dataVencimento);
     }
 
     public Despesa(
@@ -41,14 +47,67 @@ public class Despesa
         double valor,
         String descricao,
         String dataVencimento
-    ) throws ParseException
+    ) throws DespesaException
     {
         this.idCliente = idCliente;
         this.idTipoDespesa = idTipoDespesa;
         this.nome = nome;
         this.valor = valor;
         this.descricao = descricao;
-        this.dataVencimento = this.dateFormat.parse(dataVencimento);
+
+        this.validarNome();
+        this.validarValor();
+        this.validarDescricao();
+        this.definirDataVencimentoSeValida(dataVencimento);
+    }
+
+    private void validarNome() throws NomeInvalidoException
+    {
+        if (!this.nomeEValido())
+            throw new NomeInvalidoException();
+    }
+
+    protected boolean nomeEValido()
+    {
+        return this.nome instanceof String &&
+               !this.nome.isEmpty() &&
+               this.nome.length() <= 30;
+    }
+
+    private void validarValor() throws ValorInvalidoException
+    {
+        if (!this.valorEValido())
+            throw new ValorInvalidoException();
+    }
+
+    private boolean valorEValido()
+    {
+        return this.valor > 0;
+    }
+
+    private void definirDataVencimentoSeValida(String dataVencimento) throws DataVencimentoInvalidaException
+    {
+        try
+        {
+            this.dataVencimento = this.dateFormat.parse(dataVencimento);
+        }
+        catch (ParseException e)
+        {
+            throw new DataVencimentoInvalidaException();
+        }
+    }
+
+    private void validarDescricao() throws DescricaoInvalidaException
+    {
+        if (!this.descricaoEValida())
+            throw new DescricaoInvalidaException();
+    }
+
+    protected boolean descricaoEValida()
+    {
+        return this.nome instanceof String &&
+                !this.nome.isEmpty() &&
+                this.nome.length() <= 300;
     }
 
     public void data()
