@@ -5,6 +5,7 @@ import com.entity.conta.exceptions.ContaExceptions.AgenciaInvalidaException;
 import com.entity.conta.exceptions.ContaExceptions.ContaException;
 import com.entity.conta.exceptions.ContaExceptions.NumeroInvalidoException;
 import com.entity.conta.exceptions.ContaExceptions.TransacaoInvalidaException;
+import com.entity.conta.exceptions.ContaInvestimentoExceptions.ContaInvestimentoException;
 import com.entity.conta.exceptions.EmprestimoExceptions.EmprestimoException;
 import com.entity.conta.exceptions.PagamentoExceptions.PagamentoException;
 
@@ -179,6 +180,15 @@ public class Conta
         this.saldo -= valor;
 
         return pagamento;
+    }
+
+    public ContaInvestimento criarInvestimento(
+        int idInvestimento,
+        String dataInvestimento,
+        double valor
+    ) throws ContaInvestimentoException
+    {
+        return new ContaInvestimento(idInvestimento, this.id, dataInvestimento, valor);
     }
 
     public void data()
