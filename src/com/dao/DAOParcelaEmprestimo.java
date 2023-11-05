@@ -6,11 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.ParcelaEmprestimo;
+import com.entity.conta.ParcelaEmprestimo;
+import com.entity.conta.exceptions.ParcelaEmprestimoExceptions.ParcelaEmprestimoException;
 
 public class DAOParcelaEmprestimo extends DAO
 {
@@ -19,10 +19,10 @@ public class DAOParcelaEmprestimo extends DAO
         super(conn);
     }
 
-    public List<ParcelaEmprestimo> getAll() throws SQLException, ParseException
+    public List<ParcelaEmprestimo> getAll() throws SQLException, ParcelaEmprestimoException
     {
         List<ParcelaEmprestimo> parcelas = new ArrayList<ParcelaEmprestimo>();
-        
+
         ResultSet result = this.getParcelas();
 
         while (result.next())
@@ -49,10 +49,10 @@ public class DAOParcelaEmprestimo extends DAO
 
         String query = """
             SELECT
-                cd_parcela, 
-                t_fp_empr_cd_empr, 
-                vl_pago, 
-                dt_pagamento, 
+                cd_parcela,
+                t_fp_empr_cd_empr,
+                vl_pago,
+                dt_pagamento,
                 vl_juros
 
                 FROM T_FP_PARCELA_EMPR
@@ -62,7 +62,7 @@ public class DAOParcelaEmprestimo extends DAO
         return stmt.executeQuery(query);
     }
 
-    public ParcelaEmprestimo getById(int id) throws SQLException, ParseException
+    public ParcelaEmprestimo getById(int id) throws SQLException, ParcelaEmprestimoException
     {
         ResultSet result = this.getTransacao(id);
 
@@ -86,10 +86,10 @@ public class DAOParcelaEmprestimo extends DAO
     {
         String query = """
             SELECT
-                cd_parcela, 
-                t_fp_empr_cd_empr, 
-                vl_pago, 
-                dt_pagamento, 
+                cd_parcela,
+                t_fp_empr_cd_empr,
+                vl_pago,
+                dt_pagamento,
                 vl_juros
 
                 FROM T_FP_PARCELA_EMPR
@@ -114,7 +114,7 @@ public class DAOParcelaEmprestimo extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, ParcelaEmprestimoException
     {
         ParcelaEmprestimo parcela = this.getById(id);
 
