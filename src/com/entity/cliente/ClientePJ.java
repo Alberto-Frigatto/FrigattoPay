@@ -85,7 +85,7 @@ public class ClientePJ extends Cliente
             cnpjDigits[i] = Character.getNumericValue(this.cnpj.charAt(i));
 
         int[] weights = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
-    
+
         int sum = 0;
         for (int i = 0; i < 12; i++)
             sum += cnpjDigits[i] * weights[i];
@@ -139,8 +139,7 @@ public class ClientePJ extends Cliente
     {
         return this.setor instanceof String &&
                !this.setor.isEmpty() &&
-               this.setor.length() <= 30 &&
-               this.setor.matches("^[^0-9]*$");
+               this.setor.length() <= 30;
     }
 
     private void definirDataAberturaSeValida(String dataAbertura) throws DataAberturaInvalidaException
@@ -180,6 +179,7 @@ public class ClientePJ extends Cliente
         System.out.println("\tcnpj=" + this.cnpj + ",");
         System.out.println("\tinscricaoEstadual=" + this.inscricaoEstadual + ",");
         System.out.println("\tdataAbertura=" + this.dateFormat.format(this.dataAbertura) + ",");
+        System.out.println("\tsetor=" + this.setor + ",");
         System.out.println("\ttelefones=[");
 
         for (Telefone telefone : this.getTelefones())
