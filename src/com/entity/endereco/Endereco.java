@@ -30,7 +30,7 @@ public class Endereco
         this.cep = cep.strip();
         this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento.strip();
+        this.complemento = complemento != null ? complemento.strip() : complemento;
         this.municipio = municipio.strip();
 
         this.validarCep();
@@ -55,7 +55,7 @@ public class Endereco
         this.cep = cep.strip();
         this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento.strip();
+        this.complemento = complemento != null ? complemento.strip() : complemento;
         this.municipio = municipio.strip();
 
         this.validarCep();
@@ -78,7 +78,7 @@ public class Endereco
         this.cep = cep.strip();
         this.logradouro = logradouro.strip();
         this.numero = numero;
-        this.complemento = complemento.strip();
+        this.complemento = complemento != null ? complemento.strip() : complemento;
         this.municipio = municipio.strip();
 
         this.validarCep();
@@ -150,18 +150,18 @@ public class Endereco
         if (!this.complementoEValido())
             throw new ComplementoInvalidoException();
     }
-    
+
     private boolean complementoEValido()
     {
         if (this.complemento != null)
         {
             int complementoMaxSize = 30;
-            
+
             if (this.complemento.isEmpty() ||
                 this.complemento.length() > complementoMaxSize)
                 return false;
         }
-        
+
         return true;
     }
 
