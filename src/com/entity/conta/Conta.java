@@ -1,9 +1,12 @@
 package com.entity.conta;
 
-import com.entity.conta.ContaExceptions.AgenciaInvalidaException;
-import com.entity.conta.ContaExceptions.ContaException;
-import com.entity.conta.ContaExceptions.NumeroInvalidoException;
-import com.entity.conta.ContaExceptions.TransacaoInvalidaException;
+import com.entity.conta.exceptions.CartaoExceptions.CartaoException;
+import com.entity.conta.exceptions.ContaExceptions.AgenciaInvalidaException;
+import com.entity.conta.exceptions.ContaExceptions.ContaException;
+import com.entity.conta.exceptions.ContaExceptions.NumeroInvalidoException;
+import com.entity.conta.exceptions.ContaExceptions.TransacaoInvalidaException;
+import com.entity.conta.exceptions.EmprestimoExceptions.EmprestimoException;
+import com.entity.conta.exceptions.PagamentoExceptions.PagamentoException;
 
 public class Conta
 {
@@ -57,18 +60,6 @@ public class Conta
         this.validarAgencia();
     }
 
-    public void data()
-    {
-        System.out.println("Conta(");
-        System.out.println("\tid=" + this.id + ",");
-        System.out.println("\tidCliente=" + this.idCliente + ",");
-        System.out.println("\tidTipoConta=" + this.idTipoConta + ",");
-        System.out.println("\tnumero=" + this.numero + ",");
-        System.out.println("\tsaldo=" + this.saldo + ",");
-        System.out.println("\tagencia=" + this.agencia + ",");
-        System.out.println(")\n");
-    }
-
     private void validarNumero() throws NumeroInvalidoException
     {
         if (!this.numeroEValido())
@@ -108,8 +99,8 @@ public class Conta
 
         return true;
     }
-    
-    public void transferir(double value, Conta conta) throws TransacaoInvalidaException
+
+    public Transacao transferir(double value, Conta conta) throws TransacaoInvalidaException
     {
         if (!this.transacaoEPossivel(value) || !this.valorTransacaoEValido(value))
             throw new TransacaoInvalidaException();
@@ -117,6 +108,8 @@ public class Conta
         this.saldo -= value;
 
         conta.depositar(value);
+
+        return new Transacao(this.id, conta.getId(), 2, value);
     }
 
     private boolean valorTransacaoEValido(double value)
@@ -136,7 +129,70 @@ public class Conta
 
         this.saldo += value;
     }
-    
+
+    public Cartao criarCartao(
+        int idBandeira,
+        int idTipoCartao,
+        String numero,
+        String dataValidade,
+        String cvv,
+        boolean desbloqueado
+    ) throws CartaoException
+    {
+        return new Cartao(this.id, idBandeira, idTipoCartao, numero, dataValidade, cvv, desbloqueado);
+    }
+
+    public Emprestimo criarEmprestimo(
+        double valorEmprestimo,
+        double valorJuros,
+        double valorParcela,
+        String dataPrazo,
+        String dataSolicitacao,
+        int diaVencimentoParcela
+    ) throws EmprestimoException
+    {
+        Emprestimo emprestimo = new Emprestimo(
+            this.id,
+            valorEmprestimo,
+            valorJuros,
+            valorParcela,
+            dataPrazo,
+            dataSolicitacao,
+            diaVencimentoParcela
+        );
+
+        this.saldo += valorEmprestimo;
+
+        return emprestimo;
+    }
+
+    public Pagamento criarPagamento(
+        int idTipoPagamento,
+        String codigoBarras,
+        String nome,
+        String dataPagamento,
+        double valor
+    ) throws PagamentoException
+    {
+        Pagamento pagamento = new Pagamento(this.id, idTipoPagamento, codigoBarras, nome, dataPagamento, valor);
+
+        this.saldo -= valor;
+
+        return pagamento;
+    }
+
+    public void data()
+    {
+        System.out.println("Conta(");
+        System.out.println("\tid=" + this.id + ",");
+        System.out.println("\tidCliente=" + this.idCliente + ",");
+        System.out.println("\tidTipoConta=" + this.idTipoConta + ",");
+        System.out.println("\tnumero=" + this.numero + ",");
+        System.out.println("\tsaldo=" + this.saldo + ",");
+        System.out.println("\tagencia=" + this.agencia + ",");
+        System.out.println(")\n");
+    }
+
     public Integer getId()
     {
         return this.id;
