@@ -6,11 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Emprestimo;
+import com.entity.conta.Emprestimo;
+import com.entity.conta.exceptions.EmprestimoExceptions.EmprestimoException;
 
 public class DAOEmprestimo extends DAO
 { 
@@ -19,7 +19,7 @@ public class DAOEmprestimo extends DAO
         super(conn);
     }
 
-    public List<Emprestimo> getAll() throws SQLException, ParseException
+    public List<Emprestimo> getAll() throws SQLException, EmprestimoException
     {
         List<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
         
@@ -35,9 +35,9 @@ public class DAOEmprestimo extends DAO
                 result.getInt("t_fp_conta_cd_conta"),
                 result.getDouble("vl_empr"),
                 result.getDouble("vl_juros"),
+                result.getDouble("vl_parcela"),
                 formattedDatePrazo,
                 formattedDateSolicitacao,
-                result.getDouble("vl_parcela"),
                 result.getInt("dia_vencimento_parcela")
             );
 
@@ -69,7 +69,7 @@ public class DAOEmprestimo extends DAO
         return stmt.executeQuery(query);        
     }
 
-    public Emprestimo getById(int id) throws SQLException, ParseException
+    public Emprestimo getById(int id) throws SQLException, EmprestimoException
     {
         ResultSet result = this.getEmprestimo(id);
 
@@ -84,9 +84,9 @@ public class DAOEmprestimo extends DAO
             result.getInt("t_fp_conta_cd_conta"),
             result.getDouble("vl_empr"),
             result.getDouble("vl_juros"),
+            result.getDouble("vl_parcela"),
             formattedDatePrazo,
             formattedDateSolicitacao,
-            result.getDouble("vl_parcela"),
             result.getInt("dia_vencimento_parcela")
         );
 
@@ -131,7 +131,7 @@ public class DAOEmprestimo extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, EmprestimoException
     {
         Emprestimo emprestimo = this.getById(id);
 
