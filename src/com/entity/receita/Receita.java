@@ -1,10 +1,13 @@
-package com.entity;
+package com.entity.receita;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Receita {
+import com.entity.receita.ReceitaExceptions.*;
+
+public class Receita
+{
     private Integer id;
     private int idCliente;
     private int idTipoReceita;
@@ -18,13 +21,15 @@ public class Receita {
         int idTipoReceita,
         double valor,
         String dataReceita
-    ) throws ParseException
+    ) throws ReceitaException
     {
         this.id = id;
         this.idCliente = idCliente;
         this.idTipoReceita = idTipoReceita;
         this.valor = valor;
-        this.dataReceita = this.dateFormat.parse(dataReceita);
+
+        this.validarValor();
+        this.definirDataReceitaSeValida(dataReceita);
     }
 
     public Receita(
@@ -32,12 +37,37 @@ public class Receita {
         int idTipoReceita,
         double valor,
         String dataReceita
-    ) throws ParseException
+    ) throws ReceitaException
     {
         this.idCliente = idCliente;
         this.idTipoReceita = idTipoReceita;
         this.valor = valor;
-        this.dataReceita = this.dateFormat.parse(dataReceita);
+
+        this.validarValor();
+        this.definirDataReceitaSeValida(dataReceita);
+    }
+
+    private void validarValor() throws ValorInvalidoException
+    {
+        if (!this.valorEValido())
+            throw new ValorInvalidoException();
+    }
+
+    private boolean valorEValido()
+    {
+        return this.valor > 0;
+    }
+
+    private void definirDataReceitaSeValida(String dataReceita) throws DataReceitaInvalidaException
+    {
+        try
+        {
+            this.dataReceita = this.dateFormat.parse(dataReceita);
+        }
+        catch (ParseException e)
+        {
+            throw new DataReceitaInvalidaException();
+        }
     }
 
     public void data()
