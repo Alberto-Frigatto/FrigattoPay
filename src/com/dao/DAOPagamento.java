@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.CallableStatement;
 import java.sql.Statement;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Pagamento;
+import com.entity.conta.Pagamento;
+import com.entity.conta.exceptions.PagamentoExceptions.PagamentoException;
 
 public class DAOPagamento extends DAO
 {
@@ -19,7 +19,7 @@ public class DAOPagamento extends DAO
         super(conn);
     }
 
-    public List<Pagamento> getAll() throws SQLException, ParseException
+    public List<Pagamento> getAll() throws SQLException, PagamentoException
     {
         List<Pagamento> pagamentos = new ArrayList<Pagamento>();
 
@@ -66,7 +66,7 @@ public class DAOPagamento extends DAO
         return stmt.executeQuery(query);        
     }
 
-    public Pagamento getById(int id) throws SQLException, ParseException
+    public Pagamento getById(int id) throws SQLException, PagamentoException
     {
         ResultSet result = this.getPagamento(id);
 
@@ -134,7 +134,7 @@ public class DAOPagamento extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, PagamentoException
     {
         Pagamento pagamento = this.getById(id);
 
