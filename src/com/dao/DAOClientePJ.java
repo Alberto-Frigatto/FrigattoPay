@@ -41,8 +41,8 @@ public class DAOClientePJ extends DAOCliente
                 result.getString("ds_senha"),
                 result.getString("nr_cnpj"),
                 result.getString("nr_inscricao_estadual"),
-                result.getString("dt_abertura"),
-                formattedDate
+                formattedDate,
+                result.getString("ds_setor")
             );
 
             int idCliente = clientePJ.getId();
@@ -88,8 +88,8 @@ public class DAOClientePJ extends DAOCliente
             result.getString("nm_cliente"),
             result.getString("ds_email"),
             result.getString("ds_senha"),
-            result.getString("nr_cnpj"), 
-            result.getString("nr_inscricao_estadual"), 
+            result.getString("nr_cnpj"),
+            result.getString("nr_inscricao_estadual"),
             formattedDate,
             result.getString("ds_setor")
         );
