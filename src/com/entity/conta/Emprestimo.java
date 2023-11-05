@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.entity.conta.exceptions.EmprestimoExceptions.*;
+import com.entity.conta.exceptions.ParcelaEmprestimoExceptions.ParcelaEmprestimoException;
 
 public class Emprestimo
 {
@@ -124,6 +125,15 @@ public class Emprestimo
     private boolean diaVencimentoParcelaEValido()
     {
         return this.diaVencimentoParcela >= 1 && this.diaVencimentoParcela <= 31;
+    }
+
+    public ParcelaEmprestimo criarParcelaEmprestimo(
+        double valor,
+        String dataPagamento,
+        double juros
+    ) throws ParcelaEmprestimoException
+    {
+        return new ParcelaEmprestimo(this.id, valor, dataPagamento, juros);
     }
 
     public void data()
