@@ -10,7 +10,8 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.entity.Cartao;
+import com.entity.conta.Cartao;
+import com.entity.conta.exceptions.CartaoExceptions.CartaoException;
 
 public class DAOCartao extends DAO
 {
@@ -19,7 +20,7 @@ public class DAOCartao extends DAO
         super(conn);
     }
 
-    public List<Cartao> getAll() throws SQLException, ParseException
+    public List<Cartao> getAll() throws SQLException, ParseException, CartaoException
     {
         List<Cartao> cartoes = new ArrayList<Cartao>();
         
@@ -33,10 +34,10 @@ public class DAOCartao extends DAO
 
             Cartao cartao = new Cartao(
                 result.getInt("cd_cartao"),
-                result.getString("nr_cartao"),
                 result.getInt("t_fp_conta_cd_conta"),
                 result.getInt("t_fp_bandeira_cd_bandeira"),
                 result.getInt("t_fp_tipo_cartao_cd_tipo"),
+                result.getString("nr_cartao"),
                 formattedDate,
                 result.getString("nr_cvv"),
                 desbloqueadoBoolean
@@ -70,7 +71,7 @@ public class DAOCartao extends DAO
         return stmt.executeQuery(query);
     }
 
-    public Cartao getById(int id) throws SQLException, ParseException
+    public Cartao getById(int id) throws SQLException, ParseException, CartaoException
     {
         ResultSet result = this.getCartao(id);
 
@@ -83,10 +84,10 @@ public class DAOCartao extends DAO
 
         Cartao cartao = new Cartao(
             result.getInt("cd_cartao"),
-            result.getString("nr_cartao"),
             result.getInt("t_fp_conta_cd_conta"),
             result.getInt("t_fp_bandeira_cd_bandeira"),
             result.getInt("t_fp_tipo_cartao_cd_tipo"),
+            result.getString("nr_cartao"),
             formattedDate,
             result.getString("nr_cvv"),
             desbloqueadoBoolean
@@ -146,7 +147,7 @@ public class DAOCartao extends DAO
         cs.execute();
     }
 
-    public void delete(int id) throws SQLException, ParseException
+    public void delete(int id) throws SQLException, ParseException, CartaoException
     {
         Cartao cartao = this.getById(id);
 
