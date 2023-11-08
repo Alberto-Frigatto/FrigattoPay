@@ -22,16 +22,17 @@ public class ClientePF extends Cliente
         String senha,
         String cpf,
         String rg,
-        String dataNascimento
+        Date dataNascimento
     ) throws ClienteException
     {
         super(id, nome, email, senha);
         this.cpf = cpf.strip();
         this.rg = rg.strip();
+        this.dataNascimento = dataNascimento;
 
         this.validarCpf();
         this.validarRg();
-        this.definirDataNascimentoSeValida(dataNascimento);
+		this.validarDataNascimento();
     }
 
     public ClientePF(
@@ -40,16 +41,17 @@ public class ClientePF extends Cliente
         String senha,
         String cpf,
         String rg,
-        String dataNascimento
+        Date dataNascimento
     ) throws ClienteException
     {
         super(nome, email, senha);
         this.cpf = cpf.strip();
         this.rg = rg.strip();
+        this.dataNascimento = dataNascimento;
 
         this.validarCpf();
         this.validarRg();
-        this.definirDataNascimentoSeValida(dataNascimento);
+		this.validarDataNascimento();
     }
 
     @Override
@@ -112,32 +114,28 @@ public class ClientePF extends Cliente
         return true;
     }
 
-    private void definirDataNascimentoSeValida(String dataNascimento) throws DataNascimentoInvalidaException
+    private void validarDataNascimento() throws DataNascimentoInvalidaException
     {
-        try
-        {
-            this.dataNascimento = this.dateFormat.parse(dataNascimento);
-        }
-        catch (ParseException e)
-        {
-            throw new DataNascimentoInvalidaException();
-        }
-
-        if (!this.dataNascimentoEValida(this.dataNascimento))
+        if (!this.dataNascimentoEValida())
             throw new DataNascimentoInvalidaException();
     }
 
-    private boolean dataNascimentoEValida(Date dataNascimento)
+    private boolean dataNascimentoEValida()
     {
-        Calendar calendar = Calendar.getInstance();
-
-        int anosMaioridade = 18;
-
-        calendar.add(Calendar.YEAR, -anosMaioridade);
-
-        Date dataMaioridade = calendar.getTime();
-
-        return dataNascimento.before(dataMaioridade);
+    	if (this.dataNascimento != null)
+    	{    		
+    		Calendar calendar = Calendar.getInstance();
+    		
+    		int anosMaioridade = 18;
+    		
+    		calendar.add(Calendar.YEAR, -anosMaioridade);
+    		
+    		Date dataMaioridade = calendar.getTime();
+    		
+    		return this.dataNascimento.before(dataMaioridade);
+    	}
+    	
+    	return false;
     }
 
     public void data()
@@ -201,8 +199,11 @@ public class ClientePF extends Cliente
         return this.dataNascimento;
     }
 
-    public void updateDataNascimento(String value) throws ParseException, DataNascimentoInvalidaException
+    public void updateDataNascimento(Date value) throws ParseException, DataNascimentoInvalidaException
     {
-        this.definirDataNascimentoSeValida(value);
+        this.dataNascimento = value;
+        
+        if (!this.dataNascimentoEValida())
+            throw new DataNascimentoInvalidaException();
     }
 }
