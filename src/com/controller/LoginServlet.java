@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		Connection conn = ConnectionManager.getInstance().getConnection();
+		Connection conn = (Connection) request.getAttribute("conn");
 		
 		try
 		{
@@ -38,14 +38,6 @@ public class LoginServlet extends HttpServlet
 		{
 			request.setAttribute("error", e.getMessage());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		}
-		finally
-		{
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 }
