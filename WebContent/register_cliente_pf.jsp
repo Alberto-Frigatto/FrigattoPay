@@ -12,7 +12,7 @@
 		</div>
 	</c:if>
 
-	<form action='clientePF' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-3'>
+	<form action='clientePF' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-2'>
 		<h2>Pessoa Física</h2>
 		
 		<p>Para criar uma conta como Pessoa Jurídica <a href='register_cliente_pj.jsp'>Clique Aqui</a></p>
@@ -24,7 +24,7 @@
 				    <label for="nome">Nome</label>
 				</div>
 			</div>
-			<div class='col mb-2'>
+			<div class='col'>
 				<div class="form-floating">
 				    <input type="email" class="form-control" name='email' id="email" placeholder="email">
 				    <label for="email">Email</label>
