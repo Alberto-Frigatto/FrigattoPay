@@ -24,7 +24,7 @@ public class ClientePFServlet extends HttpServlet {
 	{
 		SimpleDateFormat dateFormatInter = new SimpleDateFormat("yyyy-MM-dd");
 		
-		Connection conn = ConnectionManager.getInstance().getConnection();
+		Connection conn = (Connection) request.getAttribute("conn");
 		
 		try
 		{
@@ -57,14 +57,6 @@ public class ClientePFServlet extends HttpServlet {
 			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
 			request.getRequestDispatcher("register_cliente_pf.jsp").forward(request, response);
-		}
-		finally
-		{
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 }
