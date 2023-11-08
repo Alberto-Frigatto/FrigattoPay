@@ -23,7 +23,7 @@ public class ClientePJ extends Cliente
         String senha,
         String cnpj,
         String inscricaoEstadual,
-        String dataAbertura,
+        Date dataAbertura,
         String setor
     ) throws ClienteException
     {
@@ -31,11 +31,12 @@ public class ClientePJ extends Cliente
         this.cnpj = cnpj.strip();
         this.inscricaoEstadual = inscricaoEstadual.strip();
         this.setor = setor.strip();
+        this.dataAbertura = dataAbertura;
 
         this.validarCnpj();
         this.validarInscricaoEstadual();
         this.validarSetor();
-        this.definirDataAberturaSeValida(dataAbertura);
+        this.validarDataAbertura();
     }
 
     public ClientePJ(
@@ -44,7 +45,7 @@ public class ClientePJ extends Cliente
         String senha,
         String cnpj,
         String inscricaoEstadual,
-        String dataAbertura,
+        Date dataAbertura,
         String setor
     ) throws ClienteException
     {
@@ -52,11 +53,12 @@ public class ClientePJ extends Cliente
         this.cnpj = cnpj.strip();
         this.inscricaoEstadual = inscricaoEstadual.strip();
         this.setor = setor.strip();
+        this.dataAbertura = dataAbertura;
 
         this.validarCnpj();
         this.validarInscricaoEstadual();
         this.validarSetor();
-        this.definirDataAberturaSeValida(dataAbertura);
+        this.validarDataAbertura();
     }
 
     @Override
@@ -142,31 +144,26 @@ public class ClientePJ extends Cliente
                this.setor.length() <= 30;
     }
 
-    private void definirDataAberturaSeValida(String dataAbertura) throws DataAberturaInvalidaException
+    private void validarDataAbertura() throws DataAberturaInvalidaException
     {
-        try
-        {
-            this.dataAbertura = this.dateFormat.parse(dataAbertura);
-        }
-        catch (ParseException e)
-        {
-            throw new DataAberturaInvalidaException();
-        }
-
-        if (!this.dataAberturaEValida(this.dataAbertura))
+        if (!this.dataAberturaEValida())
             throw new DataAberturaInvalidaException();
     }
 
-    private boolean dataAberturaEValida(Date dataAbertura)
+    private boolean dataAberturaEValida()
     {
-
-        Calendar calendar = Calendar.getInstance();
-
-        calendar.add(Calendar.DAY_OF_YEAR, -1);
-
-        Date ontem = calendar.getTime();
-
-        return dataAbertura.before(ontem);
+    	if (this.dataAbertura != null)
+    	{
+    		Calendar calendar = Calendar.getInstance();
+    		
+    		calendar.add(Calendar.DAY_OF_YEAR, -1);
+    		
+    		Date ontem = calendar.getTime();
+    		
+    		return this.dataAbertura.before(ontem);    		
+    	}
+    	
+    	return false;
     }
 
     public void data()
@@ -231,9 +228,12 @@ public class ClientePJ extends Cliente
         return this.dataAbertura;
     }
 
-    public void updateDataAbertura(String value) throws ParseException, DataAberturaInvalidaException
+    public void updateDataAbertura(Date value) throws ParseException, DataAberturaInvalidaException
     {
-        this.definirDataAberturaSeValida(value);
+        this.dataAbertura = value;
+        
+        if (!this.dataAberturaEValida())
+            throw new DataAberturaInvalidaException();
     }
 
     public String getSetor()
