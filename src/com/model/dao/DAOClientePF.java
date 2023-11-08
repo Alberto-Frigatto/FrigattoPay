@@ -32,8 +32,6 @@ public class DAOClientePF extends DAOCliente
 
         while (result.next())
         {
-            String formattedDate = this.formatCompleteDate(result.getDate("dt_nascimento"));
-
             ClientePF clientePF = new ClientePF(
                 result.getInt("cd_cliente"),
                 result.getString("nm_cliente"),
@@ -41,7 +39,7 @@ public class DAOClientePF extends DAOCliente
                 result.getString("ds_senha"),
                 result.getString("nr_cpf"),
                 result.getString("nr_rg"),
-                formattedDate
+                result.getDate("dt_nascimento")
             );
 
             int idCliente = clientePF.getId();
@@ -79,8 +77,6 @@ public class DAOClientePF extends DAOCliente
         if (!result.next())
             throw new SQLException("O cliente PF " + id + " não existe");
 
-        String formattedDate = this.formatCompleteDate(result.getDate("dt_nascimento"));
-
         ClientePF clientePF = new ClientePF(
             result.getInt("cd_cliente"),
             result.getString("nm_cliente"),
@@ -88,7 +84,7 @@ public class DAOClientePF extends DAOCliente
             result.getString("ds_senha"),
             result.getString("nr_cpf"),
             result.getString("nr_rg"),
-            formattedDate
+            result.getDate("dt_nascimento")
         );
 
         int idCliente = clientePF.getId();
