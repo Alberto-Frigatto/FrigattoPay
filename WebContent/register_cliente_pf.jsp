@@ -75,6 +75,8 @@
 		<div class='d-grid'>
 			<button type='submit' class='btn btn-primary'>Cadastrar</button>
 		</div>
+		
+		<p>Ou então, efetue seu login <a href='index.jsp'>clicando aqui</a></p>
 	</form>
 </body>
 
