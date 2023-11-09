@@ -9,10 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.dao.DAOCliente;
-
-import com.singleton.ConnectionManager;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet
@@ -30,9 +29,11 @@ public class LoginServlet extends HttpServlet
 			String email = request.getParameter("email");
 			String senha = request.getParameter("senha");
 			
-			request.setAttribute("cliente", daoCliente.login(email, senha));
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("clienteLogado", daoCliente.login(email, senha));
 
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			response.sendRedirect("user/home");
 		}
 		catch(Exception e)
 		{
