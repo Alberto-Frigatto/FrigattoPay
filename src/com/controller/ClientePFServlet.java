@@ -16,8 +16,9 @@ import com.model.dao.DAOClientePF;
 import com.model.entity.cliente.ClientePF;
 import com.singleton.ConnectionManager;
 
-@WebServlet("/clientePF")
-public class ClientePFServlet extends HttpServlet {
+@WebServlet({"/clientePF", "/user/clientePF"})
+public class ClientePFServlet extends HttpServlet
+{
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
