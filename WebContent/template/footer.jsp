@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.time.LocalDate" %>
 
 		<footer class='d-flex align-items-center justify-content-center py-4 border-top text-white'>
 			<span>
-				Copyright © FrigattoPay <%=LocalDate.now().getYear() %> - 
-				<a href='https://github.com/Alberto-Frigatto/Fintech' target='_blank'>Repositório</a>
+				Copyright Â© FrigattoPay <%=LocalDate.now().getYear() %> - 
+				<a href='https://github.com/Alberto-Frigatto/Fintech' target='_blank'>RepositÃ³rio</a>
 			</span>
 		</footer>
 
