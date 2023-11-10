@@ -5,7 +5,7 @@
     <jsp:param name="title" value="Realizar Cadastro" />
 </jsp:include>
 
-<body class='d-flex align-items-center justify-content-center bg-black flex-column gap-3'>
+<main class='d-flex align-items-center justify-content-center flex-column gap-3'>
 	<c:if test="${error != null}">
 		<div class="alert alert-danger" role="alert">
 		    ${ error }
@@ -13,9 +13,9 @@
 	</c:if>
 
 	<form action='clientePF' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-2'>
-		<h2>Pessoa Física</h2>
+		<h1 class='fs-2'>Pessoa Física</h1>
 		
-		<p>Para criar uma conta como Pessoa Jurídica <a href='register_cliente_pj.jsp'>Clique Aqui</a></p>
+		<p>Para criar uma conta como <b>Pessoa Jurídica</b> <a href='register_cliente_pj.jsp'>Clique Aqui</a></p>
 		
 		<div class='row mb-2'>
 			<div class='col'>
@@ -78,6 +78,6 @@
 		
 		<p>Ou então, efetue seu login <a href='index.jsp'>clicando aqui</a></p>
 	</form>
-</body>
+</main>
 
 <%@ include file="template/footer.jsp" %>
