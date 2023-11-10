@@ -102,9 +102,12 @@ public class ClientePF extends Cliente
 
     private boolean rgEValido()
     {
-        int rgSize = 9;
+        int minSize = 8;
+        int maxSize = 9;
 
-        if (this.rg.isEmpty() || this.rg.length() != rgSize)
+        if (this.rg.isEmpty() ||
+        	this.rg.length() < minSize ||
+        	this.rg.length() > maxSize)
             return false;
 
         for (char c : this.rg.toCharArray())
