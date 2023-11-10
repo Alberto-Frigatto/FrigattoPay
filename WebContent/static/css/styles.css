@@ -3,4 +3,27 @@
 body
 {
 	min-height: 100vh;
+	display: grid;
+	grid-template-rows: max-content auto max-content;
+	grid-template-areas:
+         "navbar"
+         "main"
+         "footer"
+    ;
+}
+
+.navbar
+{
+	grid-area: navbar;
+}
+
+main
+{
+	grid-area: main;
+	padding-block: 1.5rem;
+}
+
+footer
+{
+	grid-area: footer;
 }
