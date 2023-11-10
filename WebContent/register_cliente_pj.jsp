@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="template/header.jsp">
@@ -13,9 +13,9 @@
 	</c:if>
 	
 	<form action='clientePJ' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-2'>
-		<h1  class='fs-2'>Pessoa Jurídica</h1>
+		<h1  class='fs-2'>Pessoa JurÃ­dica</h1>
 		
-		<p>Para criar uma conta como <b>Pessoa Física</b> <a href='register_cliente_pf.jsp'>Clique aqui</a></p>
+		<p>Para criar uma conta como <b>Pessoa FÃ­sica</b> <a href='register_cliente_pf.jsp'>Clique aqui</a></p>
 		
 		<div class='row mb-2'>
 			<div class='col'>
@@ -49,7 +49,7 @@
 			<div class='col'>
 				<div class="form-floating">
 					<input type="text" class="form-control" name="inscricaoEstadual" placeholder="11111111111111111111">
-					<label for="inscricaoEstadual">Inscrição estadual</label>
+					<label for="inscricaoEstadual">InscriÃ§Ã£o estadual</label>
 				</div>
 			</div>
 			<div class='col'>
@@ -69,12 +69,12 @@
 				</div>
 			</div>
 			<div class='col'>
-				<p>A senha deve possuir no mínimo:</p>
+				<p>A senha deve possuir no mÃ­nimo:</p>
 				<ul>
 					<li>8 caracteres</li>
-					<li>1 letra maiúscula</li>
-					<li>1 letra minúscula</li>
-					<li>1 número</li>
+					<li>1 letra maiÃºscula</li>
+					<li>1 letra minÃºscula</li>
+					<li>1 nÃºmero</li>
 					<li>1 caractere especial</li>
 				</ul>
 			</div>
@@ -84,7 +84,7 @@
 			<button type='submit' class='btn btn-primary'>Cadastrar</button>
 		</div>
 		
-		<p>Ou então, efetue seu login <a href='index.jsp'>clicando aqui</a></p>
+		<p>Ou entÃ£o, efetue seu login <a href='index.jsp'>clicando aqui</a></p>
 	</form>
 </main>
 
