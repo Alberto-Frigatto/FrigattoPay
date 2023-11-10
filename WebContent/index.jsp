@@ -5,14 +5,14 @@
     <jsp:param name="title" value="Login" />
 </jsp:include>
 
-<body class='d-flex align-items-center justify-content-center bg-black flex-column gap-3'>
+<main class='d-flex align-items-center justify-content-center flex-column gap-3'>
 	<c:if test="${error != null}">
 		<div class="alert alert-danger" role="alert">
 		    ${ error }
 		</div>
 	</c:if>
 	<form action='login' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-25 gap-3'>
-		<h2>Entre</h2>
+		<h1 class='fs-2'>Entre</h1>
 		
 		<div class="form-floating mb-3">
 		    <input type="email" class="form-control" name='email' id="email" placeholder="name@example.com">
@@ -30,6 +30,6 @@
 		
 		<a href='register_cliente_pf.jsp'>Criar conta</a>
 	</form>
-</body>
+</main>
 
 <%@ include file="template/footer.jsp" %>
