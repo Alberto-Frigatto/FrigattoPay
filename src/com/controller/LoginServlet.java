@@ -33,12 +33,12 @@ public class LoginServlet extends HttpServlet
 			
 			session.setAttribute("clienteLogado", daoCliente.login(email, senha));
 
-			response.sendRedirect("user/home");
+			response.sendRedirect(request.getContextPath() + "/user/home");
 		}
 		catch(Exception e)
 		{
 			request.setAttribute("error", e.getMessage());
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("/").forward(request, response);
 		}
 	}
 }
