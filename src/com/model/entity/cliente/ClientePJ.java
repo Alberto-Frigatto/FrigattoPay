@@ -116,7 +116,7 @@ public class ClientePJ extends Cliente
 
     private boolean inscricaoEstadualEValida()
     {
-        int inscEstadualMinSize = 15;
+        int inscEstadualMinSize = 7;
         int inscEstadualMaxSize = 20;
 
         if (this.inscricaoEstadual.isEmpty() ||
