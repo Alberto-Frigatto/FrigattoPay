@@ -26,7 +26,7 @@ public class LogoutFilter extends HttpFilter implements Filter
         HttpSession session = httpRequest.getSession();
         
         if (session.getAttribute("clienteLogado") != null)
-        	httpResponse.sendRedirect("user/home");
+        	httpResponse.sendRedirect(httpRequest.getContextPath() + "/user/home");
         else
         	chain.doFilter(request, response);
 	}
