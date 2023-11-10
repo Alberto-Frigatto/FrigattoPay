@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.model.dao.DAOCliente;
+import com.model.entity.cliente.ClientePF;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet
@@ -32,6 +33,7 @@ public class LoginServlet extends HttpServlet
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("clienteLogado", daoCliente.login(email, senha));
+			session.setAttribute("isClientePF", session.getAttribute("clienteLogado") instanceof ClientePF);
 
 			response.sendRedirect(request.getContextPath() + "/user/home");
 		}
