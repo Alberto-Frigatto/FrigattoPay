@@ -15,7 +15,7 @@
 	<form action='clientePJ' method='post' class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-2'>
 		<h1  class='fs-2'>Pessoa Jurídica</h1>
 		
-		<p>Para criar uma conta como <b>Pessoa Física</b> <a href='register_cliente_pf.jsp'>Clique aqui</a></p>
+		<p>Para criar uma conta como <b>Pessoa Física</b> <a href='<%=request.getContextPath() + "/criar/pf"%>'> Clique aqui</a></p>
 		
 		<div class='row mb-2'>
 			<div class='col'>
@@ -84,7 +84,7 @@
 			<button type='submit' class='btn btn-primary'>Cadastrar</button>
 		</div>
 		
-		<p>Ou então, efetue seu login <a href='index.jsp'>clicando aqui</a></p>
+		<p>Ou então, efetue seu login <a href='<%=request.getContextPath() + "/"%>'>clicando aqui</a></p>
 	</form>
 </main>
 
