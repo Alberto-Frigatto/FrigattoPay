@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="template/header.jsp">
@@ -28,7 +28,7 @@
 			<button type='submit' class='btn btn-primary'>Entrar</button>
 		</div>
 		
-		<a href='register_cliente_pf.jsp'>Criar conta</a>
+		<a href='criar/pf'>Criar conta</a>
 	</form>
 </main>
 
