@@ -28,7 +28,7 @@ public class LoginFilter extends HttpFilter implements Filter
         HttpSession session = httpRequest.getSession();
         
         if (session.getAttribute("clienteLogado") == null)
-        	httpResponse.sendRedirect("/Fintech/index.jsp");
+        	httpResponse.sendRedirect(httpRequest.getContextPath() + "/");
         else
         	chain.doFilter(request, response);
 	}
