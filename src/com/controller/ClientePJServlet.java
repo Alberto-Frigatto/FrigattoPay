@@ -17,10 +17,16 @@ import com.model.entity.cliente.ClientePJ;
 @WebServlet({"/clientePJ", "/user/clientePJ"})
 public class ClientePJServlet extends HttpServlet 
 {
-	private static final long serivalVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		if ("put".equals(request.getParameter("method")))
+		{
+			this.doPut(request, response);
+			return;
+		}
+
 		SimpleDateFormat dateFormatInter = new SimpleDateFormat("yyyy-MM-dd");
 		
 		Connection conn = (Connection) request.getAttribute("conn");
@@ -58,6 +64,46 @@ public class ClientePJServlet extends HttpServlet
 			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
 			request.getRequestDispatcher("cliente_pj_form.jsp").forward(request, response);
+		}
+	}
+	
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		SimpleDateFormat dateFormatInter = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Connection conn = (Connection) request.getAttribute("conn");
+		
+		try
+		{
+			DAOClientePJ daoClientePJ = new DAOClientePJ(conn);
+			
+			String nome = request.getParameter("nome");
+			String email = request.getParameter("email");
+			String cnpj = request.getParameter("cnpj").replaceAll("\\D", "");
+			String inscricaoEstadual = request.getParameter("inscricaoEstadual").replaceAll("\\D", "");
+			String setor = request.getParameter("setor");
+			
+			String rawDataAbertura = request.getParameter("dataAbertura");
+			Date dataAbertura = rawDataAbertura != "" ? dateFormatInter.parse(rawDataAbertura) : null;
+			
+			ClientePJ cliente = (ClientePJ) request.getSession().getAttribute("clienteLogado");
+			
+			cliente.updateNome(nome);
+			cliente.updateEmail(email);
+			cliente.updateCnpj(cnpj);
+			cliente.updateInscricaoEstadual(inscricaoEstadual);
+			cliente.updateSetor(setor);
+			cliente.updateDataAbertura(dataAbertura);
+			
+			daoClientePJ.update(cliente);
+
+			response.sendRedirect(request.getContextPath() + "/user/perfil");
+		}
+		catch (Exception e)
+		{
+			request.setAttribute("error", e.getMessage());
+			e.printStackTrace();
+			request.getRequestDispatcher("/cliente_pj_form.jsp").forward(request, response);
 		}
 	}
 		
