@@ -8,38 +8,66 @@
 </jsp:include>
 
 <main class='d-flex align-items-center justify-content-center flex-column gap-3'>
-	<section class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-3'>
+	<section class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-5'>
 		<h1 class='fs-2 text-center'>Minha conta</h1>
 		<div class='row'>
 			<div class='col'>
 				<b>Nome:</b>
 				${ clienteLogado.getNome() }
 			</div>
-			<div class='col'>
-				<%
-					boolean isClientePF = session.getAttribute("clienteLogado") instanceof ClientePF;
-				
-					if (isClientePF) {
-				%>
-				        <b>CPF:</b>
+			<c:choose>
+				<c:when test="${isClientePF}">
+					<div class='col'>
+						<b>CPF:</b>
 						${ FormatUtil.formatCpf(clienteLogado.getCpf()) }
-				<% } else { %>
-				        <b>CNPJ:</b>
-						${ FormatUtil.formatCnpj(clienteLogado.getCnpj()) }
-				<% } %>
-			</div>
-			<div class='col'>
-				<%
-					if (isClientePF) {
-				%>
-				        <b>RG:</b>
+					</div>
+					<div class='col'>
+						<b>RG:</b>
 						${ FormatUtil.formatRg(clienteLogado.getRg()) }
-				<% } else { %>
-				        <b>Insc.:</b>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class='col'>
+						<b>CNPJ:</b>
+						${ FormatUtil.formatCnpj(clienteLogado.getCnpj()) }
+					</div>
+					<div class='col'>
+						<b>Insc:</b>
 						${ clienteLogado.getInscricaoEstadual() }
-				<% } %>
-			</div>
+					</div>
+				</c:otherwise>
+			</c:choose>
 			
+		</div>
+		<div class='d-grid'>
+			<button type='button' data-bs-toggle="modal"
+					data-bs-target="#excluirContaModal"
+					class='p-4 border rounded btn btn-outline-danger'>Excluir cadastro</button>
+		</div>
+			
+		<div class="modal fade" id="excluirContaModal">
+		    <div class="modal-dialog modal-dialog-centered">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Cadastro</h1>
+		        		<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		      		</div>
+		      		<div class="modal-body">
+		        		<span class='text-center d-block'>Deseja excluir seu cadastro?</span>
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+		        		<c:choose>
+							<c:when test="${isClientePF}">
+								<a href='<%=request.getContextPath() + "/user/clientePF?method=delete"%>' class="btn btn-primary">Excluir cadastro</a>
+							</c:when>
+							<c:otherwise>
+								<a href='<%=request.getContextPath() + "/user/clientePJ?method=delete"%>' class="btn btn-primary">Excluir cadastro</a>
+							</c:otherwise>
+						</c:choose>
+		      		</div>
+		    	</div>
+		    </div>
 		</div>
 	</section>
 </main>
