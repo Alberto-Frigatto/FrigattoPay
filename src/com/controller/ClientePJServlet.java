@@ -57,7 +57,7 @@ public class ClientePJServlet extends HttpServlet
 		{
 			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
-			request.getRequestDispatcher("register_cliente_pj.jsp").forward(request, response);
+			request.getRequestDispatcher("cliente_pj_form.jsp").forward(request, response);
 		}
 	}
 		
