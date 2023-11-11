@@ -21,6 +21,12 @@ public class ClientePFServlet extends HttpServlet
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		if ("put".equals(request.getParameter("method")))
+		{
+			this.doPut(request, response);
+			return;
+		}
+
 		SimpleDateFormat dateFormatInter = new SimpleDateFormat("yyyy-MM-dd");
 		
 		Connection conn = (Connection) request.getAttribute("conn");
@@ -55,7 +61,45 @@ public class ClientePFServlet extends HttpServlet
 		{
 			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
-			request.getRequestDispatcher("register_cliente_pf.jsp").forward(request, response);
+			request.getRequestDispatcher("cliente_pf_form.jsp").forward(request, response);
+		}
+	}
+	
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		SimpleDateFormat dateFormatInter = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Connection conn = (Connection) request.getAttribute("conn");
+		
+		try
+		{
+			DAOClientePF daoClientePF = new DAOClientePF(conn);
+			
+			String nome = request.getParameter("nome");
+			String email = request.getParameter("email");
+			String cpf = request.getParameter("cpf").replaceAll("\\D", "");
+			String rg = request.getParameter("rg").replaceAll("\\D", "");
+			
+			String rawDataNascimento = request.getParameter("dataNascimento");
+			Date dataNascimento = rawDataNascimento != "" ? dateFormatInter.parse(rawDataNascimento) : null;
+			
+			ClientePF cliente = (ClientePF) request.getSession().getAttribute("clienteLogado");
+			
+			cliente.updateNome(nome);
+			cliente.updateEmail(email);
+			cliente.updateCpf(cpf);
+			cliente.updateRg(rg);
+			cliente.updateDataNascimento(dataNascimento);
+			
+			daoClientePF.update(cliente);
+
+			response.sendRedirect(request.getContextPath() + "/user/perfil");
+		}
+		catch (Exception e)
+		{
+			request.setAttribute("error", e.getMessage());
+			e.printStackTrace();
+			request.getRequestDispatcher("/cliente_pf_form.jsp").forward(request, response);
 		}
 	}
 	
