@@ -60,4 +60,31 @@ public class ClientePJServlet extends HttpServlet
 			request.getRequestDispatcher("register_cliente_pj.jsp").forward(request, response);
 		}
 	}
+		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		if ("delete".equals(request.getParameter("method")))
+			this.doDelete(request, response);
+	}
+	
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		Connection conn = (Connection) request.getAttribute("conn");
+		
+		try
+		{
+			DAOClientePJ daoClientePJ = new DAOClientePJ(conn);
+			
+			ClientePJ cliente = (ClientePJ) request.getSession().getAttribute("clienteLogado");
+			
+			daoClientePJ.delete(cliente.getId());
+			
+			response.sendRedirect(request.getContextPath() + "/user/logout");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
 }
