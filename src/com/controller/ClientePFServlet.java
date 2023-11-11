@@ -2,7 +2,6 @@ package com.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.model.dao.DAOClientePF;
 import com.model.entity.cliente.ClientePF;
-import com.singleton.ConnectionManager;
 
 @WebServlet({"/clientePF", "/user/clientePF"})
 public class ClientePFServlet extends HttpServlet
@@ -58,6 +56,32 @@ public class ClientePFServlet extends HttpServlet
 			request.setAttribute("error", e.getMessage());
 			e.printStackTrace();
 			request.getRequestDispatcher("register_cliente_pf.jsp").forward(request, response);
+		}
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		if ("delete".equals(request.getParameter("method")))
+			this.doDelete(request, response);
+	}
+
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		Connection conn = (Connection) request.getAttribute("conn");
+		
+		try
+		{
+			DAOClientePF daoClientePF = new DAOClientePF(conn);
+			
+			ClientePF cliente = (ClientePF) request.getSession().getAttribute("clienteLogado");
+			
+			daoClientePF.delete(cliente.getId());
+			
+			response.sendRedirect(request.getContextPath() + "/user/logout");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 }
