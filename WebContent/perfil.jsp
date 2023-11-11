@@ -41,7 +41,14 @@
 		</div>
 		<div class='row gap-3'>
 			<div class='d-grid'>
-				<a href='<%=request.getContextPath() + "/user/alterar/pf"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+			<c:choose>
+				<c:when test="${isClientePF}">
+					<a href='<%=request.getContextPath() + "/user/alterar/pf"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+				</c:when>
+				<c:otherwise>
+					<a href='<%=request.getContextPath() + "/user/alterar/pj"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+				</c:otherwise>
+			</c:choose>
 			</div>
 			<div class='d-grid'>
 				<button type='button' data-bs-toggle="modal"
