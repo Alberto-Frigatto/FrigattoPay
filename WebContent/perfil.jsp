@@ -39,10 +39,15 @@
 			</c:choose>
 			
 		</div>
-		<div class='d-grid'>
-			<button type='button' data-bs-toggle="modal"
-					data-bs-target="#excluirContaModal"
-					class='p-4 border rounded btn btn-outline-danger'>Excluir cadastro</button>
+		<div class='row gap-3'>
+			<div class='d-grid'>
+				<a href='<%=request.getContextPath() + "/user/alterar/pf"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+			</div>
+			<div class='d-grid'>
+				<button type='button' data-bs-toggle="modal"
+						data-bs-target="#excluirContaModal"
+						class='p-4 btn btn-outline-danger'>Excluir cadastro</button>
+			</div>
 		</div>
 			
 		<div class="modal fade" id="excluirContaModal">
