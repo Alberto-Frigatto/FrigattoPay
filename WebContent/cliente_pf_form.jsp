@@ -5,6 +5,7 @@
 
 <jsp:include page="template/header.jsp">
     <jsp:param name="title" value="Realizar Cadastro" />
+    <jsp:param name="navbar" value='${ clienteLogado != null }' />
 </jsp:include>
 
 <main class='d-flex align-items-center justify-content-center flex-column gap-3'>
@@ -96,7 +97,7 @@
 		</c:if>
 		
 		<div class='d-grid'>
-			<button type='submit' class='btn btn-primary'>Cadastrar</button>
+			<button type='submit' class='btn btn-primary'>${ clienteLogado != null ? "Alterar" : "Cadastrar" }</button>
 		</div>
 		
 		<c:if test='${ clienteLogado == null }'>
