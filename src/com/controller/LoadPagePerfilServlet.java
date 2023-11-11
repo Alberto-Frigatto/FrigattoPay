@@ -7,18 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/home")
-public class HomeServlet extends HttpServlet
+@WebServlet("/user/perfil")
+public class LoadPagePerfilServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		this.doPost(request, response);
+		request.getRequestDispatcher("/perfil.jsp").forward(request, response);
 	}
 }
