@@ -62,29 +62,29 @@ public class ClientePJ extends Cliente
     }
 
     @Override
-    protected boolean nomeEValido()
+    protected boolean nomeEValido(String nome)
     {
-        return this.getNome() instanceof String &&
-               !this.getNome().isEmpty() &&
-               this.getNome().length() <= 50;
+        return nome instanceof String &&
+        	   !nome.isEmpty() &&
+        	   nome.length() <= 50;
     }
 
     private void validarCnpj() throws CnpjInvalidoException
     {
-        if (!this.cnpjEValido())
+        if (!this.cnpjEValido(this.cnpj))
             throw new CnpjInvalidoException();
     }
 
-    private boolean cnpjEValido()
+    private boolean cnpjEValido(String cnpj)
     {
         int cnpjSize = 14;
 
-        if (this.cnpj.matches("(\\d)\\1{13}") || this.cnpj.length() != cnpjSize)
+        if (cnpj.matches("(\\d)\\1{13}") || cnpj.length() != cnpjSize)
             return false;
 
         int[] cnpjDigits = new int[14];
         for (int i = 0; i < 14; i++)
-            cnpjDigits[i] = Character.getNumericValue(this.cnpj.charAt(i));
+            cnpjDigits[i] = Character.getNumericValue(cnpj.charAt(i));
 
         int[] weights = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
 
@@ -110,21 +110,21 @@ public class ClientePJ extends Cliente
 
     private void validarInscricaoEstadual() throws InscricaoEstadualInvalidaException
     {
-        if (!this.inscricaoEstadualEValida())
+        if (!this.inscricaoEstadualEValida(this.inscricaoEstadual))
             throw new InscricaoEstadualInvalidaException();
     }
 
-    private boolean inscricaoEstadualEValida()
+    private boolean inscricaoEstadualEValida(String inscricaoEstadual)
     {
         int inscEstadualMinSize = 7;
         int inscEstadualMaxSize = 20;
 
-        if (this.inscricaoEstadual.isEmpty() ||
-            this.inscricaoEstadual.length() < inscEstadualMinSize ||
-            this.inscricaoEstadual.length() > inscEstadualMaxSize)
+        if (inscricaoEstadual.isEmpty() ||
+            inscricaoEstadual.length() < inscEstadualMinSize ||
+            inscricaoEstadual.length() > inscEstadualMaxSize)
             return false;
 
-        for (char c : this.inscricaoEstadual.toCharArray())
+        for (char c : inscricaoEstadual.toCharArray())
             if (!Character.isDigit(c))
                 return false;
 
@@ -133,26 +133,26 @@ public class ClientePJ extends Cliente
 
     private void validarSetor() throws SetorInvalidoException
     {
-        if (!this.setorEValido())
+        if (!this.setorEValido(this.setor))
             throw new SetorInvalidoException();
     }
 
-    private boolean setorEValido()
+    private boolean setorEValido(String setor)
     {
-        return this.setor instanceof String &&
-               !this.setor.isEmpty() &&
-               this.setor.length() <= 30;
+        return setor instanceof String &&
+               !setor.isEmpty() &&
+               setor.length() <= 30;
     }
 
     private void validarDataAbertura() throws DataAberturaInvalidaException
     {
-        if (!this.dataAberturaEValida())
+        if (!this.dataAberturaEValida(this.dataAbertura))
             throw new DataAberturaInvalidaException();
     }
 
-    private boolean dataAberturaEValida()
+    private boolean dataAberturaEValida(Date dataAbertura)
     {
-    	if (this.dataAbertura != null)
+    	if (dataAbertura != null)
     	{
     		Calendar calendar = Calendar.getInstance();
     		
@@ -160,7 +160,7 @@ public class ClientePJ extends Cliente
     		
     		Date ontem = calendar.getTime();
     		
-    		return this.dataAbertura.before(ontem);    		
+    		return dataAbertura.before(ontem);    		
     	}
     	
     	return false;
@@ -204,10 +204,10 @@ public class ClientePJ extends Cliente
 
     public void updateCnpj(String value) throws CnpjInvalidoException
     {
-        this.cnpj = value;
-
-        if (!this.cnpjEValido())
+        if (!this.cnpjEValido(value))
             throw new CnpjInvalidoException();
+
+        this.cnpj = value;
     }
 
     public String getInscricaoEstadual()
@@ -217,10 +217,10 @@ public class ClientePJ extends Cliente
 
     public void updateInscricaoEstadual(String value) throws InscricaoEstadualInvalidaException
     {
-        this.inscricaoEstadual = value;
-
-        if (!this.inscricaoEstadualEValida())
+        if (!this.inscricaoEstadualEValida(value))
             throw new InscricaoEstadualInvalidaException();
+
+        this.inscricaoEstadual = value;
     }
 
     public Date getDataAbertura()
@@ -230,10 +230,10 @@ public class ClientePJ extends Cliente
 
     public void updateDataAbertura(Date value) throws ParseException, DataAberturaInvalidaException
     {
-        this.dataAbertura = value;
-        
-        if (!this.dataAberturaEValida())
+        if (!this.dataAberturaEValida(value))
             throw new DataAberturaInvalidaException();
+
+        this.dataAbertura = value;
     }
 
     public String getSetor()
@@ -243,10 +243,10 @@ public class ClientePJ extends Cliente
 
     public void updateSetor(String value) throws SetorInvalidoException
     {
-        this.setor = value;
-
-        if (!this.setorEValido())
+        if (!this.setorEValido(value))
             throw new SetorInvalidoException();
+
+        this.setor = value;
     }
 }
 

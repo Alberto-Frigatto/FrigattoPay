@@ -53,23 +53,23 @@ public abstract class Cliente
 
     private void validarNome() throws NomeInvalidoException
     {
-        if (!this.nomeEValido())
+        if (!this.nomeEValido(this.nome))
             throw new NomeInvalidoException();
     }
 
-    protected abstract boolean nomeEValido();
+    protected abstract boolean nomeEValido(String nome);
 
     private void validarEmail() throws EmailInvalidoException
     {
-        if (!this.emailEValido())
+        if (!this.emailEValido(this.email))
             throw new EmailInvalidoException();
     }
 
-    private boolean emailEValido()
+    private boolean emailEValido(String email)
     {
         String emailRegex = "^[A-Za-z0-9+_.-]+@([A-Za-z0-9]+\\.)+[A-Za-z]{2,}$";
 
-        return this.email.matches(emailRegex);
+        return email.matches(emailRegex);
     }
 
     private void criptografarSenhaSeValida() throws SenhaInvalidaException
@@ -150,10 +150,10 @@ public abstract class Cliente
 
     public void updateNome(String value) throws NomeInvalidoException
     {
-        this.nome = value;
-
-        if (!this.nomeEValido())
+        if (!this.nomeEValido(value))
             throw new NomeInvalidoException();
+
+        this.nome = value;
     }
 
     public String getEmail()
@@ -163,10 +163,10 @@ public abstract class Cliente
 
     public void updateEmail(String value) throws EmailInvalidoException
     {
-        this.email = value;
-
-        if (!this.emailEValido())
+        if (!this.emailEValido(value))
             throw new EmailInvalidoException();
+
+        this.email = value;
     }
 
     public String getSenha()

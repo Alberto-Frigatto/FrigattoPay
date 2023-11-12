@@ -55,29 +55,29 @@ public class ClientePF extends Cliente
     }
 
     @Override
-    protected boolean nomeEValido()
+    protected boolean nomeEValido(String nome)
     {
-        return this.getNome() instanceof String &&
-               !this.getNome().isEmpty() &&
-               this.getNome().length() <= 50 &&
-               this.getNome().matches("^[^0-9]*$");
+        return nome instanceof String &&
+        	   !nome.isEmpty() &&
+        	   nome.length() <= 50 &&
+        	   nome.matches("^[^0-9]*$");
     }
 
     private void validarCpf() throws CpfInvalidoException
     {
-        if (!this.cpfEValido())
+        if (!this.cpfEValido(this.cpf))
             throw new CpfInvalidoException();
     }
 
-    private boolean cpfEValido()
+    private boolean cpfEValido(String cpf)
     {
-        if (this.cpf.matches("(\\d)\\1{10}") || this.cpf.strip().length() != 11)
+        if (cpf.matches("(\\d)\\1{10}") || cpf.strip().length() != 11)
             return false;
 
         int[] cpfDigits = new int[11];
 
         for (int i = 0; i < 11; i++)
-            cpfDigits[i] = Character.getNumericValue(this.cpf.charAt(i));
+            cpfDigits[i] = Character.getNumericValue(cpf.charAt(i));
 
         for (int t = 9; t < 11; t++)
         {
@@ -96,21 +96,21 @@ public class ClientePF extends Cliente
 
     private void validarRg() throws RgInvalidoException
     {
-        if (!this.rgEValido())
+        if (!this.rgEValido(this.rg))
             throw new RgInvalidoException();
     }
 
-    private boolean rgEValido()
+    private boolean rgEValido(String rg)
     {
         int minSize = 8;
         int maxSize = 9;
 
-        if (this.rg.isEmpty() ||
-        	this.rg.length() < minSize ||
-        	this.rg.length() > maxSize)
+        if (rg.isEmpty() ||
+        	rg.length() < minSize ||
+        	rg.length() > maxSize)
             return false;
 
-        for (char c : this.rg.toCharArray())
+        for (char c : rg.toCharArray())
             if (!Character.isDigit(c))
                 return false;
 
@@ -119,13 +119,13 @@ public class ClientePF extends Cliente
 
     private void validarDataNascimento() throws DataNascimentoInvalidaException
     {
-        if (!this.dataNascimentoEValida())
+        if (!this.dataNascimentoEValida(this.dataNascimento))
             throw new DataNascimentoInvalidaException();
     }
 
-    private boolean dataNascimentoEValida()
+    private boolean dataNascimentoEValida(Date dataNascimento)
     {
-    	if (this.dataNascimento != null)
+    	if (dataNascimento != null)
     	{    		
     		Calendar calendar = Calendar.getInstance();
     		
@@ -135,7 +135,7 @@ public class ClientePF extends Cliente
     		
     		Date dataMaioridade = calendar.getTime();
     		
-    		return this.dataNascimento.before(dataMaioridade);
+    		return dataNascimento.before(dataMaioridade);
     	}
     	
     	return false;
@@ -178,10 +178,10 @@ public class ClientePF extends Cliente
 
     public void updateCpf(String value) throws CpfInvalidoException
     {
-        this.cpf = value;
-
-        if (!this.cpfEValido())
+        if (!this.cpfEValido(value))
             throw new CpfInvalidoException();
+
+        this.cpf = value;
     }
 
     public String getRg()
@@ -191,10 +191,10 @@ public class ClientePF extends Cliente
 
     public void updateRg(String value) throws RgInvalidoException
     {
-        this.rg = value;
+    	if (!this.rgEValido(value))
+    		throw new RgInvalidoException();
 
-        if (!this.rgEValido())
-            throw new RgInvalidoException();
+        this.rg = value;
     }
 
     public Date getDataNascimento()
@@ -204,9 +204,9 @@ public class ClientePF extends Cliente
 
     public void updateDataNascimento(Date value) throws ParseException, DataNascimentoInvalidaException
     {
-        this.dataNascimento = value;
-        
-        if (!this.dataNascimentoEValida())
+        if (!this.dataNascimentoEValida(value))
             throw new DataNascimentoInvalidaException();
+
+        this.dataNascimento = value;
     }
 }
