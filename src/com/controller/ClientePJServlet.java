@@ -62,7 +62,6 @@ public class ClientePJServlet extends HttpServlet
 		catch (Exception e)
 		{
 			request.setAttribute("error", e.getMessage());
-			e.printStackTrace();
 			request.getRequestDispatcher("cliente_pj_form.jsp").forward(request, response);
 		}
 	}

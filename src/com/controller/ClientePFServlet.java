@@ -60,7 +60,6 @@ public class ClientePFServlet extends HttpServlet
 		catch (Exception e)
 		{
 			request.setAttribute("error", e.getMessage());
-			e.printStackTrace();
 			request.getRequestDispatcher("cliente_pf_form.jsp").forward(request, response);
 		}
 	}
