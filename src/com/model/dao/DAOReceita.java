@@ -27,14 +27,13 @@ public class DAOReceita extends DAO
 
         while (result.next())
         {
-            String formattedDate = this.formatCompleteDate(result.getDate("dt_receita"));
 
             Receita receita = new Receita(
                 result.getInt("cd_receita"),
                 result.getInt("t_fp_cliente_cd_cliente"),
                 result.getInt("t_fp_tipo_receita_cd_tipo"),
                 result.getDouble("vl_receita"),
-                formattedDate
+                result.getDate("dt_receita")
             );
 
             receitas.add(receita);
@@ -61,6 +60,51 @@ public class DAOReceita extends DAO
 
         return stmt.executeQuery(query);
     }
+    
+    public List<Receita> getAll(int idCliente) throws SQLException, ReceitaException
+    {
+        List<Receita> receitas = new ArrayList<Receita>();
+
+        ResultSet result = this.getReceitas(idCliente);
+
+        while (result.next())
+        {
+
+            Receita receita = new Receita(
+                result.getInt("cd_receita"),
+                result.getInt("t_fp_cliente_cd_cliente"),
+                result.getInt("t_fp_tipo_receita_cd_tipo"),
+                result.getDouble("vl_receita"),
+                result.getDate("dt_receita")
+            );
+
+            receitas.add(receita);
+        }
+
+        return receitas;
+    }
+
+    private ResultSet getReceitas(int idCliente) throws SQLException
+    {        
+    	String query = """
+            SELECT
+                cd_receita,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_receita_cd_tipo,
+                vl_receita,
+                dt_receita
+
+                FROM T_FP_RECEITA
+    			    WHERE t_fp_cliente_cd_cliente = ?
+                    ORDER BY dt_receita DESC
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, idCliente);
+
+        return pstmt.executeQuery();
+    }
 
     public Receita getById(int id) throws SQLException, ReceitaException
     {
@@ -69,14 +113,12 @@ public class DAOReceita extends DAO
         if (!result.next())
             throw new SQLException("A receita " + id + " não existe");
 
-        String formattedDate = this.formatCompleteDate(result.getDate("dt_receita"));
-
         Receita receita = new Receita(
             result.getInt("cd_receita"),
             result.getInt("t_fp_cliente_cd_cliente"),
             result.getInt("t_fp_tipo_receita_cd_tipo"),
             result.getDouble("vl_receita"),
-            formattedDate
+            result.getDate("dt_receita")
         );
 
         return receita;
