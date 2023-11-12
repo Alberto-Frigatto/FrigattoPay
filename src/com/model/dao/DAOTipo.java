@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,18 +39,10 @@ public class DAOTipo extends DAO
 
 	private ResultSet getTipos(String tabela) throws SQLException
     {
-        String query = """
-            SELECT
-                cd_tipo,
-                nm_tipo
-                  FROM ?
-                    ORDER BY cd_tipo
-        """;
+		Statement stmt = this.conn.createStatement();
+		
+        String query = "SELECT cd_tipo, nm_tipo FROM " + tabela + " ORDER BY cd_tipo";
 
-       PreparedStatement pstmt = this.conn.prepareStatement(query);
-
-        pstmt.setString(1, tabela);
-        
-		return pstmt.executeQuery();
+        return stmt.executeQuery(query);
     }
 }
