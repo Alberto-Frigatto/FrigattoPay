@@ -19,7 +19,7 @@
 		action='<%=request.getContextPath() %>${ clienteLogado != null ? "/user/clientePJ?method=put" : "/clientePJ" }' 
 		method='post' 
 		class='p-4 bg-white d-flex flex-column rounded-4 w-50 ${ clienteLogado != null ? "gap-4" : "gap-2" }'>
-		<h1 class='fs-2'>${ clienteLogado != null ? "Alterar cadastro" : "Pessoa Física" }</h1>
+		<h1 class='fs-2'>${ clienteLogado != null ? "Alterar cadastro" : "Pessoa Jurídica" }</h1>
 		
 		<c:if test='${ clienteLogado == null }'>
 		<p>Para criar uma conta como <b>Pessoa Física</b> <a href='<%=request.getContextPath() + "/criar/pf"%>'> Clique aqui</a></p>
