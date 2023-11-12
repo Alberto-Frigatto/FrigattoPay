@@ -23,7 +23,7 @@
 		    	<span>Olá, ${ clienteLogado.getNome() }</span>
 		    	<ul class='nav d-flex gap-4'>
 		    		<li class='nav-item'>
-		    			<a href='<%=request.getContextPath() + "/user/perfil"%>' class='btn btn-primary'>Minha conta</a>
+		    			<a href='<%=request.getContextPath() + "/user/perfil"%>' class='btn btn-primary'>Meu Perfil</a>
 		    		</li>
 		    		<li class='nav-item'>
 		    			<a href='<%=request.getContextPath() + "/user/logout"%>' class='btn btn-outline-danger'>Sair</a>
