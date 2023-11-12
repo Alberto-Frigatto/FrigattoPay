@@ -25,7 +25,10 @@
 		</div>
 		
 		<div class='d-grid'>
-			<button type='submit' class='btn btn-primary'>Entrar</button>
+			<button type='submit' class='btn btn-primary d-flex align-items-center justify-content-center gap-2'>
+				Entrar
+				<i class="bi bi-chevron-right"></i>
+			</button>
 		</div>
 		
 		<a href='criar/pf'>Criar conta</a>

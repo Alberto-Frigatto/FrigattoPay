@@ -45,13 +45,13 @@
 		<div class='row mb-2'>
 			<div class='col'>
 				<div class="form-floating">
-				    <input type="text" value='${ clienteLogado != null ? clienteLogado.getCpf() : "" }' class="form-control" name='cpf' id="cpf" placeholder="11111111111">
+				    <input type="text" value='${ clienteLogado != null ? clienteLogado.getCpf() : "" }' class="form-control cpf-input" name='cpf' id="cpf" placeholder="11111111111">
 				    <label for="cpf">CPF</label>
 				</div>
 			</div>
 			<div class='col'>
 				<div class="form-floating">
-				    <input type="text" value='${ clienteLogado != null ? clienteLogado.getRg() : "" }' class="form-control" name='rg' id="rg" placeholder="111111111">
+				    <input type="text" value='${ clienteLogado != null ? clienteLogado.getRg() : "" }' class="form-control rg-input" name='rg' id="rg" placeholder="111111111">
 				    <label for="rg">RG</label>
 				</div>
 			</div>
@@ -97,7 +97,9 @@
 		</c:if>
 		
 		<div class='d-grid'>
-			<button type='submit' class='btn btn-primary'>${ clienteLogado != null ? "Alterar" : "Cadastrar" }</button>
+			<button type='submit' class='btn btn-primary d-flex align-items-center justify-content-center gap-2'>
+				${ clienteLogado != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-person-fill-add fs-5'></i> Cadastrar" }
+			</button>
 		</div>
 		
 		<c:if test='${ clienteLogado == null }'>

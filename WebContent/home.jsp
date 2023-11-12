@@ -7,28 +7,31 @@
 </jsp:include>
 
 <main class='d-flex align-items-center justify-content-center flex-column gap-3'>
-	<section class='p-4 bg-white d-flex flex-column rounded-4 w-25 gap-3'>
+	<section class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-3'>
 		<h1 class='fs-2 text-center'>Opções</h1>
 		<div class='row'>
 			<div class='col'>
 				<a href='' class='card text-decoration-none btn btn-outline-primary'>
-					<div class='card-body'>
-						Contas
+					<div class='card-body d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-bank fs-5"></i>
+						Contas bancárias
 					</div>
 				</a>
 			</div>
 		</div>
 		<div class='row'>
 			<div class='col'>
-				<a href='' class='card text-decoration-none btn btn-outline-primary'>
-					<div class='card-body'>
+				<a href='<%=request.getContextPath() + "/user/receitas"%>' class='card text-decoration-none btn btn-outline-primary'>
+					<div class='card-body d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-coin fs-5"></i>
 						Receitas
 					</div>
 				</a>
 			</div>
 			<div class='col'>
 				<a href='' class='card text-decoration-none btn btn-outline-primary'>
-					<div class='card-body'>
+					<div class='card-body d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-credit-card-fill fs-5"></i>
 						Despesas
 					</div>
 				</a>

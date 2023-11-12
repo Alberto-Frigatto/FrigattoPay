@@ -42,7 +42,7 @@
 		<div class='row mb-2'>
 			<div class='col'>
 				<div class="form-floating">
-					<input type="text" value='${ clienteLogado != null ? clienteLogado.getCnpj() : "" }' class="form-control" name='cnpj' placeholder="11111111111111">
+					<input type="text" value='${ clienteLogado != null ? clienteLogado.getCnpj() : "" }' class="form-control cnpj-input" name='cnpj' placeholder="11111111111111">
 					<label for="cnpj">CNPJ</label>
 				</div>
 			</div>
@@ -95,9 +95,9 @@
 		</div>
 	</c:if>
 		
-		<div class='d-grid'>
-			<button type='submit' class='btn btn-primary'>${ clienteLogado != null ? "Alterar" : "Cadastrar" }</button>
-		</div>
+		<button type='submit' class='btn btn-primary d-flex align-items-center justify-content-center gap-2'>
+			${ clienteLogado != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-person-fill-add fs-5'></i> Cadastrar" }
+		</button>
 		
 		<c:if test='${ clienteLogado == null }'>
 		<p>Ou então, efetue seu login <a href='<%=request.getContextPath() + "/"%>'>clicando aqui</a></p>

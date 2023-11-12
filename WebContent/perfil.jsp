@@ -43,17 +43,26 @@
 			<div class='d-grid'>
 			<c:choose>
 				<c:when test="${isClientePF}">
-					<a href='<%=request.getContextPath() + "/user/alterar/pf"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+					<a href='<%=request.getContextPath() + "/user/alterar/pf"%>' class='text-decoration-none btn btn-outline-primary p-3 d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-pencil-square fs-4"></i>
+						Alterar cadastro
+					</a>
 				</c:when>
 				<c:otherwise>
-					<a href='<%=request.getContextPath() + "/user/alterar/pj"%>' class='text-decoration-none btn btn-outline-primary p-4'>Alterar cadastro</a>
+					<a href='<%=request.getContextPath() + "/user/alterar/pj"%>' class='text-decoration-none btn btn-outline-primary p-3 d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-pencil-square fs-4"></i>
+						Alterar cadastro
+					</a>
 				</c:otherwise>
 			</c:choose>
 			</div>
 			<div class='d-grid'>
 				<button type='button' data-bs-toggle="modal"
 						data-bs-target="#excluirContaModal"
-						class='p-4 btn btn-outline-danger'>Excluir cadastro</button>
+						class='p-3 btn btn-outline-danger d-flex align-items-center gap-2 justify-content-center'>
+						<i class="bi bi-trash-fill fs-4"></i>
+						Excluir cadastro
+				</button>
 			</div>
 		</div>
 			
