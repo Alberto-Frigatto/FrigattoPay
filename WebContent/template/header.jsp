@@ -23,10 +23,16 @@
 		    	<span>Olá, ${ clienteLogado.getNome() }</span>
 		    	<ul class='nav d-flex gap-4'>
 		    		<li class='nav-item'>
-		    			<a href='<%=request.getContextPath() + "/user/perfil"%>' class='btn btn-primary'>Meu Perfil</a>
+		    			<a href='<%=request.getContextPath() + "/user/perfil"%>' class='btn btn-primary d-flex align-items-center gap-2'>
+		    				<i class='bi bi-person-fill'></i>
+		    				Meu Perfil
+		    			</a>
 		    		</li>
 		    		<li class='nav-item'>
-		    			<a href='<%=request.getContextPath() + "/user/logout"%>' class='btn btn-outline-danger'>Sair</a>
+		    			<a href='<%=request.getContextPath() + "/user/logout"%>' class='btn btn-outline-danger d-flex align-items-center gap-2'>
+		    				<i class="bi bi-box-arrow-right"></i>
+		    				Sair
+		    			</a>
 		    		</li>
 		    	</ul>
 		  	</div>
