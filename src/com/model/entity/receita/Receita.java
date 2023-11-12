@@ -1,6 +1,5 @@
 package com.model.entity.receita;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,57 +19,58 @@ public class Receita
         int idCliente,
         int idTipoReceita,
         double valor,
-        String dataReceita
+        Date dataReceita
     ) throws ReceitaException
     {
         this.id = id;
         this.idCliente = idCliente;
         this.idTipoReceita = idTipoReceita;
         this.valor = valor;
+        this.dataReceita = dataReceita;
 
         this.validarValor();
-        this.definirDataReceitaSeValida(dataReceita);
+    	this.validarDataReceita();
     }
 
     public Receita(
         int idCliente,
         int idTipoReceita,
         double valor,
-        String dataReceita
+        Date dataReceita
     ) throws ReceitaException
     {
         this.idCliente = idCliente;
         this.idTipoReceita = idTipoReceita;
         this.valor = valor;
+        this.dataReceita = dataReceita;
 
         this.validarValor();
-        this.definirDataReceitaSeValida(dataReceita);
+    	this.validarDataReceita();
     }
 
     private void validarValor() throws ValorInvalidoException
     {
-        if (!this.valorEValido())
+        if (!this.valorEValido(this.valor))
             throw new ValorInvalidoException();
     }
 
-    private boolean valorEValido()
+    private boolean valorEValido(Double value)
     {
-        return this.valor > 0;
+        return value > 0;
+    }
+    
+    private void validarDataReceita() throws DataReceitaInvalidaException
+    {
+    	if (!this.dataReceitaEvalida(this.dataReceita))
+    		throw new DataReceitaInvalidaException();
     }
 
-    private void definirDataReceitaSeValida(String dataReceita) throws DataReceitaInvalidaException
+    private boolean dataReceitaEvalida(Date dataReceita)
     {
-        try
-        {
-            this.dataReceita = this.dateFormat.parse(dataReceita);
-        }
-        catch (ParseException e)
-        {
-            throw new DataReceitaInvalidaException();
-        }
-    }
+		return this.dataReceita != null;
+	}
 
-    public void data()
+	public void data()
     {
         System.out.println("Receita(");
         System.out.println("\tid=" + this.id + ",");
@@ -106,8 +106,11 @@ public class Receita
         return this.valor;
     }
 
-    public void updateValor(double value)
+    public void updateValor(double value) throws ValorInvalidoException
     {
+    	if (!this.valorEValido(value))
+            throw new ValorInvalidoException();
+    	
         this.valor = value;
     }
 
@@ -116,8 +119,11 @@ public class Receita
         return this.dataReceita;
     }
 
-    public void updateDataReceita(String value) throws ParseException
+    public void updateDataReceita(Date value) throws DataReceitaInvalidaException
     {
-        this.dataReceita = this.dateFormat.parse(value);
+    	if (!this.dataReceitaEvalida(this.dataReceita))
+    		throw new DataReceitaInvalidaException();
+    	
+        this.dataReceita = value;
     }
 }
