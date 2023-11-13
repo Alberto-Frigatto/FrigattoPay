@@ -44,12 +44,14 @@
 			    					<small>${ daoTipo.getById("t_fp_tipo_receita", receita.getIdTipoReceita()).getNome() } - <fmt:formatDate pattern="dd/MM/yyyy" value="${ receita.getDataReceita() }" /></small>
 			    				</div>
 				    			<ul class='nav gap-3'>
-				    				<a href='' class='btn btn-outline-primary'>
+				    				<a href='<%=request.getContextPath() + "/user/receita/alterar?id="%>${ receita.getId() }' class='btn btn-outline-primary'>
 				    					<i class="bi bi-pencil-square"></i>
 				    				</a>
-				    				<button type='button' class='btn btn-outline-danger'>
-				    					<i class="bi bi-trash-fill"></i>
-				    				</button>
+				    				<button type='button' data-bs-toggle="modal"
+											data-bs-target="#excluirReceita${ receita.getId() }Modal"
+											class='btn btn-outline-danger'>
+											<i class="bi bi-trash-fill"></i>
+									</button>
 				    			</ul>
 			    			</div>
 			    		</div>
@@ -61,6 +63,26 @@
 			</c:choose>
 		</section>
 	</section>
+	
+   	<c:forEach var="receita" items="${ receitas }">
+		<div class="modal fade" id="excluirReceita${ receita.getId() }Modal">
+		    <div class="modal-dialog modal-dialog-centered">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Receita</h1>
+		        		<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		      		</div>
+		      		<div class="modal-body">
+		        		<span class='text-center d-block'>Deseja excluir a receita de ${ daoTipo.getById("t_fp_tipo_receita", receita.getIdTipoReceita()).getNome() } no valor de <fmt:formatNumber value="${ receita.getValor() }" type="currency" currencyCode="BRL" />?</span>
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+						<a href='<%=request.getContextPath() + "/user/receita?method=delete&idReceita="%>${ receita.getId() }' class="btn btn-primary">Excluir Receita</a>
+		      		</div>
+		    	</div>
+		    </div>
+		</div>
+   	</c:forEach>
 </main>
 
 <%@ include file="template/footer.jsp" %>
