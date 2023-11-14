@@ -29,7 +29,7 @@
 				</a>
 			</div>
 			<div class='col'>
-				<a href='' class='card text-decoration-none btn btn-outline-primary'>
+				<a href='<%=request.getContextPath() + "/user/despesas"%>' class='card text-decoration-none btn btn-outline-primary'>
 					<div class='card-body d-flex align-items-center gap-2 justify-content-center'>
 						<i class="bi bi-credit-card-fill fs-5"></i>
 						Despesas
