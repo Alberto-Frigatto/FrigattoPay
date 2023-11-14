@@ -1,6 +1,5 @@
 package com.model.entity.despesa;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,7 +23,7 @@ public class Despesa
         String nome,
         double valor,
         String descricao,
-        String dataVencimento
+        Date dataVencimento
     ) throws DespesaException
     {
         this.id = id;
@@ -33,11 +32,12 @@ public class Despesa
         this.nome = nome;
         this.valor = valor;
         this.descricao = descricao;
+        this.dataVencimento = dataVencimento;
 
         this.validarNome();
         this.validarValor();
         this.validarDescricao();
-        this.definirDataVencimentoSeValida(dataVencimento);
+        this.validarDataVencimento();
     }
 
     public Despesa(
@@ -46,7 +46,7 @@ public class Despesa
         String nome,
         double valor,
         String descricao,
-        String dataVencimento
+        Date dataVencimento
     ) throws DespesaException
     {
         this.idCliente = idCliente;
@@ -54,11 +54,12 @@ public class Despesa
         this.nome = nome;
         this.valor = valor;
         this.descricao = descricao;
+        this.dataVencimento = dataVencimento;
 
         this.validarNome();
         this.validarValor();
         this.validarDescricao();
-        this.definirDataVencimentoSeValida(dataVencimento);
+        this.validarDataVencimento();
     }
 
     private void validarNome() throws NomeInvalidoException
@@ -85,16 +86,15 @@ public class Despesa
         return this.valor > 0;
     }
 
-    private void definirDataVencimentoSeValida(String dataVencimento) throws DataVencimentoInvalidaException
+    private void validarDataVencimento() throws DataVencimentoInvalidaException
     {
-        try
-        {
-            this.dataVencimento = this.dateFormat.parse(dataVencimento);
-        }
-        catch (ParseException e)
-        {
-            throw new DataVencimentoInvalidaException();
-        }
+        if (!this.dataVencimentoEvalida(this.dataVencimento))
+        	throw new DataVencimentoInvalidaException();
+    }
+    
+    private boolean dataVencimentoEvalida(Date dataVencimento)
+    {
+    	return this.dataVencimento != null;
     }
 
     private void validarDescricao() throws DescricaoInvalidaException
@@ -178,8 +178,11 @@ public class Despesa
         return this.dataVencimento;
     }
 
-    public void updateDataVencimento(String value) throws ParseException
+    public void updateDataVencimento(Date value) throws DataVencimentoInvalidaException
     {
-        this.dataVencimento = this.dateFormat.parse(value);
+    	if (!this.dataVencimentoEvalida(this.dataVencimento))
+    		throw new DataVencimentoInvalidaException();
+    	
+        this.dataVencimento = value;
     }
 }
