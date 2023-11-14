@@ -27,8 +27,7 @@ public class DAODespesa extends DAO
 
         while (result.next())
         {
-            String formattedDate = this.formatCompleteDate(result.getDate("dt_vencimento"));
-
+    
             Despesa despesa = new Despesa(
                 result.getInt("cd_despesa"),
                 result.getInt("t_fp_cliente_cd_cliente"),
@@ -36,7 +35,7 @@ public class DAODespesa extends DAO
                 result.getString("nm_despesa"),
                 result.getDouble("vl_despesa"),
                 result.getString("ds_despesa"),
-                formattedDate
+                result.getDate("dt_vencimento")
             );
 
             despesas.add(despesa);
@@ -65,6 +64,56 @@ public class DAODespesa extends DAO
 
         return stmt.executeQuery(query);
     }
+    
+    public List<Despesa> getAll(int idCliente) throws SQLException, DespesaException
+    {
+        List<Despesa> despesas = new ArrayList<Despesa>();
+
+        ResultSet result = this.getDespesas(idCliente);
+
+        while (result.next())
+        {
+
+        	Despesa despesa = new Despesa(
+                result.getInt("cd_despesa"),
+                result.getInt("t_fp_cliente_cd_cliente"),
+                result.getInt("t_fp_tipo_despesa_cd_tipo"),
+                result.getString("nm_despesa"),
+                result.getDouble("vl_despesa"),
+                result.getString("ds_despesa"),
+                result.getDate("dt_vencimento")
+               );
+        	
+                despesas.add(despesa);
+                
+        }
+        
+        return despesas;
+    }
+    
+    private ResultSet getDespesas(int idCliente) throws SQLException
+    {        
+    	String query = """
+            SELECT
+                cd_despesa,
+                t_fp_cliente_cd_cliente,
+                t_fp_tipo_despesa_cd_tipo,
+                nm_despesa,
+                vl_despesa,
+                ds_despesa,
+                dt_vencimento
+       
+                FROM T_FP_DESPESA
+    			    WHERE t_fp_cliente_cd_cliente = ?
+                    ORDER BY dt_vencimento DESC
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, idCliente);
+
+        return pstmt.executeQuery();
+    }
 
     public Despesa getById(int id) throws SQLException, DespesaException
     {
@@ -73,7 +122,6 @@ public class DAODespesa extends DAO
         if (!result.next())
             throw new SQLException("A despesa " + id + " não existe");
 
-        String formattedDate = this.formatCompleteDate(result.getDate("dt_vencimento"));
 
         Despesa despesa = new Despesa(
             result.getInt("cd_despesa"),
@@ -82,7 +130,7 @@ public class DAODespesa extends DAO
             result.getString("nm_despesa"),
             result.getDouble("vl_despesa"),
             result.getString("ds_despesa"),
-            formattedDate
+            result.getDate("dt_vencimento")
         );
 
         return despesa;
