@@ -11,7 +11,7 @@
 		<h1 class='fs-2 text-center'>Opções</h1>
 		<div class='row'>
 			<div class='col'>
-				<a href='' class='card text-decoration-none btn btn-outline-primary'>
+				<a href='<%=request.getContextPath() + "/user/contas"%>' class='card text-decoration-none btn btn-outline-primary'>
 					<div class='card-body d-flex align-items-center gap-2 justify-content-center'>
 						<i class="bi bi-bank fs-5"></i>
 						Contas bancárias
