@@ -53,7 +53,7 @@
 		method='post'
 		class='p-4 bg-white d-flex flex-column rounded-4 w-50 gap-4'>
 		
-		<h1 class='fs-2'>${ despesa != null ? "Alterar despesa" : "Cadastrar despesa" }</h1>
+		<h1 class='fs-2'>${ despesa != null ? "Alterar despesa: ".concat(despesa.getNome()) : "Cadastrar despesa" }</h1>
 		
 		<div class='row mb-2'>
 			<div class='col'>
@@ -115,7 +115,7 @@
 		
 		<div class='d-grid'>
 			<button type='submit' class='btn btn-primary d-flex align-items-center justify-content-center gap-2'>
-				${ despesa != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-person-fill-add fs-5'></i> Cadastrar" }
+				${ despesa != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-plus-circle'></i> Cadastrar" }
 			</button>
 		</div>
 	</form>
