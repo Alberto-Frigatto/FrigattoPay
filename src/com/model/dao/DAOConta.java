@@ -64,6 +64,57 @@ public class DAOConta extends DAO
         return stmt.executeQuery(query);        
     }
 
+    public List<Conta> getAll(int idCliente) throws SQLException, ContaException
+    {
+        List<Conta> contas = new ArrayList<Conta>();
+
+        ResultSet result = this.getContas(idCliente);
+
+        while (result.next())
+        {
+
+        	Conta conta = new Conta(
+                result.getInt("cd_conta"),
+                result.getInt("t_fp_cliente_cd_cliente"),
+                result.getInt("t_fp_banco_cd_banco"),
+                result.getInt("t_fp_tipo_conta_cd_tipo"),
+                result.getString("nr_conta"),
+                result.getDouble("vl_saldo"),
+                result.getString("nr_agencia")
+            );
+
+        	
+                contas.add(conta);
+                
+        }
+        
+        return contas;
+    }
+
+    private ResultSet getContas(int idCliente) throws SQLException
+    {        
+    	String query = """
+            SELECT
+                cd_conta, 
+                t_fp_cliente_cd_cliente, 
+                t_fp_banco_cd_banco, 
+                t_fp_tipo_conta_cd_tipo, 
+                nr_conta, 
+                vl_saldo, 
+                nr_agencia
+                     
+                FROM T_FP_CONTA
+    			    WHERE t_fp_cliente_cd_cliente = ?
+                    ORDER BY cd_conta DESC
+        """;
+
+        PreparedStatement pstmt = this.conn.prepareStatement(query);
+
+        pstmt.setInt(1, idCliente);
+
+        return pstmt.executeQuery();
+    }
+    
     public Conta getById(int id) throws SQLException, ContaException
     {
         ResultSet result = this.getConta(id);
@@ -123,10 +174,14 @@ public class DAOConta extends DAO
 
     public void update(Conta conta) throws SQLException
     {
-        CallableStatement cs = conn.prepareCall("{ call AtualizarConta(?, ?) }");
+        CallableStatement cs = conn.prepareCall("{ call AtualizarConta(?, ?, ?, ?, ?, ?) }");
 
         cs.setInt(1, conta.getId());
         cs.setDouble(2, conta.getSaldo());
+        cs.setString(3, conta.getNumero());
+        cs.setString(4, conta.getAgencia());
+        cs.setInt(5, conta.getIdTipoConta());
+        cs.setInt(6, conta.getIdBanco());
         cs.execute();
     }
 
