@@ -218,14 +218,29 @@ public class Conta
         return this.idBanco;
     }
 
+    public void updateIdBanco(int value)
+    {
+        this.idBanco = value;
+    }
+
     public int getIdTipoConta()
     {
         return this.idTipoConta;
     }
 
+    public void updateIdTipoConta(int value)
+    {
+        this.idTipoConta = value;
+    }
+
     public String getNumero()
     {
         return this.numero;
+    }
+
+    public void updateNumero(String value)
+    {
+        this.numero = value;
     }
 
     public double getSaldo()
@@ -241,5 +256,10 @@ public class Conta
     public String getAgencia()
     {
         return this.agencia;
+    }
+
+    public void updateAgencia(String value)
+    {
+        this.agencia = value;
     }
 }
