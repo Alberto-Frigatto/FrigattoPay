@@ -100,7 +100,7 @@
 		
 		<div class='d-grid'>
 			<button type='submit' class='btn btn-primary d-flex align-items-center justify-content-center gap-2'>
-				${ receita != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-person-fill-add fs-5'></i> Cadastrar" }
+				${ receita != null ? "<i class='bi bi-pencil-fill fs-6'></i> Alterar" : "<i class='bi bi-plus-circle'></i> Cadastrar" }
 			</button>
 		</div>
 	</form>
