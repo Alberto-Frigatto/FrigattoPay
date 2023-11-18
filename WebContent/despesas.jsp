@@ -40,9 +40,10 @@
 			    		<div class='card'>
 			    			<div class='card-body d-flex align-items-center justify-content-between'>
 			    				<div class='d-flex flex-column align-items-start'>
-			    					<span class='fs-4'><fmt:formatNumber value="${ despesa.getValor() }" type="currency" currencyCode="BRL" /></span>
+			    					<span class='fs-4'>${ despesa.getNome() }</span>
 			    					<small>${ daoTipo.getById("t_fp_tipo_despesa", despesa.getIdTipoDespesa()).getNome() } - <fmt:formatDate pattern="dd/MM/yyyy" value="${ despesa.getDataVencimento() }" /></small>			    							    	
 			    				</div>
+			    				<span class='fs-5'><fmt:formatNumber value="${ despesa.getValor() }" type="currency" currencyCode="BRL" /></span>
 				    			<ul class='nav gap-3'>
 				    				<a href='<%=request.getContextPath() + "/user/despesa/alterar?id="%>${ despesa.getId() }' class='btn btn-outline-primary'>
 				    					<i class="bi bi-pencil-square"></i>
@@ -73,7 +74,7 @@
 		        		<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 		      		</div>
 		      		<div class="modal-body">
-		        		<span class='text-center d-block'>Deseja excluir a despesa de ${ daoTipo.getById("t_fp_tipo_despesa", despesa.getIdTipoDespesa()).getNome() } no valor de <fmt:formatNumber value="${ despesa.getValor() }" type="currency" currencyCode="BRL" />?</span>
+		        		<span class='text-center d-block'>Deseja excluir a despesa de ${ despesa.getNome() } no valor de <fmt:formatNumber value="${ despesa.getValor() }" type="currency" currencyCode="BRL" />?</span>
 		      		</div>
 		      		<div class="modal-footer">
 		        		<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
