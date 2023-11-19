@@ -19,7 +19,9 @@
 	%>
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		  	<div class="container-fluid d-flex align-items-center justify-content-between px-5">
-		  		<a class="navbar-brand" href="<%=request.getContextPath() + "/user/home"%>">FrigattoPay</a>
+		  		<a class="navbar-brand" href="<%=request.getContextPath() + "/user/home"%>">
+		  			<img src='<%=request.getContextPath() %>/static/img/logo.png' alt='FrigattoPay' style='height: 2rem' />
+		  		</a>
 		    	<span>Olá, ${ clienteLogado.getNome() }</span>
 		    	<ul class='nav d-flex gap-4'>
 		    		<li class='nav-item'>
