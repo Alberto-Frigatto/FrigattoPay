@@ -67,6 +67,7 @@ danilo.bossanova@hotmail.com
 guhrlopes999@gmail.com
 
 [Linkedin](https://www.linkedin.com/in/gustavo-rodrigues-lopes-b41046213/)
+
 [Github](https://github.com/guh99998)
 
 <br/>
