@@ -16,5 +16,6 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/ojdbc11.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/static/img/logo.png"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
